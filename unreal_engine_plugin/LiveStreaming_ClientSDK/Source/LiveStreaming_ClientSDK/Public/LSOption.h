@@ -1,0 +1,82 @@
+// Copyright 2022 RICOH Company, Ltd. All rights reserved.
+
+#pragma once
+
+#include <memory>
+#include "LiveStreaming_ClientSDK.h"
+#include "Definitions.h"
+#include "LSEnumDefine.h"
+#include "LSTrack.h"
+#include "LSSendingOption.h"
+#include "LSReceivingOption.h"
+#include "CoreMinimal.h"
+#include "UObject/NoExportTypes.h"
+#include "LSOption.generated.h"
+
+UCLASS(BlueprintType, Blueprintable)
+class LIVESTREAMING_CLIENTSDK_API ULSOption : public UObject
+{
+    GENERATED_BODY()
+
+public:
+    ULSOption();
+    Option* Get() const;
+
+    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    FString GetSignalingURL() const;
+
+    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    TArray<ULSTrack*> GetLocalLSTracks() const;
+
+    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    TMap<FString, FString> GetMetadata() const;
+
+    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    bool GetEnableCpuOveruseDetection() const;
+
+    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    ULSSendingOption* GetSendingOption() const;
+
+    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    ULSReceivingOption* GetReceivingOption() const;
+
+    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    ELSIceTransportPolicy GetIceTransportPolicy() const;
+
+    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    ELSIceServersProtocol GetIceServersProtocol() const;
+
+    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    ULSOption* SetSignalingURL(const FString& signalingURL);
+
+    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    ULSOption* SetLocalLSTracks(const TArray<ULSTrack*>& localLSTracks);
+
+    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    ULSOption* SetMeta(const TMap<FString, FString>& meta);
+
+    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    ULSOption* SetEnableCpuOveruseDetection(bool bEnabled = true);
+
+    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    ULSOption* SetSendingOption(ULSSendingOption* sendingOption);
+
+    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    ULSOption* SetReceivingOption(ULSReceivingOption* receivingOption);
+
+    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    ULSOption* SetIceTransportPolicy(ELSIceTransportPolicy iceTransportPolicy);
+
+    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    ULSOption* SetIceServersProtocol(ELSIceServersProtocol iceServersProtocol);
+
+private:
+    TUniquePtr<FLiveStreaming_ClientSDKModule> _pluginModule;
+    std::unique_ptr<Option> _option;
+
+    UPROPERTY()
+    ULSSendingOption* _sendingOption = nullptr;
+
+    UPROPERTY()
+    ULSReceivingOption* _receivingOption = nullptr;
+};

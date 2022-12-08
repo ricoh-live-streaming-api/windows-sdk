@@ -1,0 +1,837 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/workspace/cappella-windows-release/ClientSDK/ClientSDK",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "pq3KyDv/bzkDzVf43vx5cIe9l/7KEJUPkQtpSuC92uM="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "VWjrclI2a+rxQKIB7sEqwmsjG5x8kG20aaTMV20N+jQ="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "BlPxk5mtl2kgfcZUgkEguqiSAR/EUyUTT4EdebwkQvs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/tutorial.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/tutorial.html",
+          "hash": "J+boBoQks1sN3sFl6Se69onQb5dK8IoUacx/wB427Ck="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "V/5EaeNXLptIQ4gvdo4CW7fmEuJ3m9ZFKE+BmXNMgZ8="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.Client.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.Client.html",
+          "hash": "Fe2jh5Q5BO+91O4lmr1/901HzuLgu5m+kFyxj3Q3LGw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.ConnectionState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.ConnectionState.html",
+          "hash": "/9/NG2Q1THhI9exg2JgTgQhDnhlNuTaaxjiQeoge6/A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.ErrorDetail.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.ErrorDetail.html",
+          "hash": "TW8QRmSUrzWa2hMcERatMSv4e+cQsigXAdvFI97YkDQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.ErrorType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.ErrorType.html",
+          "hash": "xQf3uJ271eiNBEjIZF6vvtcnOlp8Dv8e5NXPflDwMe0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.IClientListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.IClientListener.html",
+          "hash": "btDheDsGGS8mJroELkj8lXXMpBBxbnF28a0kz+CTl34="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.IceServersProtocol.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.IceServersProtocol.html",
+          "hash": "uRodjKw1NDo1cofH0ml9c0Ci/dsbnx5rKKr2I/wekIk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.IceTransportPolicy.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.IceTransportPolicy.html",
+          "hash": "15fLtLznF4F4GKKKqBAuOkFcEYeIYK9daHy7EwHLuKc="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.LSAddLocalTrackEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.LSAddLocalTrackEvent.html",
+          "hash": "FGZipzQIYtt+TBbpcbWVYw5zPe1qe8OiRLysRipQDxs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.LSAddRemoteConnectionEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.LSAddRemoteConnectionEvent.html",
+          "hash": "YCotzeQhu5KYn8dbRklK7MQm39Db9x0MThw6eiK5YoI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.LSAddRemoteTrackEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.LSAddRemoteTrackEvent.html",
+          "hash": "Nbve9U++H8Lu5Y/uhwQaF9Ay5LpgBDldnPHIFu0gPJ8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.LSChangeStabilityEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.LSChangeStabilityEvent.html",
+          "hash": "Fnbfh7j+tTq0UvhzHIrg53WFSqJBf4WWA+goCiq8te8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.LSCloseEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.LSCloseEvent.html",
+          "hash": "mH2Rgr402MiU22BUq8ZAaM0Lf4QklFi7l5F17Fwa6y4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.LSClosingEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.LSClosingEvent.html",
+          "hash": "JZvb3+2Ve/zk8GlzGhUznj92LqrKPqkx/qdIGqBZIe0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.LSConnectingEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.LSConnectingEvent.html",
+          "hash": "kwS+qqQ7+kp3IxZp+oYOeZ7G4AQoOr0R2wlOiy3X/Rs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.LSOpenEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.LSOpenEvent.html",
+          "hash": "SGaiDPMxMdD64S+FkjUaIvPX1PB0PAAGmKLa8yl151g="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.LSRemoveRemoteConnectionEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.LSRemoveRemoteConnectionEvent.html",
+          "hash": "ph1lv+zgWwqZ0XJkGkKd7xOEErlqTAE2lJyZuZV4aAk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.LSTrack.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.LSTrack.html",
+          "hash": "HWxhLE41d7aY5L8C26CiLIXjNZkDjb2nZskaQGKQBY0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.LSTrackOption.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.LSTrackOption.html",
+          "hash": "eUUnF+MWX1sufnJC+2lENrJvTa6f1TLhonnFVkc8nyM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.LSUpdateMuteEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.LSUpdateMuteEvent.html",
+          "hash": "fLKqM1ndRetVyoVzarY6LPhUJnktQGxV13cAL0bM/98="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.LSUpdateRemoteConnectionEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.LSUpdateRemoteConnectionEvent.html",
+          "hash": "AV0WdhmcplHIm5S8ZwyH6560ZY3Cs/cy+8Fvya3EiNQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.LSUpdateRemoteTrackEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.LSUpdateRemoteTrackEvent.html",
+          "hash": "2C8h2g1p/gY9aiDD/U767aaR8Im2zQzpvDvklD8TtNQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.MuteType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.MuteType.html",
+          "hash": "JYiP4xKodOgA+habqyd6QrSuFPAs55dpHLmN2yevYAE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.Option.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.Option.html",
+          "hash": "Nu7TSK+QfMzdb5c2xCQwg4dmAWLRZocFKB008BtexNk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.ReceivingOption.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.ReceivingOption.html",
+          "hash": "uJDSw6QoRYkpqD8SJ+AhH5cUdX7OwBlTB+DmIOxhwZ8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.SDKErrorEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.SDKErrorEvent.html",
+          "hash": "TuVecPkRqUY3TDrvzmSxE85S+XkqLGPFWP12fdi/AK8="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.SDKException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.SDKException.html",
+          "hash": "ljexkkR+9aq1hoPODBdVy2MSMR/s7AYiAbGRbbkNFC0="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.SendingOption.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.SendingOption.html",
+          "hash": "p6tXmznArhYd09wSPBvcsqBuJYn07LONuOiPw02J8tA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.SendingVideoOption.SendingPriority.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.SendingVideoOption.SendingPriority.html",
+          "hash": "9PnKcy7coP4KKSdUE/1ST4nx+AGYcgG/zB2RGIhSWqQ="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.SendingVideoOption.VideoCodecType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.SendingVideoOption.VideoCodecType.html",
+          "hash": "Ia+xnNkiuwEp7IHOjEfzgbfjc3QbTwUcfm4kArgDHcY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.SendingVideoOption.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.SendingVideoOption.html",
+          "hash": "D/U3TNroAwTgwCwz0nToYV619Vif6/AcKh3K4H1eR0k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.Stability.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.Stability.html",
+          "hash": "NUPCgF31zJAa8NnA82GM4CrnLT+rP/ikYcuroiMRFsM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.VideoRequirement.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.VideoRequirement.html",
+          "hash": "gDl374leRv+6FbSlqOdAf32CJZr9GyLo/BKzx1S+cZo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.unity.UnityCameraCapturer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.unity.UnityCameraCapturer.html",
+          "hash": "WQC2Pivy7xOGIcEJQx1mSMG97pq+MVhHDMr2eWNHzvE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.unity.UnityRenderer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.unity.UnityRenderer.html",
+          "hash": "oxd+boOsE9PnnB65FOAzY3gJAkBFZUhlBA5PvSlcN0k="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.unity.WindowProcedureHook.DeviceType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.unity.WindowProcedureHook.DeviceType.html",
+          "hash": "ouMN7f2yGRz5ozih8EuvBqurngo6xiiPRpJEgoxBWxk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.unity.WindowProcedureHook.IListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.unity.WindowProcedureHook.IListener.html",
+          "hash": "WfLTzLFZhALQL20X6hYU0qswe4EWpCYegvYAld4gVxU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.unity.WindowProcedureHook.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.unity.WindowProcedureHook.html",
+          "hash": "ZE4jBvIuU2/afoM9HUGcuFN3OxZKiVxskeeDIVJ+3As="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.unity.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.unity.html",
+          "hash": "6lrSeeRd4JqbhHcFD2R2zQONPUoqo/9ZRZQ0mWcpvaM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.webrtc.AudioTrack.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.webrtc.AudioTrack.html",
+          "hash": "kwJ9jxCLmHUA3sJ3iwUzXSMld2C8mQkkjXAOfA9b278="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.webrtc.ByteArrayCapturer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.webrtc.ByteArrayCapturer.html",
+          "hash": "VYmcc9ngWe7b98qy3n9BGIaoHBBqoANr1g3WpcXL/Rk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.webrtc.CodecUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.webrtc.CodecUtil.html",
+          "hash": "2VEZ5CM3pBvmAXZeZ0A85VXu/X4WkBYqF4sdRZQzAnM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.webrtc.DeviceInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.webrtc.DeviceInfo.html",
+          "hash": "dN6fT2sTIwSv7KbCcTY7QbclBcAL3mEtKKe1dRH+M+Y="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.webrtc.DeviceUtil.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.webrtc.DeviceUtil.html",
+          "hash": "MnR3zjC8ZRy08cXiINgJ+YtRrmLS8chMCrDAS6+bQSY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.webrtc.MediaStream.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.webrtc.MediaStream.html",
+          "hash": "rHRfFrmXu6EAcX1+HwXuPajj+7AbOvhpmHuGfMcxEJk="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.webrtc.MediaStreamConstraints.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.webrtc.MediaStreamConstraints.html",
+          "hash": "8PC1zw/In4K21IJSreCNc1high0SDxr6E/q4z47txqs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.webrtc.MediaStreamTrack.TrackType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.webrtc.MediaStreamTrack.TrackType.html",
+          "hash": "rkDCWooCYwcy3dEtiPdHNJuvO1j36mEdJ40udA4j9aI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.webrtc.MediaStreamTrack.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.webrtc.MediaStreamTrack.html",
+          "hash": "rNRx/biOERiFdwSyUG41owVQlrFLbvcGSAoPPwhqhGE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.webrtc.RTCStats.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.webrtc.RTCStats.html",
+          "hash": "Rftl6bwqijlQrjpAqD74xprkitdmpI7t20RXUmCSoh4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.webrtc.RTCStatsReport.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.webrtc.RTCStatsReport.html",
+          "hash": "99W4zKBzWAfzP7R8Tomq2PdFj4XumquWuZaUKKtHpFU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.webrtc.VideoCapturer.CapturerType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.webrtc.VideoCapturer.CapturerType.html",
+          "hash": "nwD335tbfs4AZ5JVWfGawgpzOJay5Q6hK6HmbMhw24A="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.webrtc.VideoCapturer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.webrtc.VideoCapturer.html",
+          "hash": "suFF8uw0rHOP9PVV8rHtrD0dCWD6KLR+vh3lWcVdNbs="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.webrtc.VideoCapturerDeviceCapability.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.webrtc.VideoCapturerDeviceCapability.html",
+          "hash": "qvjuAxNlRREOywRT63QWrfRZJAVWWaOjlncg6v908/w="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.webrtc.VideoDeviceCapturer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.webrtc.VideoDeviceCapturer.html",
+          "hash": "tmt6K2AJftK8NfAqyho5BHEYWQaZvbLiL1GIMC+bp24="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.webrtc.VideoTrack.IListener.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.webrtc.VideoTrack.IListener.html",
+          "hash": "haWjt5P24XZnYDHZTcSfBbrVFpEVMwtQjXkUrEQ8Da4="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.webrtc.VideoTrack.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.webrtc.VideoTrack.html",
+          "hash": "UGfyON/4XvDAUIew2X6wfrkF1fq46Q1jBXzGQmUzmeE="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.webrtc.WebrtcLog.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.webrtc.WebrtcLog.html",
+          "hash": "QpXVCvCVXd6clW2QwSMu4TfB3p7GEBaStEysUEVDdAw="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.webrtc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.webrtc.html",
+          "hash": "L7Z7b2M88ix0s8ao+qKZAbl1/CxKSXQPHjX52Ij9VzY="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.html",
+          "hash": "EgRmhMfs1sTac3wDimsCHFqxBTDrw1GRxtbUDTWcfmo="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "obj/api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "yoMeXUgOS3wmLuxPmWZ4743gjoPx6KbyjeLM229pHpM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "Oa9PuD4E1hvZnCkVjUgzNBX6S00Zo5YilamTERTZo54="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 4,
+          "skipped_file_count": 4
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 58,
+          "skipped_file_count": 3
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
