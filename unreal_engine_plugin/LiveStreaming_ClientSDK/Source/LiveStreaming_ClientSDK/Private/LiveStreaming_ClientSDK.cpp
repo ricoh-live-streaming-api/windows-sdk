@@ -54,6 +54,7 @@ void FLiveStreaming_ClientSDKModule::StartupModule()
     GET_FUNC(Logger::ConfigureFunc, this->moduleClient, pLogConfigureFunc, TEXT("LogConfigure"), isError);
 
     SET_FUNC(CreateMediaStreamConstraintsFunc, CreateMediaStreamConstraints, isError);
+    SET_FUNC(CreateAudioDataCapturerFunc, CreateAudioDataCapturer, isError);
     SET_FUNC(CreateVideoDeviceCapturerFunc, CreateVideoDeviceCapturer, isError);
     SET_FUNC(CreateByteArrayCapturerFunc, CreateByteArrayCapturer, isError);
     SET_FUNC(CreateByteArrayRendererFunc, CreateByteArrayRenderer, isError);
@@ -63,6 +64,7 @@ void FLiveStreaming_ClientSDKModule::StartupModule()
     SET_FUNC(CreateOptionFunc, CreateOption, isError);
     SET_FUNC(CreateSendingOptionFunc, CreateSendingOption, isError);
     SET_FUNC(CreateReceivingOptionFunc, CreateReceivingOption, isError);
+    SET_FUNC(CreateLibWebrtcLogOptionFunc, CreateLibWebrtcLogOption, isError);
     SET_FUNC(CreateClientFunc, CreateClient, isError);
     SET_FUNC(CreateStringDictionaryFunc, CreateStringDictionary, isError);
     SET_FUNC(CreateStringListFunc, CreateStringList, isError);

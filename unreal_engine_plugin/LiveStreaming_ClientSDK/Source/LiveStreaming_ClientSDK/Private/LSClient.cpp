@@ -170,3 +170,11 @@ void ULSClient::ChangeVideoSendFramerate(double maxFramerate)
         _client->ChangeVideoSendFramerate(maxFramerate);
     }
 }
+
+void ULSClient::SetLibWebrtcLogOption(ULSLibWebrtcLogOption* option)
+{
+    if (_client)
+    {
+        _client->SetLibWebrtcLogOption(option->Get());
+    }
+}

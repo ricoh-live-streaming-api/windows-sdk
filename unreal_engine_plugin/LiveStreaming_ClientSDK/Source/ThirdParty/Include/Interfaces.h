@@ -1,3 +1,5 @@
+// Copyright 2022 RICOH Company, Ltd. All rights reserved.
+
 #pragma once
 #include "ClassDefine.h"
 #include "Collections.h"
@@ -27,7 +29,17 @@ extern "C"
 	/// MediaStreamConstraintsの関数ポインター型
 	/// </summary>
 	typedef MediaStreamConstraints* (*CreateMediaStreamConstraintsFunc)();
-	
+
+	/// <summary>
+	/// AudioDataCapturerのCreate関数
+	/// </summary>
+	/// <returns>Wrapperクラスのインスタンス</returns>
+	DECLSPEC AudioDataCapturer* CreateAudioDataCapturer();
+	/// <summary>
+	/// AudioDataCapturerの関数ポインター型
+	/// </summary>
+	typedef AudioDataCapturer* (*CreateAudioDataCapturerFunc)();
+
 	/// <summary>
 	/// VideoDeviceCapturerのCreate関数
 	/// </summary>
@@ -230,14 +242,14 @@ extern "C"
 	typedef RtcStatsWriter* (*CreateRtcStatsWriterFunc)(const char* path, ReadOnlyList<const char*>* targetTypeNames);
 
 	/// <summary>
-	/// WebrtcLogの実体を生成
+	/// LibWebrtcLogOptionの実体を生成
 	/// </summary>
-	/// <returns>WebrtcLogの実体</returns>
-	DECLSPEC WebrtcLog* CreateWebrtcLog();
+	/// <returns>LibWebrtcLogOptionの実体</returns>
+	DECLSPEC LibWebrtcLogOption* CreateLibWebrtcLogOption(const wchar_t* path, unsigned int maxTotalFileSize, LibWebrtcLogOption::Level logLevel);
 	/// <summary>
-	/// WebrtcLogの実体を生成する関数ポインタ型
+	/// LibWebrtcLogOptionの実体を生成する関数ポインタ型
 	/// </summary>
-	typedef WebrtcLog* (*CreateWebrtcLogFunc)();
+	typedef LibWebrtcLogOption* (*CreateLibWebrtcLogOptionFunc)(const wchar_t* path, unsigned int maxTotalFileSize, LibWebrtcLogOption::Level logLevel);
 
 	/// <summary>
 	/// .netのDispatcher機能を提供する（LoadLibrary時にNameSpaneは効かないので注意）

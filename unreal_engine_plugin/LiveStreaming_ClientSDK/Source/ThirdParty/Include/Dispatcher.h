@@ -1,3 +1,5 @@
+// Copyright 2022 RICOH Company, Ltd. All rights reserved.
+
 #pragma once
 
 /// <summary>

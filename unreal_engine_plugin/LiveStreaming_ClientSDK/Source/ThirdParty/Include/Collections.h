@@ -1,3 +1,5 @@
+// Copyright 2022 RICOH Company, Ltd. All rights reserved.
+
 #pragma once
 
 constexpr int KEYWORD_STRING_SIZE = 256;

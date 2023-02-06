@@ -13,6 +13,7 @@
 #include "LSRTCStatsReport.h"
 #include "LSOption.h"
 #include "LSClientListener.h"
+#include "LSLibWebrtcLogOption.h"
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "LSClient.generated.h"
@@ -73,6 +74,9 @@ public:
 
     UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
     void ChangeVideoSendFramerate(double maxFramerate);
+
+    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    void SetLibWebrtcLogOption(ULSLibWebrtcLogOption* option);
 
 private:
     TUniquePtr<FLiveStreaming_ClientSDKModule> _pluginModule;

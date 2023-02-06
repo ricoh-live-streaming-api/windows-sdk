@@ -1,3 +1,5 @@
+// Copyright 2022 RICOH Company, Ltd. All rights reserved.
+
 #pragma once
 #include "EnumDefine.h"
 #include "Collections.h"
@@ -15,6 +17,7 @@ class SendingVideoOption;
 class MediaStream;	//webrtc
 class MediaStreamConstraints;	//webrtc
 class MediaStreamTrack;	//webrtc
+class AudioDataCapturer;	//webrtc
 class VideoCapturer;	//webrtc
 class VideoDeviceCapturer;
 class CodecUtil;
@@ -24,7 +27,7 @@ class DeviceUtil;
 class RTCStats;
 class RTCStatsReport;
 class VideoTrack;
-class WebrtcLog;
+class LibWebrtcLogOption;
 class IClientListener;
 class AudioTrack;
 class VideoTrack;
@@ -40,6 +43,20 @@ class LSUpdateRemoteConnectionEvent;
 class LSUpdateRemoteTrackEvent;
 class LSUpdateMuteEvent;
 class LSChangeStabilityEvent;
+
+/// <summary>
+/// 音声を追加出力するためのコールバック関数
+/// </summary>
+typedef unsigned int (*RequestPlayDataCallback)(
+	void* target,
+	const size_t nSamples,
+	const size_t nBytesPerSample,
+	const size_t nChannels,
+	const unsigned int samplesPerSec,
+	void* audioSamples,
+	size_t& nSamplesOut,
+	long long* elapsedTimeMs,
+	long long* ntpTimeMs);
 
 /// <summary>
 /// com::ricoh::livestreaming::ErrorDetailのWrapper
@@ -125,6 +142,7 @@ public:
 	virtual void ReplaceMediaStreamTrack(LSTrack*, MediaStreamTrack*) = 0;
 	virtual void ChangeMute(LSTrack*, MuteType) = 0;
 	virtual void ChangeVideoSendFramerate(double) = 0;
+	virtual void SetLibWebrtcLogOption(LibWebrtcLogOption*) = 0;
 	virtual ~Client() {};
 
 };
@@ -145,8 +163,6 @@ public:
 class SendingOption
 {
 public:
-//	static SendingOption* Create();
-
 	virtual SendingVideoOption* get_Video() = 0;
 	virtual ~SendingOption() {};
 };
@@ -157,8 +173,6 @@ public:
 class Option 
 {
 public:
-//	static Option* Create();
-
 	virtual const char* get_SignalingURL() = 0;
 	virtual ReadOnlyList<LSTrack*>* get_LocalLSTracks() = 0;
 	virtual StringDictionary* get_Meta() = 0;
@@ -203,6 +217,16 @@ public:
 	virtual MediaStreamConstraints* SetVideoCapturer(VideoCapturer*) = 0;
 	virtual MediaStreamConstraints* SetAudio(bool) = 0;
 	virtual ~MediaStreamConstraints() {};
+};
+
+/// <summary>
+/// com::ricoh::livestreaming::webrtc::AudioDataCapturerのWrapper
+/// </summary>
+class AudioDataCapturer
+{
+public:
+	virtual ~AudioDataCapturer() {};
+	virtual void SetAudioDataCapturer(RequestPlayDataCallback callback) = 0;
 };
 
 /// <summary>
@@ -448,16 +472,22 @@ public:
 	};
 };
 
-
 /// <summary>
-/// com::ricoh::livestreaming::webrtc::WebrtcLogのWrapper
+/// com::ricoh::livestreaming::LibWebrtcLogOptionのWrapper
 /// </summary>
-class WebrtcLog
+class LibWebrtcLogOption
 {
 public:
-	virtual void Create(const wchar_t*, const wchar_t*, unsigned int) = 0;
-	virtual void Destroy() = 0;
-	virtual ~WebrtcLog() {};
+	enum class Level
+	{
+		Verbose,
+		Info,
+	};
+
+	virtual const wchar_t* get_Path() = 0;
+	virtual unsigned int get_MaxTotalFileSize() = 0;
+	virtual Level get_LogLevel() = 0;
+	virtual ~LibWebrtcLogOption() {};
 };
 
 class LSConnectingEvent {};

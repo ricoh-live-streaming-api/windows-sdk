@@ -16,6 +16,7 @@ public:
     virtual void ShutdownModule() override;
 
     CreateMediaStreamConstraintsFunc CreateMediaStreamConstraints;
+    CreateAudioDataCapturerFunc CreateAudioDataCapturer;
     CreateVideoDeviceCapturerFunc CreateVideoDeviceCapturer;
     CreateByteArrayCapturerFunc CreateByteArrayCapturer;
     CreateByteArrayRendererFunc CreateByteArrayRenderer;
@@ -25,6 +26,7 @@ public:
     CreateOptionFunc CreateOption;
     CreateSendingOptionFunc CreateSendingOption;
     CreateReceivingOptionFunc CreateReceivingOption;
+    CreateLibWebrtcLogOptionFunc CreateLibWebrtcLogOption;
     CreateClientFunc CreateClient;
     CreateStringDictionaryFunc CreateStringDictionary;
     CreateStringListFunc CreateStringList;

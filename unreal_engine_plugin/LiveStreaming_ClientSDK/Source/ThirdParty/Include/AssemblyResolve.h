@@ -1,4 +1,6 @@
-﻿/**
+﻿// Copyright 2022 RICOH Company, Ltd. All rights reserved.
+
+/**
 * @File .net系アセンブリの検索パスを設定する
 * （これがないとUnrealEngineのExeディレクトリしか検索してくれない）
 */
