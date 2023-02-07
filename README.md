@@ -20,20 +20,11 @@ At this moment, we provide API license agreement / software license agreement on
 
 * [doc](doc) : APIドキュメント および チュートリアル
 * [licenses](licenses) : OSSライセンス表示
-* [unity_app](unity_app) : Live Streaming API の Windows Unity 向けサンプル および ライブラリ一式
 * [unreal_engine_plugin](unreal_engine_plugin) : UEプラグイン および ライブラリ一式
 * [CHANGELOG.md](CHANGELOG.md) : 変更履歴
 * README.md : 本ファイル
 
 ## ライブラリの場所
-
-- Unityプロジェクト [unity_app\Assets\Plugins\x86_64](unity_app/Assets/Plugins/x86_64) 配下の下記dllが対象
-
-  - ClientSDK.dll
-  - webrtc_wrapper.dll
-  - log4net.dll
-  - Newtonsoft.Json.dll
-  - websocket-sharp.dll
 
 - UEプラグイン [unreal_engine_plugin\LiveStreaming_ClientSDK\Source\ThirdParty\Bin\Win64](unreal_engine_plugin/LiveStreaming_ClientSDK/Source/ThirdParty/Bin/Win64) 配下の下記dllが対象
 
@@ -49,6 +40,3 @@ At this moment, we provide API license agreement / software license agreement on
 - log4net : v2.0.15
 - Newtonsoft.Json : v13.0.1
 - WebSocketSharp : v1.0.3-rc11
-
-## バージョンアップ時の更新方法
-- ClientSDK.dll および webrtc_wrapper.dll を差し替えてください
