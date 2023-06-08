@@ -17,13 +17,13 @@ public:
     VideoCapturerDeviceCapability* Get() const;
     void Set(VideoCapturerDeviceCapability* videoCapturerDeviceCapability);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSVideoCapturerDeviceCapability")
     int GetWidth() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSVideoCapturerDeviceCapability")
     int GetHeight() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSVideoCapturerDeviceCapability")
     int GetFrameRate() const;
 
 private:

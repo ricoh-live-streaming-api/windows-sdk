@@ -14,15 +14,18 @@ void ULSErrorDetail::Set(ErrorDetail* errorDetail)
 
 int ULSErrorDetail::GetCode() const
 {
-    return _errorDetail ? _errorDetail->get_Code() : 0;
+    checkf(_errorDetail, TEXT("ErrorDetail is null."));
+    return _errorDetail->get_Code();
 }
 
 FString ULSErrorDetail::GetError() const
 {
-    return _errorDetail ? FString(_errorDetail->get_Error()) : "";
+    checkf(_errorDetail, TEXT("ErrorDetail is null."));
+    return FString(_errorDetail->get_Error());
 }
 
 ELSErrorType ULSErrorDetail::GetType() const
 {
+    checkf(_errorDetail, TEXT("ErrorDetail is null."));
     return (ELSErrorType)_errorDetail->get_Type();
 }

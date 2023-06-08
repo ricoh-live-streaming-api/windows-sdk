@@ -35,7 +35,7 @@ public:
     VideoCapturer* Get() const;
     void Set(VideoCapturer* videoCapturer);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSVideoCapturer")
     ELSCapturerType GetType() const;
 
     void Release() PURE_VIRTUAL(ULSVideoCapturer::Release, );

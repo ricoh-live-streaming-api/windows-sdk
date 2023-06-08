@@ -24,19 +24,19 @@ public:
     LSTrack* Get() const;
     void Set(LSTrack* lsTrack);
 
-    UFUNCTION(BlueprintCallable, meta=(DisplayName = "Create LSTrack", AutoCreateRefTerm = "trackOption"), Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, meta=(DisplayName = "Create LSTrack", AutoCreateRefTerm = "trackOption"), Category = "RICOH Live Streaming Client SDK for Windows | LSTrack")
     ULSTrack* Create(ULSMediaStreamTrack* mediaStreamTrack, ULSMediaStream* mediaStream, ULSTrackOption* trackOption);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSTrack")
     ULSMediaStreamTrack* GetMediaStreamTrack() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSTrack")
     ULSMediaStream* GetMediaStream() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSTrack")
     TMap<FString, FString> GetMetadata() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSTrack")
     ELSMuteType GetMuteType() const;
 
 private:

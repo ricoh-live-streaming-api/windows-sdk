@@ -18,21 +18,21 @@ public:
     ULSByteArrayCapturer();
     ByteArrayCapturer* Get() const;
 
-    UFUNCTION(BlueprintCallable, meta = (DisplayName = "Create Byte Array Capturer"), Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, meta = (DisplayName = "Create Byte Array Capturer"), Category = "RICOH Live Streaming Client SDK for Windows | LSByteArrayCapturer")
     ULSByteArrayCapturer* Create(int width, int height);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSByteArrayCapturer")
     int GetWidth() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSByteArrayCapturer")
     int GetHeight() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSByteArrayCapturer")
     void Render(const uint8& image);
 
     void Render(const unsigned char* image);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSByteArrayCapturer")
     void Release();
 
 private:

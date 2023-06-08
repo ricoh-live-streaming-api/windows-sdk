@@ -77,7 +77,7 @@ public:
 	const char* Get(int index) override
 	{
 		std::string item = this->vec[index];
-		strcpy_s(this->buffer, KEYWORD_STRING_SIZE, item.c_str());
+		strncpy_s(this->buffer, JSON_STRING_SIZE, item.c_str(), _TRUNCATE);
 		return this->buffer;
 	}
 
@@ -87,7 +87,7 @@ public:
 	}
 private:
 	std::vector<std::string> vec;
-	char buffer[KEYWORD_STRING_SIZE] = {};
+	char buffer[JSON_STRING_SIZE] = {};
 };
 
 

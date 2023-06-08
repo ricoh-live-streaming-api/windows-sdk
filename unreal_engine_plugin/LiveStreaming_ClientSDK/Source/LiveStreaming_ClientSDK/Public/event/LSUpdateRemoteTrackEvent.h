@@ -16,7 +16,7 @@ public:
     LSUpdateRemoteTrackEvent* Get() const;
     void Set(LSUpdateRemoteTrackEvent* lsUpdateRemoteTrackEvent);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSUpdateRemoteTrackEvent")
     TMap<FString, FString> GetMetadata() const;
 
 private:

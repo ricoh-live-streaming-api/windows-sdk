@@ -13,6 +13,7 @@
 #include "LSRTCStatsReport.h"
 #include "LSOption.h"
 #include "LSClientListener.h"
+#include "LSSDKException.h"
 #include "LSLibWebrtcLogOption.h"
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
@@ -27,56 +28,56 @@ public:
     ULSClient();
     Client* Get() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSClient")
     void Dispose();
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
-    ULSMediaStream* GetUserMedia(ULSMediaStreamConstraints* constrants);
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSClient")
+    ULSMediaStream* GetUserMedia(ULSMediaStreamConstraints* constrants, bool& bOutResult, FLSSDKException& OutSDKException);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
-    void Connect(const FString& clientId, const FString& accessToken, ULSOption* option);
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSClient")
+    void Connect(const FString& clientId, const FString& accessToken, ULSOption* option, bool& bOutResult, FLSSDKException& OutSDKException);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
-    void Disconnect();
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSClient")
+    void Disconnect(bool& bOutResult, FLSSDKException& OutSDKException);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSClient")
     ELSConnectionState GetState() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
-    void UpdateMeta(const TMap<FString, FString>& meta);
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSClient")
+    void UpdateMeta(const TMap<FString, FString>& meta, bool& bOutResult, FLSSDKException& OutSDKException);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
-    void UpdateTrackMeta(ULSTrack* lsTrack, const TMap<FString, FString>& meta);
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSClient")
+    void UpdateTrackMeta(ULSTrack* lsTrack, const TMap<FString, FString>& meta, bool& bOutResult, FLSSDKException& OutSDKException);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
-    void ChangeMediaRequirements(const FString& connectionId, ELSVideoRequirement videoRequirement);
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSClient")
+    void ChangeMediaRequirements(const FString& connectionId, ELSVideoRequirement videoRequirement, bool& bOutResult, FLSSDKException& OutSDKException);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
-    void ChangeVideoSendBitrate(int maxBitrateKbps);
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSClient")
+    void ChangeVideoSendBitrate(int maxBitrateKbps, bool& bOutResult, FLSSDKException& OutSDKException);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSClient")
     void SetEventListener(ULSClientListener* listener);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSClient")
     TMap<FString, ULSRTCStatsReport*> GetStats() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSClient")
     void SetAudioInputDevice(const FString& deviceName);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSClient")
     void SetAudioOutputDevice(const FString& deviceName);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
-    void ReplaceMediaStreamTrack(ULSTrack* lsTrack, ULSMediaStreamTrack* mediaStreamTrack);
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSClient")
+    void ReplaceMediaStreamTrack(ULSTrack* lsTrack, ULSMediaStreamTrack* mediaStreamTrack, bool& bOutResult, FLSSDKException& OutSDKException);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
-    void ChangeMute(ULSTrack* lsTrack, ELSMuteType muteType);
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSClient")
+    void ChangeMute(ULSTrack* lsTrack, ELSMuteType muteType, bool& bOutResult, FLSSDKException& OutSDKException);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
-    void ChangeVideoSendFramerate(double maxFramerate);
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSClient")
+    void ChangeVideoSendFramerate(double maxFramerate, bool& bOutResult, FLSSDKException& OutSDKException);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
-    void SetLibWebrtcLogOption(ULSLibWebrtcLogOption* option);
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSClient")
+    void SetLibWebrtcLogOption(ULSLibWebrtcLogOption* option, bool& bOutResult, FLSSDKException& OutSDKException);
 
 private:
     TUniquePtr<FLiveStreaming_ClientSDKModule> _pluginModule;

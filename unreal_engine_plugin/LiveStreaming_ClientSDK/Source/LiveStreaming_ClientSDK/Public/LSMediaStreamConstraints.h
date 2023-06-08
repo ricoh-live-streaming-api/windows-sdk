@@ -19,16 +19,16 @@ public:
     ULSMediaStreamConstraints();
     MediaStreamConstraints* Get() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSMediaStreamConstraints")
     ULSVideoCapturer* GetCapturer() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSMediaStreamConstraints")
     bool ShouldCreateAudioStream() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSMediaStreamConstraints")
     ULSMediaStreamConstraints* SetVideoCapturer(ULSVideoCapturer* videoCapturer);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSMediaStreamConstraints")
     ULSMediaStreamConstraints* SetAudio(bool bEnabled = true);
 
 private:

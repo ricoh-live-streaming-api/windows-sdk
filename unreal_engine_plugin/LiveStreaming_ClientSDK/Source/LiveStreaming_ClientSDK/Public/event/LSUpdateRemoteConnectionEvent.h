@@ -17,10 +17,10 @@ public:
     LSUpdateRemoteConnectionEvent* Get() const;
     void Set(LSUpdateRemoteConnectionEvent* lsUpdateRemoteConnectionEvent);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSUpdateRemoteConnectionEvent")
     FString GetConnectionId() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSUpdateRemoteConnectionEvent")
     TMap<FString, FString> GetMetadata() const;
 
 private:

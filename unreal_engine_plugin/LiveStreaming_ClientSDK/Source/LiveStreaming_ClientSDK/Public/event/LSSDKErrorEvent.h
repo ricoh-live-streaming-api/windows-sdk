@@ -19,15 +19,15 @@ public:
     SDKErrorEvent* Get() const;
     void Set(SDKErrorEvent* sdkErrorEvent);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSSDKErrorEvent")
     ULSErrorDetail* GetDetail() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSSDKErrorEvent")
     FString ToReportString() const;
 
 private:
     SDKErrorEvent* _sdkErrorEvent = nullptr;
 
     UPROPERTY()
-    ULSErrorDetail* _lsErrorDetail = nullptr;
+    ULSErrorDetail* _errorDetail = nullptr;
 };

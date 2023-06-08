@@ -18,7 +18,7 @@ public:
     ULSByteArrayRenderer();
     ByteArrayRenderer* Get() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSByteArrayRenderer")
     void WritePixelData(uint8& buffer, int width, int height, ULSVideoTrack* videoTrack);
 
     void WritePixelData(unsigned char* buffer, int width, int height, VideoTrack* videoTrack);

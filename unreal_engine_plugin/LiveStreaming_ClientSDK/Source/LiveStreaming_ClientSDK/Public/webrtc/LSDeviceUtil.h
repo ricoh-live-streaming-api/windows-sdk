@@ -16,16 +16,16 @@ class LIVESTREAMING_CLIENTSDK_API ULSDeviceUtil : public UBlueprintFunctionLibra
     GENERATED_BODY()
 
 public:
-    UFUNCTION(BlueprintCallable, BlueprintPure, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, BlueprintPure, Category = "RICOH Live Streaming Client SDK for Windows | LSDeviceUtil")
     static TArray<ULSDeviceInfo*> GetAudioInputDeviceList();
 
-    UFUNCTION(BlueprintCallable, BlueprintPure, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, BlueprintPure, Category = "RICOH Live Streaming Client SDK for Windows | LSDeviceUtil")
     static TArray<ULSDeviceInfo*> GetAudioOutputDeviceList();
 
-    UFUNCTION(BlueprintCallable, BlueprintPure, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, BlueprintPure, Category = "RICOH Live Streaming Client SDK for Windows | LSDeviceUtil")
     static TArray<ULSDeviceInfo*> GetVideoCapturerDeviceList();
 
-    UFUNCTION(BlueprintCallable, BlueprintPure, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, BlueprintPure, Category = "RICOH Live Streaming Client SDK for Windows | LSDeviceUtil")
     static TArray<ULSVideoCapturerDeviceCapability*> GetVideoCapturerDeviceCapabilities(const FString& deviceName);
 
 private:

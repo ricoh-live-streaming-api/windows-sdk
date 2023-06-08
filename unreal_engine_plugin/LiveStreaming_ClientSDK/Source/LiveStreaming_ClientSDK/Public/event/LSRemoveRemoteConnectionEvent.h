@@ -18,13 +18,13 @@ public:
     LSRemoveRemoteConnectionEvent* Get() const;
     void Set(LSRemoveRemoteConnectionEvent* lsRemoveRemoteConnectionEvent);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSRemoveRemoteConnectionEvent")
     FString GetConnectionId() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSRemoveRemoteConnectionEvent")
     TArray<ULSMediaStreamTrack*> GetMediaStreamTracks() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSRemoveRemoteConnectionEvent")
     TMap<FString, FString> GetMetadata() const;
 
 private:

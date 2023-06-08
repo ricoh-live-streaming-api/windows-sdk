@@ -18,10 +18,10 @@ public:
     RTCStatsReport* Get() const;
     void Set(RTCStatsReport* rtcStatsReport);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSRTCStatsReport")
     int64 GetTimestampUs() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSRTCStatsReport")
     TMap<FString, ULSRTCStats*> GetStats() const;
 
 private:

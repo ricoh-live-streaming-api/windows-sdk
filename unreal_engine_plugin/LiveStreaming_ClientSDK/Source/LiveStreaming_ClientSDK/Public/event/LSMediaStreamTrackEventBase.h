@@ -21,19 +21,19 @@ class LIVESTREAMING_CLIENTSDK_API ULSMediaStreamTrackEventBase : public UObject
 public:
     ULSMediaStreamTrackEventBase();
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSMediaStreamTrackEvent")
     virtual FString GetConnectionId() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSMediaStreamTrackEvent")
     virtual ULSMediaStreamTrack* GetMediaStreamTrack() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSMediaStreamTrackEvent")
     virtual ULSMediaStream* GetMediaStream() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSMediaStreamTrackEvent")
     virtual ULSVideoTrack* GetVideoTrack() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSMediaStreamTrackEvent")
     virtual ULSAudioTrack* GetAudioTrack() const;
 
 protected:

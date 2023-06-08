@@ -20,16 +20,16 @@ public:
     void Set(VideoTrack* videoTrack);
     void FrameSizeChange(const FString& id, int width, int height);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSVideoTrack")
     void AddSink();
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSVideoTrack")
     void RemoveSink();
 
-    UFUNCTION(BlueprintCallable, BlueprintPure, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, BlueprintPure, Category = "RICOH Live Streaming Client SDK for Windows | LSVideoTrack")
     bool GetFrameResolution(int& OutWidth, int& OutHeight);
  
-    UPROPERTY(BlueprintAssignable, Category = LiveStreaming_ClientSDK)
+    UPROPERTY(BlueprintAssignable, Category = "RICOH Live Streaming Client SDK for Windows | LSVideoTrack")
     FOnFrameSizeChangedDelegate OnFrameSizeChangedDelegate;
 
 private:

@@ -18,22 +18,22 @@ public:
     ULSVideoDeviceCapturer();
     VideoDeviceCapturer* Get() const;
 
-    UFUNCTION(BlueprintCallable, meta=(DisplayName = "Create Video Device Capturer"), Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, meta=(DisplayName = "Create Video Device Capturer"), Category = "RICOH Live Streaming Client SDK for Windows | LSVideoDeviceCapturer")
     ULSVideoDeviceCapturer* Create(const FString& deviceName, int width, int height, int framerate);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSVideoDeviceCapturer")
     FString GetDeviceName() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSVideoDeviceCapturer")
     int GetWidth() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSVideoDeviceCapturer")
     int GetHeight() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSVideoDeviceCapturer")
     int GetFrameRate() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSVideoDeviceCapturer")
     void Release();
 
 private:

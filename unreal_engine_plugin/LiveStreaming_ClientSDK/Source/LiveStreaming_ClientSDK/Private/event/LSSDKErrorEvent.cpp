@@ -4,7 +4,7 @@
 
 ULSSDKErrorEvent::ULSSDKErrorEvent()
 {
-    _lsErrorDetail = NewObject<ULSErrorDetail>();
+    _errorDetail = NewObject<ULSErrorDetail>();
 }
 
 SDKErrorEvent* ULSSDKErrorEvent::Get() const
@@ -17,16 +17,17 @@ void ULSSDKErrorEvent::Set(SDKErrorEvent* sdkErrorEvent)
     if (sdkErrorEvent)
     {
         _sdkErrorEvent = sdkErrorEvent;
-        _lsErrorDetail->Set(_sdkErrorEvent->get_Detail());
+        _errorDetail->Set(_sdkErrorEvent->get_Detail());
     }
 }
 
 ULSErrorDetail* ULSSDKErrorEvent::GetDetail() const
 {
-    return _lsErrorDetail;
+    return _errorDetail;
 }
 
 FString ULSSDKErrorEvent::ToReportString() const
 {
-    return _sdkErrorEvent ? FString(_sdkErrorEvent->ToReportString()) : "";
+    checkf(_sdkErrorEvent, TEXT("SDKErrorEvent is null."));
+    return FString(_sdkErrorEvent->ToReportString());
 }

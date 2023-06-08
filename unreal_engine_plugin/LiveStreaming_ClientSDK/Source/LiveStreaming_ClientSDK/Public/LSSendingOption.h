@@ -19,10 +19,10 @@ public:
     ULSSendingOption();
     SendingOption* Get() const;
 
-    UFUNCTION(BlueprintCallable, meta = (DisplayName = "Create Sending Option"), Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, meta = (DisplayName = "Create Sending Option"), Category = "RICOH Live Streaming Client SDK for Windows | LSSendingOption")
     ULSSendingOption* Create(ULSSendingVideoOption* sendingVideoOption, bool bEnabled = true);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSSendingOption")
     ULSSendingVideoOption* GetVideo() const;
 
 private:

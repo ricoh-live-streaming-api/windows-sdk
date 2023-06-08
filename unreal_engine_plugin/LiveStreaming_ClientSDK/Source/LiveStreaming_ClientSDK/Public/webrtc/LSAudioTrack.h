@@ -17,7 +17,7 @@ public:
     AudioTrack* Get() const;
     void Set(AudioTrack* audioTrack);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSAudioTrack")
     void SetVolume(double volume);
 
 private:

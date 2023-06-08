@@ -17,10 +17,10 @@ public:
     DeviceInfo* Get() const;
     void Set(DeviceInfo* deviceInfo);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSDeviceInfo")
     FString GetDeviceName() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSDeviceInfo")
     FString GetUniqueName() const;
 
 private:

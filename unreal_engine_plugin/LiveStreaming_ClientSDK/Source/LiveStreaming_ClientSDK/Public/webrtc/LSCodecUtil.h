@@ -14,7 +14,7 @@ class LIVESTREAMING_CLIENTSDK_API ULSCodecUtil : public UObject
     GENERATED_BODY()
 
 public:
-    UFUNCTION(BlueprintCallable, BlueprintPure, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, BlueprintPure, Category = "RICOH Live Streaming Client SDK for Windows | LSCodecUtil")
     static bool IsH264Supported();
 
 private:

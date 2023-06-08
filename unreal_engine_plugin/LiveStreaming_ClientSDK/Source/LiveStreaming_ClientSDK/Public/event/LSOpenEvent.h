@@ -16,7 +16,7 @@ public:
     LSOpenEvent* Get() const;
     void Set(LSOpenEvent* lsOpenEvent);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSOpenEvent")
     FString GetAccessTokenJson() const;
 
 private:

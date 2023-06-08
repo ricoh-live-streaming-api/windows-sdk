@@ -18,10 +18,10 @@ public:
     LSChangeStabilityEvent* Get() const;
     void Set(LSChangeStabilityEvent* lsChangeStabilityEvent);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSChangeStabilityEvent")
     FString GetConnectionId() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSChangeStabilityEvent")
     ELSStability GetStability() const;
 
 private:

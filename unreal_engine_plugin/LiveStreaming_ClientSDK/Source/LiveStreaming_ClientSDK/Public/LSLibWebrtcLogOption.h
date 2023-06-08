@@ -24,16 +24,16 @@ public:
     ULSLibWebrtcLogOption();
     LibWebrtcLogOption* Get() const;
 
-    UFUNCTION(BlueprintCallable, meta = (DisplayName = "Create LibWebrtc Log Option"), Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, meta = (DisplayName = "Create LibWebrtc Log Option"), Category = "RICOH Live Streaming Client SDK for Windows | LSLibWebrtcLogOption")
     ULSLibWebrtcLogOption* Create(const FString& path, int maxTotalFileSize = 4, ELSLevel logLevel = ELSLevel::Verbose);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSLibWebrtcLogOption")
     FString GetPath() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSLibWebrtcLogOption")
     int GetMaxTotalFileSize() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSLibWebrtcLogOption")
     ELSLevel GetLogLevel() const;
 
 private:

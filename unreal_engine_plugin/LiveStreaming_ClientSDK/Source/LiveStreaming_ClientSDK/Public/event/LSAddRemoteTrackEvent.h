@@ -16,10 +16,10 @@ public:
     LSAddRemoteTrackEvent* Get() const;
     void Set(LSAddRemoteTrackEvent* lsAddRemoteTrackEvent);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSAddRemoteTrackEvent")
     TMap<FString, FString> GetMetadata() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSAddRemoteTrackEvent")
     ELSMuteType GetMuteType() const;
 
 private:

@@ -16,7 +16,7 @@ public:
     LSUpdateMuteEvent* Get() const;
     void Set(LSUpdateMuteEvent* lsUpdateMuteEvent);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSUpdateMuteEvent")
     ELSMuteType GetMuteType() const;
 
 private:

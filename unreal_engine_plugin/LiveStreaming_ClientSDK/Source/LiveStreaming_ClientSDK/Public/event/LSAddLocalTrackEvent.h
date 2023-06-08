@@ -20,10 +20,10 @@ public:
     LSAddLocalTrackEvent* Get() const;
     void Set(LSAddLocalTrackEvent* lsAddLocalTrackEvent);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSAddLocalTrackEvent")
     ULSMediaStreamTrack* GetMediaStreamTrack() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSAddLocalTrackEvent")
     ULSMediaStream* GetMediaStream() const;
 
 private:

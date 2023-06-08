@@ -33,22 +33,22 @@ public:
     ULSSendingVideoOption();
     SendingVideoOption* Get() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSSendingVideoOption")
     ELSVideoCodecType GetCodec() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSSendingVideoOption")
     ELSSendingPriority GetPriority() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSSendingVideoOption")
     int GetMaxBitrateKbps() const;
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSSendingVideoOption")
     ULSSendingVideoOption* SetCodec(ELSVideoCodecType videoCodecType);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSSendingVideoOption")
     ULSSendingVideoOption* SetPriority(ELSSendingPriority sendingPriority);
 
-    UFUNCTION(BlueprintCallable, Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSSendingVideoOption")
     ULSSendingVideoOption* SetMaxBitrateKbps(int maxBitrateKbps);
 
 private:

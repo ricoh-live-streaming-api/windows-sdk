@@ -44,43 +44,43 @@ public:
     ULSClientListener();
     IClientListener* Get();
 
-    UPROPERTY(BlueprintAssignable, Category = LiveStreaming_ClientSDK)
+    UPROPERTY(BlueprintAssignable, Category = "RICOH Live Streaming Client SDK for Windows | LSClientListener")
     FConnectingEventDelegate ConnectingEventDelegate;
 
-    UPROPERTY(BlueprintAssignable, Category = LiveStreaming_ClientSDK)
+    UPROPERTY(BlueprintAssignable, Category = "RICOH Live Streaming Client SDK for Windows | LSClientListener")
     FOpenEventDelegate OpenEventDelegate;
 
-    UPROPERTY(BlueprintAssignable, Category = LiveStreaming_ClientSDK)
+    UPROPERTY(BlueprintAssignable, Category = "RICOH Live Streaming Client SDK for Windows | LSClientListener")
     FClosingEventDelegate ClosingEventDelegate;
 
-    UPROPERTY(BlueprintAssignable, Category = LiveStreaming_ClientSDK)
+    UPROPERTY(BlueprintAssignable, Category = "RICOH Live Streaming Client SDK for Windows | LSClientListener")
     FCloseEventDelegate CloseEventDelegate;
 
-    UPROPERTY(BlueprintAssignable, Category = LiveStreaming_ClientSDK)
+    UPROPERTY(BlueprintAssignable, Category = "RICOH Live Streaming Client SDK for Windows | LSClientListener")
     FAddLocalTrackEventDelegate AddLocalTrackEventDelegate;
 
-    UPROPERTY(BlueprintAssignable, Category = LiveStreaming_ClientSDK)
+    UPROPERTY(BlueprintAssignable, Category = "RICOH Live Streaming Client SDK for Windows | LSClientListener")
     FAddRemoteTrackEventDelegate AddRemoteTrackEventDelegate;
 
-    UPROPERTY(BlueprintAssignable, Category = LiveStreaming_ClientSDK)
+    UPROPERTY(BlueprintAssignable, Category = "RICOH Live Streaming Client SDK for Windows | LSClientListener")
     FAddRemoteConnectionEventDelegate AddRemoteConnectionEventDelegate;
 
-    UPROPERTY(BlueprintAssignable, Category = LiveStreaming_ClientSDK)
+    UPROPERTY(BlueprintAssignable, Category = "RICOH Live Streaming Client SDK for Windows | LSClientListener")
     FRemoveRemoteConnectionEventDelegate RemoveRemoteConnectionEventDelegate;
 
-    UPROPERTY(BlueprintAssignable, Category = LiveStreaming_ClientSDK)
+    UPROPERTY(BlueprintAssignable, Category = "RICOH Live Streaming Client SDK for Windows | LSClientListener")
     FSDKErrorEventDelegate SDKErrorEventDelegate;
 
-    UPROPERTY(BlueprintAssignable, Category = LiveStreaming_ClientSDK)
+    UPROPERTY(BlueprintAssignable, Category = "RICOH Live Streaming Client SDK for Windows | LSClientListener")
     FUpdateRemoteConnectionEventDelegate UpdateRemoteConnectionEventDelegate;
 
-    UPROPERTY(BlueprintAssignable, Category = LiveStreaming_ClientSDK)
+    UPROPERTY(BlueprintAssignable, Category = "RICOH Live Streaming Client SDK for Windows | LSClientListener")
     FUpdateRemoteTrackEventDelegate UpdateRemoteTrackEventDelegate;
 
-    UPROPERTY(BlueprintAssignable, Category = LiveStreaming_ClientSDK)
+    UPROPERTY(BlueprintAssignable, Category = "RICOH Live Streaming Client SDK for Windows | LSClientListener")
     FUpdateMuteEventDelegate UpdateMuteEventDelegate;
 
-    UPROPERTY(BlueprintAssignable, Category = LiveStreaming_ClientSDK)
+    UPROPERTY(BlueprintAssignable, Category = "RICOH Live Streaming Client SDK for Windows | LSClientListener")
     FChangeStabilityEventDelegate ChangeStabilityEventDelegate;
 
 protected:

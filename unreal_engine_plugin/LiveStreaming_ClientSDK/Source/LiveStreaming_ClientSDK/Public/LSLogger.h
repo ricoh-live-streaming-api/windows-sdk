@@ -14,16 +14,16 @@ class LIVESTREAMING_CLIENTSDK_API ULSLogger : public UObject
     GENERATED_BODY()
 
 public:
-    UFUNCTION(BlueprintCallable, meta = (DisplayName = "LogDebug"), Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, meta = (DisplayName = "LogDebug"), Category = "RICOH Live Streaming Client SDK for Windows | LSLogger")
     static void Debug(FString message);
 
-    UFUNCTION(BlueprintCallable, meta = (DisplayName = "LogInfo"), Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, meta = (DisplayName = "LogInfo"), Category = "RICOH Live Streaming Client SDK for Windows | LSLogger")
     static void Info(FString message);
 
-    UFUNCTION(BlueprintCallable, meta = (DisplayName = "LogWarn"), Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, meta = (DisplayName = "LogWarn"), Category = "RICOH Live Streaming Client SDK for Windows | LSLogger")
     static void Warn(FString message);
 
-    UFUNCTION(BlueprintCallable, meta = (DisplayName = "LogError"), Category = LiveStreaming_ClientSDK)
+    UFUNCTION(BlueprintCallable, meta = (DisplayName = "LogError"), Category = "RICOH Live Streaming Client SDK for Windows | LSLogger")
     static void Error(FString message);
 
 private:
