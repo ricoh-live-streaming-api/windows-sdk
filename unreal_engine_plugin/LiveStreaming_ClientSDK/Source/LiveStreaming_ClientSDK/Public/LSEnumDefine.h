@@ -99,10 +99,11 @@ enum class ELSMuteType : uint8
 UENUM(BlueprintType)
 enum class ELSIceServersProtocol : uint8
 {
-    All,
-    Udp,
-    Tcp,
-    Tls,
+    All     UMETA(DisplayName = "All", ToolTip = "Use all connection modes."),
+    Udp     UMETA(DisplayName = "UDP", ToolTip = "Use UDP only."),
+    Tcp     UMETA(DisplayName = "TCP", ToolTip = "Use TCP only."),
+    Tls     UMETA(DisplayName = "TLS", ToolTip = "Use TLS only."),
+    TcpTls  UMETA(DisplayName = "TCP/TLS", ToolTip = "Use TCP/TLS."),
     isNull
 };
 

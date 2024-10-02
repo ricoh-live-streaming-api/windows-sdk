@@ -10,6 +10,26 @@
             Connect成功時などにレスポンスとして取得できる。
             </summary>
         </member>
+        <member name="T:com.ricoh.livestreaming.ConnectionsStatus">
+            <summary>
+            Indicates the usage status of Track of own Client by other Clients.
+            </summary>
+        </member>
+        <member name="P:com.ricoh.livestreaming.ConnectionsStatus.ConnectionsVideoStatus">
+            <summary>
+            Notify the usage status of video.
+            </summary>
+        </member>
+        <member name="T:com.ricoh.livestreaming.ConnectionsVideoStatus">
+            <summary>
+            Notify the usage status of video.
+            </summary>
+        </member>
+        <member name="P:com.ricoh.livestreaming.ConnectionsVideoStatus.ReceiverExistence">
+            <summary>
+            True if there is a Client receiving video from its own Client, false otherwise.
+            </summary>
+        </member>
         <member name="T:com.ricoh.livestreaming.ConnectMessage">
             <summary>
             Connect要求のメッセージ。
@@ -72,6 +92,135 @@
         <member name="F:com.ricoh.livestreaming.IceServersProtocol.Tls">
             <summary>
             Use TLS only.
+            </summary>
+        </member>
+        <member name="F:com.ricoh.livestreaming.IceServersProtocol.TcpTls">
+            <summary>
+            Use TCP/TLS.
+            </summary>
+        </member>
+        <member name="T:com.ricoh.livestreaming.ISignalingChannel">
+            <summary>
+            シグナリングサーバーとのチャンネル。
+            チャンネルの開始、終了、メッセージの送信をすることができる。
+            </summary>
+        </member>
+        <member name="P:com.ricoh.livestreaming.ISignalingChannel.IsClosing">
+            <summary>
+            true : <see cref="M:com.ricoh.livestreaming.ISignalingChannel.Close(System.Int32,System.String)"/>を呼び出し後, false : <see cref="M:com.ricoh.livestreaming.ISignalingChannel.Open"/>を呼び出し後
+            </summary>
+        </member>
+        <member name="M:com.ricoh.livestreaming.ISignalingChannel.Open">
+            <summary>
+            シグナリングサーバーとのチャンネルを開く
+            </summary>
+        </member>
+        <member name="M:com.ricoh.livestreaming.ISignalingChannel.Close(System.Int32,System.String)">
+            <summary>
+            シグナリングサーバーとのチャンネルを閉じる
+            </summary>
+            <param name="code">ステータスコード。</param>
+            <param name="reason">終了理由</param>
+        </member>
+        <member name="M:com.ricoh.livestreaming.ISignalingChannel.Send(com.ricoh.livestreaming.IMessage)">
+            <summary>
+            シグナリングサーバーにメッセージを送る
+            </summary>
+            <param name="message">送るメッセージ</param>
+        </member>
+        <member name="T:com.ricoh.livestreaming.CloseEventArgs">
+            <summary>
+            OnClose イベントのイベントデータ
+            </summary>
+        </member>
+        <member name="P:com.ricoh.livestreaming.CloseEventArgs.Code">
+            <summary>
+            WebSocket 接続を閉じた理由を示すステータスコード
+            </summary>
+        </member>
+        <member name="P:com.ricoh.livestreaming.CloseEventArgs.Reason">
+            <summary>
+            WebSocket 接続を閉じた閉じた理由を示すテキスト
+            </summary>
+        </member>
+        <member name="T:com.ricoh.livestreaming.ErrorEventArgs">
+            <summary>
+            OnError イベントのイベントデータ
+            </summary>
+        </member>
+        <member name="P:com.ricoh.livestreaming.ErrorEventArgs.Exception">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:com.ricoh.livestreaming.ErrorEventArgs.Message">
+            <summary>
+            エラーの原因となった例外
+            </summary>
+        </member>
+        <member name="T:com.ricoh.livestreaming.MessageEventArgs">
+            <summary>
+            OnMessage イベントのイベントデータ
+            </summary>
+        </member>
+        <member name="P:com.ricoh.livestreaming.MessageEventArgs.Data">
+            <summary>
+            メッセージデータ
+            </summary>
+        </member>
+        <member name="T:com.ricoh.livestreaming.IWebSocket">
+            <summary>
+            websocket-sharp 用インターフェース<br/>
+            https://github.com/sta/websocket-sharp
+            </summary>
+        </member>
+        <member name="E:com.ricoh.livestreaming.IWebSocket.OnClose">
+            <summary>
+            WebSocket が閉じられた場合に発生するイベント
+            </summary>
+        </member>
+        <member name="E:com.ricoh.livestreaming.IWebSocket.OnError">
+            <summary>
+            WebSocket でエラーが発生したした場合に発生するイベント
+            </summary>
+        </member>
+        <member name="E:com.ricoh.livestreaming.IWebSocket.OnMessage">
+            <summary>
+            WebSocket がメッセージを受信した場合に発生するイベント
+            </summary>
+        </member>
+        <member name="E:com.ricoh.livestreaming.IWebSocket.OnOpen">
+            <summary>
+            WebSocket 接続が確立された場合に発生するイベント
+            </summary>
+        </member>
+        <member name="P:com.ricoh.livestreaming.IWebSocket.WaitTime">
+            <summary>
+            Ping または Close に対する応答の待ち時間
+            </summary>
+        </member>
+        <member name="M:com.ricoh.livestreaming.IWebSocket.ConnectAsync">
+            <summary>
+            非同期で WebSocket 接続を確立する。
+            </summary>
+        </member>
+        <member name="M:com.ricoh.livestreaming.IWebSocket.CloseAsync(System.Int32,System.String)">
+            <summary>
+            指定された System.UInt16 および System.String を使用して非同期で WebSocket 接続を閉じ、関連するすべてのリソースを解放する。
+            </summary>
+            <param name="code">閉じた理由を示すステータスコード</param>
+            <param name="reason">閉じた理由を示すテキスト</param>
+        </member>
+        <member name="M:com.ricoh.livestreaming.IWebSocket.SendAsync(System.String,System.Action{System.Boolean})">
+            <summary>
+            WebSocket接続を利用して非同期でテキストデータを送信する。
+            </summary>
+            <param name="data">送信するテキストデータ</param>
+            <param name="completed">送信完了時に呼び出されるメソッドを参照するデリゲート。<br/>このデリゲートに渡される bool は、送信が正常に完了した場合に真となる。</param>
+        </member>
+        <member name="M:com.ricoh.livestreaming.IWebSocket.Ping">
+            <summary>
+            Ping を送信する。
             </summary>
         </member>
         <member name="T:com.ricoh.livestreaming.LibWebrtcLogOption">
@@ -217,6 +366,11 @@
             Json of the AccessToken specified when connecting.
             </summary>
         </member>
+        <member name="P:com.ricoh.livestreaming.LSOpenEvent.ConnectionsStatus">
+            <summary>
+            Indicates the usage status of Track of own Client by other Clients.
+            </summary>
+        </member>
         <member name="T:com.ricoh.livestreaming.LSRemoveRemoteConnectionEvent">
             <summary>
             Parameters notified by <see cref="M:com.ricoh.livestreaming.IClientListener.OnRemoveRemoteConnection(com.ricoh.livestreaming.LSRemoveRemoteConnectionEvent)"/> events.
@@ -235,6 +389,16 @@
         <member name="P:com.ricoh.livestreaming.LSRemoveRemoteConnectionEvent.MediaStreamTracks">
             <summary>
             List of media stream tracks for removed remote connection.
+            </summary>
+        </member>
+        <member name="T:com.ricoh.livestreaming.LSUpdateConnectionsStatusEvent">
+            <summary>
+            Parameters notified by <see cref="M:com.ricoh.livestreaming.IClientListener.OnUpdateConnectionsStatus(com.ricoh.livestreaming.LSUpdateConnectionsStatusEvent)"/> events.
+            </summary>
+        </member>
+        <member name="P:com.ricoh.livestreaming.LSUpdateConnectionsStatusEvent.ConnectionsStatus">
+            <summary>
+            Indicates the usage status of Track of own Client by other Clients.
             </summary>
         </member>
         <member name="T:com.ricoh.livestreaming.LSUpdateMuteEvent">
@@ -301,6 +465,31 @@
             <summary>
             Metadata of the updated remote track.
             </summary>
+        </member>
+        <member name="T:com.ricoh.livestreaming.ProxyOption">
+            <summary>
+            Proxy Option.
+            </summary>
+        </member>
+        <member name="P:com.ricoh.livestreaming.ProxyOption.Url">
+            <summary>
+            String format for setting the proxy server to go through.
+            </summary>
+        </member>
+        <member name="M:com.ricoh.livestreaming.ProxyOption.#ctor(System.String)">
+            <summary>
+            Create new Proxy Option.
+            </summary>
+            <param name="url">String format for setting the proxy server to go through.</param>
+        </member>
+        <member name="M:com.ricoh.livestreaming.ProxyUrl.#ctor(System.String)">
+            <summary>
+            <paramref name="url"/>をもとにプロキシ用のURL情報を作成する
+            </summary>
+            <param name="url">もととなるURL</param>
+            <exception cref="T:System.ArgumentNullException"><paramref name="url"/>がnullの場合</exception>
+            <exception cref="T:System.ArgumentException"><paramref name="url"/>の認証情報形式が不正な場合</exception>
+            <exception cref="T:System.UriFormatException"><paramref name="url"/>の形式が不正な場合</exception>
         </member>
         <member name="T:com.ricoh.livestreaming.RemoteStreamSet">
             <summary>
@@ -646,6 +835,12 @@
             Called when stability of the connection changed.
             </summary>
             <param name="lSChangeStabilityEvent"></param>
+        </member>
+        <member name="M:com.ricoh.livestreaming.IClientListener.OnUpdateConnectionsStatus(com.ricoh.livestreaming.LSUpdateConnectionsStatusEvent)">
+            <summary>
+            Called when ConnectionsStatus has been updated.
+            </summary>
+            <param name="lSUpdateConnectionsStatusEvent"></param>
         </member>
         <member name="T:com.ricoh.livestreaming.LocalLSTrack">
             <summary>
@@ -1653,6 +1848,49 @@
             Release Byte array capturer.
             </summary>
         </member>
+        <member name="T:com.ricoh.livestreaming.webrtc.IMediaStreamOperator">
+            <summary>
+            メディア(Video, Audio)を操作を行うインターフェース
+            </summary>
+        </member>
+        <member name="M:com.ricoh.livestreaming.webrtc.IMediaStreamOperator.AddAudioTrack(System.IntPtr,System.IntPtr)">
+            <summary>
+            音声トラックを追加する
+            </summary>
+            <param name="stream">ストリーム</param>
+            <param name="track">追加する音声トラック</param>
+            <returns>true:成功、false:失敗</returns>
+        </member>
+        <member name="M:com.ricoh.livestreaming.webrtc.IMediaStreamOperator.AddVideoTrack(System.IntPtr,System.IntPtr)">
+            <summary>
+            映像トラックを追加する
+            </summary>
+            <param name="stream">ストリーム</param>
+            <param name="track">追加する映像トラック</param>
+            <returns>true:成功、false:失敗</returns>
+        </member>
+        <member name="M:com.ricoh.livestreaming.webrtc.IMediaStreamOperator.RemoveAudioTrack(System.IntPtr,System.IntPtr)">
+            <summary>
+            音声トラックを削除する
+            </summary>
+            <param name="stream">ストリーム</param>
+            <param name="track">削除する音声トラック</param>
+            <returns>true:成功、false:失敗</returns>
+        </member>
+        <member name="M:com.ricoh.livestreaming.webrtc.IMediaStreamOperator.RemoveVideoTrack(System.IntPtr,System.IntPtr)">
+            <summary>
+            映像トラックを削除する
+            </summary>
+            <param name="stream">ストリーム</param>
+            <param name="track">削除する映像トラック</param>
+            <returns>true:成功、false:失敗</returns>
+        </member>
+        <member name="M:com.ricoh.livestreaming.webrtc.IMediaStreamOperator.Dispose(System.IntPtr)">
+            <summary>
+            ストリームを破棄する
+            </summary>
+            <param name="stream">破棄するストリーム</param>
+        </member>
         <member name="T:com.ricoh.livestreaming.webrtc.IWebrtcWrapper">
             <summary>
             webrtc_wrapperを呼び出すインターフェース
@@ -1757,6 +1995,29 @@
             <param name="audio">If true, create audio stream.</param>
             <returns>MediaStreamConstraints's instance for method chain.</returns>
         </member>
+        <member name="T:com.ricoh.livestreaming.webrtc.MediaStreamOperator">
+            <summary>
+            <see cref="T:com.ricoh.livestreaming.webrtc.IMediaStreamOperator"/>の実体クラス
+            webrtc_wrapper.dll を使用してメディアの操作を行う
+            </summary>
+        </member>
+        <member name="P:com.ricoh.livestreaming.webrtc.MediaStreamOperator.CreateBody">
+            <summary>
+            <see cref="T:com.ricoh.livestreaming.webrtc.MediaStreamOperator"/>生成処理
+            テスト用に外部から注入可能
+            </summary>
+        </member>
+        <member name="M:com.ricoh.livestreaming.webrtc.MediaStreamOperator.#ctor">
+            <summary>
+            テスト用に外部から注入できるようにするためにコンストラクタは公開しない
+            </summary>
+        </member>
+        <member name="M:com.ricoh.livestreaming.webrtc.MediaStreamOperator.Create">
+            <summary>
+            インスタンス生成
+            </summary>
+            <returns><see cref="P:com.ricoh.livestreaming.webrtc.MediaStreamOperator.CreateBody"/>で生成されたインスタンス</returns>
+        </member>
         <member name="T:com.ricoh.livestreaming.webrtc.PeerConnection">
             <summary>
             PeerConnection
@@ -1767,11 +2028,12 @@
             Connection ID
             </summary>
         </member>
-        <member name="M:com.ricoh.livestreaming.webrtc.PeerConnection.#ctor(com.ricoh.livestreaming.webrtc.PeerConnection.IObserver,System.String)">
+        <member name="M:com.ricoh.livestreaming.webrtc.PeerConnection.#ctor(com.ricoh.livestreaming.webrtc.PeerConnection.IObserver,com.ricoh.livestreaming.ProxyUrl,System.String)">
             <summary>
             Create peer connection.
             </summary>
             <param name="observer">The argument "observer" is disposed at the same time as this class.</param>
+            <param name="proxyUrl">Settings for Web Proxy.</param>
             <param name="connectionId">Connection ID(default value is "sfu").</param>
         </member>
         <member name="M:com.ricoh.livestreaming.webrtc.PeerConnection.Dispose">
@@ -2363,10 +2625,45 @@
             true : Close()を呼び出し後, false : Open()を呼び出し後
             </summary>
         </member>
+        <member name="P:com.ricoh.livestreaming.SignalingChannel.CreateBody">
+            <summary>
+            <see cref="T:com.ricoh.livestreaming.SignalingChannel"/>生成処理
+            テスト用に外部から注入可能。
+            </summary>
+            <remarks>
+            webrtcWrapper : 使用するwebrtcWrapper
+            listener：通知先のリスナー
+            websocket：使用するWebSocket
+            </remarks>
+        </member>
+        <member name="M:com.ricoh.livestreaming.SignalingChannel.Create(com.ricoh.livestreaming.webrtc.IWebrtcWrapper,com.ricoh.livestreaming.ISignalingChannelListener,com.ricoh.livestreaming.IWebSocket)">
+            <summary>
+            インスタンス生成
+            </summary>
+            <returns><see cref="P:com.ricoh.livestreaming.SignalingChannel.CreateBody"/>で生成されたインスタンス</returns>
+            <param name="webrtcWrapper">使用するwebrtcWrapper</param>
+            <param name="listener">メッセージの通知先になるリスナー</param>
+            <param name="websocket">使用するWebSocket</param>
+        </member>
+        <member name="M:com.ricoh.livestreaming.SignalingChannel.#ctor(com.ricoh.livestreaming.webrtc.IWebrtcWrapper,com.ricoh.livestreaming.ISignalingChannelListener,com.ricoh.livestreaming.IWebSocket)">
+            <summary>
+            テスト用に外部から注入できるようにするためにコンストラクタは公開しない
+            </summary>
+        </member>
         <member name="T:com.ricoh.livestreaming.Client">
             <summary>
             Client class of RICOH Live Streaming API.
             This class has a state. The state can be acquired with the <see cref="M:com.ricoh.livestreaming.Client.GetState"/> method. The following figure shows the state transition.
+            </summary>
+        </member>
+        <member name="F:com.ricoh.livestreaming.Client.IsIceConnected">
+            <summary>
+            <see cref="T:com.ricoh.livestreaming.Client.PeerConnectionObserver.IceConnectionState"/> が Connected または Completed かどうか
+            </summary>
+        </member>
+        <member name="F:com.ricoh.livestreaming.Client.IsIceSucceeded">
+            <summary>
+            <see cref="M:com.ricoh.livestreaming.Client.IceConnectionSuccessLog"/> によるログ出力が完了したかどうか
             </summary>
         </member>
         <member name="M:com.ricoh.livestreaming.Client.#ctor">
@@ -2574,6 +2871,21 @@
             <param name="mediaStreamTrack">Media stream track to set hardmute or unmute.</param>
             <param name="isTrackEnabled">If false, disable the mediaStreamTrack for hardmute. If true, set the mediaStreamTrack for unmute.</param>
         </member>
+        <member name="M:com.ricoh.livestreaming.Client.TagsToMute(System.Collections.Generic.List{com.ricoh.livestreaming.RemoteTag})">
+            <summary>
+            引数 tags に含まれる "muteState" を <see cref="T:com.ricoh.livestreaming.MuteType"/> に変換する<br/>
+            引数 tags に "muteState" が含まれない場合は MuteType.Unmute を返却する
+            </summary>
+            <param name="tags">タグ</param>
+            <returns>MuteType</returns>
+        </member>
+        <member name="M:com.ricoh.livestreaming.Client.IsMuteStateExistTag(System.Collections.Generic.List{com.ricoh.livestreaming.RemoteTag})">
+            <summary>
+            引数 tags に "muteState" を含むキーペアが存在するかどうか
+            </summary>
+            <param name="tags">確認対象のタグ</param>
+            <returns>"muteState" を含むキーペアが存在する場合は true, それ以外は false</returns>
+        </member>
         <member name="M:com.ricoh.livestreaming.Client.InternalError(System.Int32,System.Exception)">
             <summary>
             Internal SDK errors.
@@ -2583,6 +2895,13 @@
             </summary>
             <param name="code">Error code.</param>
             <param name="detail">Error detail.</param>
+        </member>
+        <member name="M:com.ricoh.livestreaming.Client.IceConnectionSuccessLog">
+            <summary>
+            ICE 確立時の情報を Stats から取得しログに出力する<br/>
+            <see cref="M:com.ricoh.livestreaming.Client.GetStats"/> で <see cref="F:com.ricoh.livestreaming.Client.semaphoreSlim"/> を使用しているため、デッドロックに注意
+            </summary>
+            <returns>ログを出力した場合 または Exception が発生した場合は true, それ以外は false</returns>
         </member>
         <member name="T:com.ricoh.livestreaming.Option">
             <summary>
@@ -2627,6 +2946,11 @@
         <member name="P:com.ricoh.livestreaming.Option.IceServersProtocol">
             <summary>
             Configurations for TURN protocols to be used for ICE Servers.
+            </summary>
+        </member>
+        <member name="P:com.ricoh.livestreaming.Option.ProxyOption">
+            <summary>
+            Configurations for proxy option.
             </summary>
         </member>
         <member name="M:com.ricoh.livestreaming.Option.SetSignalingURL(System.String)">
@@ -2688,6 +3012,44 @@
             </summary>
             <param name="iceServersProtocol">TURN protocols to be used for ICE Servers.</param>
             <returns>Option's instance for method chain.</returns>
+        </member>
+        <member name="M:com.ricoh.livestreaming.Option.SetProxyOption(com.ricoh.livestreaming.ProxyOption)">
+            <summary>
+            Sets options for using the HTTP proxy server.
+            </summary>
+            <param name="proxyOption">Proxy Option.</param>
+            <returns>Option's instance for method chain.</returns>
+        </member>
+        <member name="T:com.ricoh.livestreaming.WebSocket">
+            <summary>
+            websocket-sharp のラッパー<br/>
+            https://github.com/sta/websocket-sharp
+            </summary>
+        </member>
+        <member name="P:com.ricoh.livestreaming.WebSocket.CreateBody">
+            <summary>
+            <see cref="T:com.ricoh.livestreaming.WebSocket"/>生成処理<br/>
+            テスト用に外部から注入可能。
+            </summary>
+            <remarks>
+            endpoint : 接続に使用する WebSocket の URL
+            endpoint : WebProxy に使用する URL
+            </remarks>
+        </member>
+        <member name="M:com.ricoh.livestreaming.WebSocket.Create(System.String,com.ricoh.livestreaming.ProxyUrl)">
+            <summary>
+            インスタンス生成
+            </summary>
+            <param name="endpoint">接続に使用する WebSocket の URL</param>
+            <returns><see cref="P:com.ricoh.livestreaming.WebSocket.CreateBody"/>で生成されたインスタンス</returns>
+            <param name="proxyUrl">WebProxy に使用する URL</param>
+        </member>
+        <member name="M:com.ricoh.livestreaming.WebSocket.#ctor(System.String,com.ricoh.livestreaming.ProxyUrl)">
+            <summary>
+            テスト用に外部から注入できるようにするためにコンストラクタは公開しない
+            </summary>
+            <param name="endpoint">接続に使用する WebSocket の URL</param>
+            <param name="proxyUrl">WebProxy に使用する URL</param>
         </member>
     </members>
 </doc>

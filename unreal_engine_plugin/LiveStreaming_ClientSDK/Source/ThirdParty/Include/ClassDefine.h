@@ -14,6 +14,7 @@ class Option;
 class ReceivingOption;
 class SendingOption;
 class SendingVideoOption;
+class ProxyOption;
 class MediaStream;	//webrtc
 class MediaStreamConstraints;	//webrtc
 class MediaStreamTrack;	//webrtc
@@ -31,6 +32,8 @@ class LibWebrtcLogOption;
 class IClientListener;
 class AudioTrack;
 class VideoTrack;
+class ConnectionsStatus;
+class ConnectionsVideoStatus;
 class LSConnectingEvent;
 class LSOpenEvent;
 class LSClosingEvent;
@@ -43,6 +46,7 @@ class LSUpdateRemoteConnectionEvent;
 class LSUpdateRemoteTrackEvent;
 class LSUpdateMuteEvent;
 class LSChangeStabilityEvent;
+class LSUpdateConnectionsStatusEvent;
 
 /// <summary>
 /// 音声を追加出力するためのコールバック関数
@@ -168,6 +172,16 @@ public:
 };
 
 /// <summary>
+/// com::ricoh::livestreaming::ProxyOptionのWrapper
+/// </summary>
+class ProxyOption
+{
+public:
+	virtual const char* get_Url() = 0;
+	virtual ~ProxyOption() {};
+};
+
+/// <summary>
 /// com::ricoh::livestreaming::OptionのWrapper
 /// </summary>
 class Option 
@@ -181,6 +195,7 @@ public:
 	virtual ReceivingOption* get_ReceivingOption() = 0;
 	virtual IceTransportPolicy get_IceTransportPolicy() = 0; //Nullable
 	virtual IceServersProtocol get_IceServersProtocol() = 0; //Nullable
+	virtual ProxyOption* get_ProxyOption() = 0; //Nullable
 	virtual Option* SetSignalingURL(const char*) = 0;
 	virtual Option* SetLocalLSTracks(List<LSTrack*>*) = 0;
 	virtual Option* SetMeta(StringDictionary*) = 0;
@@ -189,6 +204,7 @@ public:
 	virtual Option* SetReceivingOption(ReceivingOption*) = 0;
 	virtual Option* SetIceTransportPolicy(IceTransportPolicy) = 0;
 	virtual Option* SetIceServersProtocol(IceServersProtocol) = 0;
+	virtual Option* SetProxyOption(ProxyOption*) = 0;
 	virtual ~Option() {};
 };
 
@@ -490,12 +506,27 @@ public:
 	virtual ~LibWebrtcLogOption() {};
 };
 
+class ConnectionsStatus
+{
+public:
+	virtual ConnectionsVideoStatus* get_ConnectionsVideoStatus() = 0;
+	virtual ~ConnectionsStatus() {};
+};
+
+class ConnectionsVideoStatus
+{
+public:
+	virtual bool get_ReceiverExistence() = 0;
+	virtual ~ConnectionsVideoStatus() {};
+};
+
 class LSConnectingEvent {};
 
 class LSOpenEvent
 {
 public:
 	virtual const char* get_AccessTokenJson() = 0;
+	virtual ConnectionsStatus* get_ConnectionsStatus() = 0;
 };
 
 class LSClosingEvent {};
@@ -564,6 +595,12 @@ class LSChangeStabilityEvent
 public:
 	virtual const char* get_ConnectionId() = 0;
 	virtual Stability get_Stability() = 0;
+};
+
+class LSUpdateConnectionsStatusEvent
+{
+public:
+	virtual ConnectionsStatus* get_ConnectionsStatus() = 0;
 };
 
 /// <summary>
@@ -649,6 +686,12 @@ public:
 	/// </summary>
 	/// <param name="lsChangeStabilityEvent"></param>
 	virtual void OnChangeStability(LSChangeStabilityEvent* lsChangeStabilityEvent) = 0;
+
+	/// <summary>
+	/// Called when ConnectionsStatus has been updated.
+	/// </summary>
+	/// <param name="lSUpdateConnectionsStatusEvent"></param>
+	virtual void OnUpdateConnectionsStatus(LSUpdateConnectionsStatusEvent* lSUpdateConnectionsStatusEvent) = 0;
 
 	virtual ~IClientListener() {};
 };

@@ -53,7 +53,7 @@ enum class IceTransportPolicy
     /// All ICE candidates will be considered.
     /// </summary>
     All,
-	isNull
+    isNull
 };
 
 
@@ -90,32 +90,32 @@ enum class MuteType
 
 enum class CapturerType
 {
-	/// <summary>
-	/// Capture video from device.
-	/// </summary>
-	Device,
-	/// <summary>
-	/// Capture video from unity camera.
-	/// </summary>
-	UnityCamera,
-	/// <summary>
-	/// Create video frame from byte array.
-	/// </summary>
-	ByteArray
+    /// <summary>
+    /// Capture video from device.
+    /// </summary>
+    Device,
+    /// <summary>
+    /// Capture video from unity camera.
+    /// </summary>
+    UnityCamera,
+    /// <summary>
+    /// Create video frame from byte array.
+    /// </summary>
+    ByteArray
 };
 
 enum class IceServersProtocol
 {
-   All,
-   Udp,
-   Tcp,
-   Tls,
-   isNull
+    All,
+    Udp,
+    Tcp,
+    Tls,
+    TcpTls,
+    isNull
 };
 
 enum VideoRequirement
 {
-
     Required,
     Unrequired
 };

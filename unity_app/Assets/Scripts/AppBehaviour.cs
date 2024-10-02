@@ -38,6 +38,28 @@ public class AppBehaviour : BehaviorBase
     public DropdownIceServersProtocol dropdownIceServersProtocol;
     public Button deviceDropdownRefreshButton;
 
+    // Web Proxy(UI)
+    [SerializeField]
+    private Toggle useProxy;
+    [SerializeField]
+    private Toggle useProxyAuthentication;
+    [SerializeField]
+    private InputField proxyUrl;
+    [SerializeField]
+    private InputField proxyPort;
+    [SerializeField]
+    private InputField proxyUserName;
+    [SerializeField]
+    private InputField proxyPassword;
+
+    // Web Proxy(Script)
+    public bool UseProxy => useProxy.isOn;
+    public bool UseProxyAuthentication => useProxyAuthentication.isOn;
+    public string ProxyUrl => proxyUrl.text;
+    public int ProxyPort => string.IsNullOrEmpty(proxyPort.text) ? 0 : Int32.Parse(proxyPort.text);
+    public string ProxyUserName => proxyUserName.text;
+    public string ProxyPassword => proxyPassword.text;
+
     private UnityRenderer cappellaRenderer;
 
     private Dictionary<string, RemoteView> remoteTracks = new Dictionary<string, RemoteView>();
@@ -271,6 +293,24 @@ public class AppBehaviour : BehaviorBase
                         }
 
                         option.SetLocalLSTracks(localLSTracks);
+                    }
+
+                    if (UseProxy && !string.IsNullOrEmpty(ProxyUrl))
+                    {
+                        UriBuilder uriBuilder = new UriBuilder(ProxyUrl);
+
+                        if (UseProxyAuthentication && !string.IsNullOrEmpty(ProxyUserName) && !string.IsNullOrEmpty(ProxyPassword))
+                        {
+                            uriBuilder.UserName = ProxyUserName;
+                            uriBuilder.Password = ProxyPassword;
+                        }
+
+                        if (ProxyPort >= 0)
+                        {
+                            uriBuilder.Port = ProxyPort;
+                        }
+
+                        option.SetProxyOption(new ProxyOption(uriBuilder.ToString()));
                     }
 
                     client.Connect(Secrets.GetInstance().ClientId, accessToken, option);
@@ -527,6 +567,21 @@ public class AppBehaviour : BehaviorBase
         {
             Logger.Error($"Failed to UpdateTrackMeta. code={e.Detail.Code}", e);
         }
+    }
+
+    public void OnUseProxyChanged(bool isOn)
+    {
+        proxyUrl.interactable = isOn;
+        proxyPort.interactable = isOn;
+        useProxyAuthentication.interactable = isOn;
+        proxyUserName.interactable = isOn && useProxyAuthentication.isOn;
+        proxyPassword.interactable = isOn && useProxyAuthentication.isOn;
+    }
+
+    public void OnUseProxyAuthenticationChanged(bool isOn)
+    {
+        proxyUserName.interactable = isOn;
+        proxyPassword.interactable = isOn;
     }
 
     private class WindowProcedureHookListener : WindowProcedureHook.IListener

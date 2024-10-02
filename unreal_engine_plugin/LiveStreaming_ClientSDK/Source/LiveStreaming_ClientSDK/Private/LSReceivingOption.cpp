@@ -13,9 +13,10 @@ ReceivingOption* ULSReceivingOption::Get() const
     return _receivingOption.get();
 }
 
-void ULSReceivingOption::Create(bool bEnabled)
+ULSReceivingOption* ULSReceivingOption::Create(bool bEnabled)
 {
     _receivingOption.reset(_pluginModule->CreateReceivingOption(bEnabled));
+    return this;
 }
 
 bool ULSReceivingOption::GetEnabled() const

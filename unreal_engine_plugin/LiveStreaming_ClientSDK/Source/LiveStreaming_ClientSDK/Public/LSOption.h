@@ -9,6 +9,7 @@
 #include "LSTrack.h"
 #include "LSSendingOption.h"
 #include "LSReceivingOption.h"
+#include "LSProxyOption.h"
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "LSOption.generated.h"
@@ -47,6 +48,9 @@ public:
     ELSIceServersProtocol GetIceServersProtocol() const;
 
     UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSOption")
+    ULSProxyOption* GetProxyOption() const;
+
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSOption")
     ULSOption* SetSignalingURL(const FString& signalingURL);
 
     UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSOption")
@@ -70,6 +74,9 @@ public:
     UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSOption")
     ULSOption* SetIceServersProtocol(ELSIceServersProtocol iceServersProtocol);
 
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSOption")
+    ULSOption* SetProxyOption(ULSProxyOption* proxyOption);
+
 private:
     TUniquePtr<FLiveStreaming_ClientSDKModule> _pluginModule;
     std::unique_ptr<Option> _option;
@@ -79,4 +86,7 @@ private:
 
     UPROPERTY()
     ULSReceivingOption* _receivingOption = nullptr;
+
+    UPROPERTY()
+    ULSProxyOption* _proxyOption = nullptr;
 };

@@ -64,6 +64,7 @@ void FLiveStreaming_ClientSDKModule::StartupModule()
     SET_FUNC(CreateOptionFunc, CreateOption, isError);
     SET_FUNC(CreateSendingOptionFunc, CreateSendingOption, isError);
     SET_FUNC(CreateReceivingOptionFunc, CreateReceivingOption, isError);
+    SET_FUNC(CreateProxyOptionFunc, CreateProxyOption, isError);
     SET_FUNC(CreateLibWebrtcLogOptionFunc, CreateLibWebrtcLogOption, isError);
     SET_FUNC(CreateClientFunc, CreateClient, isError);
     SET_FUNC(CreateStringDictionaryFunc, CreateStringDictionary, isError);

@@ -17,6 +17,7 @@
 #include "LSUpdateRemoteTrackEvent.h"
 #include "LSUpdateMuteEvent.h"
 #include "LSChangeStabilityEvent.h"
+#include "LSUpdateConnectionsStatusEvent.h"
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "LSClientListener.generated.h"
@@ -34,6 +35,7 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUpdateRemoteConnectionEventDelegate
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUpdateRemoteTrackEventDelegate, ULSUpdateRemoteTrackEvent*, lsUpdateRemoteTrackEvent);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUpdateMuteEventDelegate, ULSUpdateMuteEvent*, lsUpdateMuteEvent);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChangeStabilityEventDelegate, ULSChangeStabilityEvent*, lsChangeStabilityEvent);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUpdateConnectionsStatusEventDelegate, ULSUpdateConnectionsStatusEvent*, lsUpdateConnectionsStatusEvent);
 
 UCLASS(BlueprintType, Blueprintable)
 class LIVESTREAMING_CLIENTSDK_API ULSClientListener : public UObject
@@ -83,6 +85,9 @@ public:
     UPROPERTY(BlueprintAssignable, Category = "RICOH Live Streaming Client SDK for Windows | LSClientListener")
     FChangeStabilityEventDelegate ChangeStabilityEventDelegate;
 
+    UPROPERTY(BlueprintAssignable, Category = "RICOH Live Streaming Client SDK for Windows | LSClientListener")
+    FUpdateConnectionsStatusEventDelegate UpdateConnectionsStatusEventDelegate;
+
 protected:
     virtual void OnConnecting(LSConnectingEvent* lsConnectingEvent);
     virtual void OnOpen(LSOpenEvent* lsOpenEvent);
@@ -97,6 +102,7 @@ protected:
     virtual void OnUpdateRemoteTrack(LSUpdateRemoteTrackEvent* lsUpdateRemoteTrackEvent);
     virtual void OnUpdateMute(LSUpdateMuteEvent* lsUpdateMuteEvent);
     virtual void OnChangeStability(LSChangeStabilityEvent* lsChangeStabilityEvent);
+    virtual void OnUpdateConnectionsStatus(LSUpdateConnectionsStatusEvent* lsUpdateConnectionsStatusEvent);
 
 private:
     class ClientListenerImpl : public IClientListener
@@ -116,6 +122,7 @@ private:
         virtual void OnUpdateRemoteTrack(LSUpdateRemoteTrackEvent* lsUpdateRemoteTrackEvent) override { _parent->OnUpdateRemoteTrack(lsUpdateRemoteTrackEvent); };
         virtual void OnUpdateMute(LSUpdateMuteEvent* lsUpdateMuteEvent) override { _parent->OnUpdateMute(lsUpdateMuteEvent); };
         virtual void OnChangeStability(LSChangeStabilityEvent* lsChangeStabilityEvent) override { _parent->OnChangeStability(lsChangeStabilityEvent); };
+        virtual void OnUpdateConnectionsStatus(LSUpdateConnectionsStatusEvent* lsUpdateConnectionsStatusEvent) override { _parent->OnUpdateConnectionsStatus(lsUpdateConnectionsStatusEvent); };
 
     private:
         ULSClientListener* _parent;

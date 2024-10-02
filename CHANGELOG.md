@@ -1,5 +1,25 @@
 # CHANGELOG
 
+## v2.2.0
+- API 変更
+  - NetworkErrorに SFU が WebRTC 接続を切断判定した場合のエラー 53004 ConnectionClosedByServer を追加しました
+  - connect メソッドの option.SetProxyOption で Web プロキシサーバが指定できるようになりました。Client の通信が指定された Web プロキシサーバを通過するようになります
+  - ある connection から見て自分が送信している映像を受信している対向 connection の有無をイベントで通知するようになりました
+    - 対向の入室や受信モードなどに応じて有無は変化します
+    - IClientListener#OnUpdateConnectionsStatus イベントの ConnectionsVideoStatus.ReceiverExistence で判断できるようになります
+  - connect の options の IceServersProtocol に TcpTls が指定できるようになりました。TURN の TCP か TLS が自動で選択されるようになります
+  - ULSReceivingOption::CreateがULSReceivingOption*を返却するように修正しました。ULSSendingOption::Createと同等の挙動になります
+
+- SDK 修正
+  - libwebrtc のバージョンを m114.5735.2.0 に変更しました
+  - P2PRoom への connect 時に対向 connection が退室すると InternalError が発生することがある問題を修正しました
+  - Connect 直後に Audio を Hardmute した場合、Unmute 後に音声が出ないことがある問題を修正しました
+  - IClientListener#OnUpdateRemoteTrack()と IClientListener#OnUpdateMute() について、片方のイベントの発生時にもう片方のイベントも不要に発生してしまう問題を修正しました
+  - ログの ICE (WebRTC の接続試行) 関連の情報を強化しました
+
+- サンプルアプリ修正
+  - Web Proxy 用の URL、ポート番号、ユーザー名、パスワードの入力欄を追加しました
+
 ## v2.1.2
 - 共通修正
   - Unity 向けと Unreal Engine 向けに提供していた Windows SDK を統合しました。ただし、 Unreal Engine での動作保証は引き続き β バージョン扱いになります
@@ -60,7 +80,6 @@
   * サンプルアプリ間接続の簡単のためroom_id, room_specを揃えた
 
 ## v1.4.0
-
 * API変更
   * 送信映像フレームレートを送信中に変更できる [Client#ChangeVideoSendFramerate(double maxFramerate)](https://api.livestreaming.ricoh/document/ricoh-live-streaming-client-sdk-api-%E5%A4%96%E9%83%A8%E4%BB%95%E6%A7%98/#changeVideoSendFramerate) を追加
   * (2022/06/29より本番環境で利用可能になりました)ConnectOptionのsending.enabledでクライアントの送信機能を無効にできるようにした。同一Room中に大量に送信機能が有効なクライアントが存在する場合、クライアントに大きな処理負荷や遅延が発生してしまうが、このオプションで低減することができる

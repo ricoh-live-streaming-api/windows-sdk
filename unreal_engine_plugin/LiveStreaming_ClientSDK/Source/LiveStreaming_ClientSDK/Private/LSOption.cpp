@@ -55,6 +55,11 @@ ELSIceServersProtocol ULSOption::GetIceServersProtocol() const
     return (ELSIceServersProtocol)_option->get_IceServersProtocol();
 }
 
+ULSProxyOption* ULSOption::GetProxyOption() const
+{
+    return _proxyOption;
+}
+
 ULSOption* ULSOption::SetSignalingURL(const FString& signalingURL)
 {
     _option->SetSignalingURL(TCHAR_TO_ANSI(*signalingURL));
@@ -111,5 +116,15 @@ ULSOption* ULSOption::SetIceTransportPolicy(ELSIceTransportPolicy iceTransportPo
 ULSOption* ULSOption::SetIceServersProtocol(ELSIceServersProtocol iceServersProtocol)
 {
     _option->SetIceServersProtocol((IceServersProtocol)iceServersProtocol);
+    return this;
+}
+
+ULSOption* ULSOption::SetProxyOption(ULSProxyOption* proxyOption)
+{
+    if (proxyOption)
+    {
+        _option->SetProxyOption(proxyOption->Get());
+        _proxyOption = proxyOption;
+    }
     return this;
 }

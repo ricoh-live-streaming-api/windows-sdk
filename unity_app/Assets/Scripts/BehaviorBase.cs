@@ -454,7 +454,9 @@ public abstract class BehaviorBase : MonoBehaviour
 
         public virtual void OnOpen(LSOpenEvent LSOpenEvent)
         {
-            Logger.Debug($"OnOpen() accessToken=\n{LSOpenEvent.AccessTokenJson}");
+            Logger.Debug($"OnOpen() " +
+                $"accessToken=\n{LSOpenEvent.AccessTokenJson}\n" +
+                $"ReceiverExistence={ LSOpenEvent.ConnectionsStatus.ConnectionsVideoStatus.ReceiverExistence}");
 
             app.UnityUIContext.Post(__ =>
             {
@@ -547,6 +549,12 @@ public abstract class BehaviorBase : MonoBehaviour
             Logger.Debug($"OnChangeStability() connectionId={lSChangeStabilityEvent.ConnectionId} stability={lSChangeStabilityEvent.Stability}");
         }
 
+        public virtual void OnUpdateConnectionsStatus(LSUpdateConnectionsStatusEvent lSUpdateConnectionsStatusEvent)
+        {
+            Logger.Debug($"OnUpdateConnectionsStatus() " +
+                $"ReceiverExistence={lSUpdateConnectionsStatusEvent.ConnectionsStatus.ConnectionsVideoStatus.ReceiverExistence}");
+        }
+
         /// <summary>
         /// リモートトラックのクリアを行う。
         /// <see cref="OnClosed"/>で実行される。
@@ -572,6 +580,5 @@ public abstract class BehaviorBase : MonoBehaviour
         protected abstract void RemoveRemoteTrackByConnectionId(string connectionId);
 
         protected abstract VideoTrack.IListener CreateVideoTrackListener(BehaviorBase app);
-
     }
 }

@@ -48,7 +48,7 @@ At this moment, we provide API license agreement / software license agreement on
 ## 依存ライブラリ
 - log4net : v2.0.15
 - Newtonsoft.Json : v13.0.1
-- WebSocketSharp : v1.0.3-rc11
+- WebSocketSharp : v1.0.2
 
 ## バージョンアップ時の更新方法
-- ClientSDK.dll および webrtc_wrapper.dll を差し替えてください
+- dll 一式を差し替えてください

@@ -26,6 +26,7 @@ public:
     CreateOptionFunc CreateOption;
     CreateSendingOptionFunc CreateSendingOption;
     CreateReceivingOptionFunc CreateReceivingOption;
+    CreateProxyOptionFunc CreateProxyOption;
     CreateLibWebrtcLogOptionFunc CreateLibWebrtcLogOption;
     CreateClientFunc CreateClient;
     CreateStringDictionaryFunc CreateStringDictionary;

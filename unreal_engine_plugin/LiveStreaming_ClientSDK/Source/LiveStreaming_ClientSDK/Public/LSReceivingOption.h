@@ -19,7 +19,7 @@ public:
     ReceivingOption* Get() const;
 
     UFUNCTION(BlueprintCallable, meta = (DisplayName = "Create Receiving Option"), Category = "RICOH Live Streaming Client SDK for Windows | LSReceivingOption")
-    void Create(bool bEnabled = true);
+    ULSReceivingOption* Create(bool bEnabled = true);
 
     UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSReceivingOption")
     bool GetEnabled() const;

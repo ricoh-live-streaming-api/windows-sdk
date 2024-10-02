@@ -77,3 +77,7 @@ void ULSClientListener::OnChangeStability(LSChangeStabilityEvent* lsChangeStabil
     BroadcastEvent<FChangeStabilityEventDelegate, ULSChangeStabilityEvent, LSChangeStabilityEvent>(ChangeStabilityEventDelegate, lsChangeStabilityEvent);
 }
 
+void ULSClientListener::OnUpdateConnectionsStatus(LSUpdateConnectionsStatusEvent* lsUpdateConnectionsStatusEvent)
+{
+    BroadcastEvent<FUpdateConnectionsStatusEventDelegate, ULSUpdateConnectionsStatusEvent, LSUpdateConnectionsStatusEvent>(UpdateConnectionsStatusEventDelegate, lsUpdateConnectionsStatusEvent);
+}

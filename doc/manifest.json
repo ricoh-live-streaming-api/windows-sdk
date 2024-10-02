@@ -1,6 +1,6 @@
 {
   "homepages": [],
-  "source_base_path": "C:/workspace/cappella-windows-release/ClientSDK/ClientSDK",
+  "source_base_path": "C:/workspace/cappella-windows/ClientSDK/ClientSDK",
   "xrefmap": "xrefmap.yml",
   "files": [
     {
@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "pq3KyDv/bzkDzVf43vx5cIe9l/7KEJUPkQtpSuC92uM="
+          "hash": "JPP/dAj6kESPgwFXKygCKFoNKOs+0Gn6xuv50BJTJOw="
         }
       },
       "is_incremental": false,
@@ -21,7 +21,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "VWjrclI2a+rxQKIB7sEqwmsjG5x8kG20aaTMV20N+jQ="
+          "hash": "SqD0klfNstywfcESOTwUoAQq0sq0W+wVt3s6Tgwr49M="
         }
       },
       "is_incremental": false,
@@ -45,7 +45,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/tutorial.html",
-          "hash": "J+boBoQks1sN3sFl6Se69onQb5dK8IoUacx/wB427Ck="
+          "hash": "d4+sXelUk8X19ADzMeEbwVIV+jK2ZXiWs/sUcdYobBE="
         }
       },
       "is_incremental": false,
@@ -60,7 +60,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "V/5EaeNXLptIQ4gvdo4CW7fmEuJ3m9ZFKE+BmXNMgZ8="
+          "hash": "8wzSu/xUsMxZjz7u8txEsqesTyAdncZV/ZHovKYc/rc="
         }
       },
       "is_incremental": false,
@@ -72,7 +72,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.Client.html",
-          "hash": "mR0wB9RXJrj3iDxza1AdnIQbeG/89WNt+yascDmt1XI="
+          "hash": "JfXC6KUL+u0PvXe13xife7vATxRHhu+Pd14bOSnLPwo="
         }
       },
       "is_incremental": false,
@@ -84,7 +84,31 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.ConnectionState.html",
-          "hash": "/9/NG2Q1THhI9exg2JgTgQhDnhlNuTaaxjiQeoge6/A="
+          "hash": "VaZcvwwytPfxOm9YwYmeYGBEhNSEc0qC60YOfAgEfeI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.ConnectionsStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.ConnectionsStatus.html",
+          "hash": "Oz1ji5zPNnMjqCsAr8KE/FueqtP9EmEPTfu5ysdYGKU="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.ConnectionsVideoStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.ConnectionsVideoStatus.html",
+          "hash": "ZkmzaVPGQJVnY/7/JrBfo9d6M9hQquy1/IHEljdGyXI="
         }
       },
       "is_incremental": false,
@@ -96,7 +120,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.ErrorDetail.html",
-          "hash": "TW8QRmSUrzWa2hMcERatMSv4e+cQsigXAdvFI97YkDQ="
+          "hash": "goR5dgzq0j9TtzP75nG8spQGq97WgZm8BTu5XOTq/C8="
         }
       },
       "is_incremental": false,
@@ -108,7 +132,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.ErrorType.html",
-          "hash": "xQf3uJ271eiNBEjIZF6vvtcnOlp8Dv8e5NXPflDwMe0="
+          "hash": "MUekTpI9m8aJERqfcLiLxrp9OohrhoZ1THo5u97PtGs="
         }
       },
       "is_incremental": false,
@@ -120,7 +144,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.IClientListener.html",
-          "hash": "btDheDsGGS8mJroELkj8lXXMpBBxbnF28a0kz+CTl34="
+          "hash": "WFOMBaRf/YzEugHFwhIPnexIQd2oXnr27KbwQKpEljw="
         }
       },
       "is_incremental": false,
@@ -132,7 +156,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.IceServersProtocol.html",
-          "hash": "uRodjKw1NDo1cofH0ml9c0Ci/dsbnx5rKKr2I/wekIk="
+          "hash": "gC7Wj0V6u6pzFxTsLPElUdvjygtxbW6ix7gZk/26/t0="
         }
       },
       "is_incremental": false,
@@ -144,7 +168,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.IceTransportPolicy.html",
-          "hash": "15fLtLznF4F4GKKKqBAuOkFcEYeIYK9daHy7EwHLuKc="
+          "hash": "EyrGaDHPzJRChKkOh+DMdppM7l/SobhCxNizQIRkHp4="
         }
       },
       "is_incremental": false,
@@ -156,7 +180,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.LSAddLocalTrackEvent.html",
-          "hash": "FGZipzQIYtt+TBbpcbWVYw5zPe1qe8OiRLysRipQDxs="
+          "hash": "o/Jp3fHFCcD0FTVDWVdVBU45xKiLIM66D8uYhTw3FFo="
         }
       },
       "is_incremental": false,
@@ -168,7 +192,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.LSAddRemoteConnectionEvent.html",
-          "hash": "YCotzeQhu5KYn8dbRklK7MQm39Db9x0MThw6eiK5YoI="
+          "hash": "SOBsK2PaTrkvGPRW5QgiCgqxB8+al/EGhxLhTV1gWxc="
         }
       },
       "is_incremental": false,
@@ -180,7 +204,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.LSAddRemoteTrackEvent.html",
-          "hash": "Nbve9U++H8Lu5Y/uhwQaF9Ay5LpgBDldnPHIFu0gPJ8="
+          "hash": "F7Irs0HVJV9/L93Rcngc8ETjaDLqbI7wy7vJTf8sq2Q="
         }
       },
       "is_incremental": false,
@@ -192,7 +216,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.LSChangeStabilityEvent.html",
-          "hash": "Fnbfh7j+tTq0UvhzHIrg53WFSqJBf4WWA+goCiq8te8="
+          "hash": "DTxicD1HKHNWt1KN8QDM4CH8E0QlVFzl7pDTl8iMqWQ="
         }
       },
       "is_incremental": false,
@@ -204,7 +228,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.LSCloseEvent.html",
-          "hash": "mH2Rgr402MiU22BUq8ZAaM0Lf4QklFi7l5F17Fwa6y4="
+          "hash": "xCbt8PLaupSQIVUXFz5VzoIEEkoJ3gQ+ePnloE0GISo="
         }
       },
       "is_incremental": false,
@@ -216,7 +240,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.LSClosingEvent.html",
-          "hash": "JZvb3+2Ve/zk8GlzGhUznj92LqrKPqkx/qdIGqBZIe0="
+          "hash": "R6+JPl9g8kyEwJb9wXfBsWgxmCJzSc2XqFlyXuJr3KU="
         }
       },
       "is_incremental": false,
@@ -228,7 +252,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.LSConnectingEvent.html",
-          "hash": "kwS+qqQ7+kp3IxZp+oYOeZ7G4AQoOr0R2wlOiy3X/Rs="
+          "hash": "M6OqpIuD7/xmpjN4jzNIVDPzAWtOhzRUnuJyRswVsbg="
         }
       },
       "is_incremental": false,
@@ -240,7 +264,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.LSOpenEvent.html",
-          "hash": "SGaiDPMxMdD64S+FkjUaIvPX1PB0PAAGmKLa8yl151g="
+          "hash": "WA/bYLxkBqB7Vrr1zImEkAmQ8dw3wnpnLJ+0tqZVFAE="
         }
       },
       "is_incremental": false,
@@ -252,7 +276,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.LSRemoveRemoteConnectionEvent.html",
-          "hash": "ph1lv+zgWwqZ0XJkGkKd7xOEErlqTAE2lJyZuZV4aAk="
+          "hash": "vzpOXsL6ldVN2SNLrC6PmIHjEwPxAiMYFPX2xWkd5SA="
         }
       },
       "is_incremental": false,
@@ -264,7 +288,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.LSTrack.html",
-          "hash": "HWxhLE41d7aY5L8C26CiLIXjNZkDjb2nZskaQGKQBY0="
+          "hash": "CycizaCf4WrivfV7mw9ImylQcMc6k83FlkISZUu6C0E="
         }
       },
       "is_incremental": false,
@@ -276,7 +300,19 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.LSTrackOption.html",
-          "hash": "eUUnF+MWX1sufnJC+2lENrJvTa6f1TLhonnFVkc8nyM="
+          "hash": "mWUEvQ6ebR4dsicpBPJL7z6spYVkO8kHUr2Qrl7vUPM="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.LSUpdateConnectionsStatusEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.LSUpdateConnectionsStatusEvent.html",
+          "hash": "8CGjgGe0CtP/z5+E3YyOzgMiU9KW5r1kfZyCByuiwXs="
         }
       },
       "is_incremental": false,
@@ -288,7 +324,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.LSUpdateMuteEvent.html",
-          "hash": "fLKqM1ndRetVyoVzarY6LPhUJnktQGxV13cAL0bM/98="
+          "hash": "31jvhU70uPXWVCNc74cdQ9uzV6Bxv0KRHzjvY+i11Lk="
         }
       },
       "is_incremental": false,
@@ -300,7 +336,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.LSUpdateRemoteConnectionEvent.html",
-          "hash": "AV0WdhmcplHIm5S8ZwyH6560ZY3Cs/cy+8Fvya3EiNQ="
+          "hash": "3lRiMz9NgVXeN+8iiOES2SABMj/ecBH/vOnjDF9LatE="
         }
       },
       "is_incremental": false,
@@ -312,7 +348,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.LSUpdateRemoteTrackEvent.html",
-          "hash": "2C8h2g1p/gY9aiDD/U767aaR8Im2zQzpvDvklD8TtNQ="
+          "hash": "BGK83+hw0VQDosSjNGCVX38pkc9un6Vm4T55gs/uJWw="
         }
       },
       "is_incremental": false,
@@ -324,7 +360,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.LibWebrtcLogOption.Level.html",
-          "hash": "cdkHgKTQcst9NUNfxFBd8cJVAcWaUq+jhOpfteK53GQ="
+          "hash": "8AmrKimsJRdOAuywXoP3PCNY6NMYf0NFENNU6bJ9PNs="
         }
       },
       "is_incremental": false,
@@ -336,7 +372,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.LibWebrtcLogOption.html",
-          "hash": "qtzoDcTIyP2MvaQ96jTNu+5jkas8U4Z3hJ+vD7bfL5c="
+          "hash": "Vx1VFtIy+Np8jstGd16QGgdgmJqXYIVnKZux0JAkLKk="
         }
       },
       "is_incremental": false,
@@ -348,7 +384,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.MuteType.html",
-          "hash": "JYiP4xKodOgA+habqyd6QrSuFPAs55dpHLmN2yevYAE="
+          "hash": "0EpNYQina52/R6QHTNpYTctCJvofE2hOySk+u45zqZQ="
         }
       },
       "is_incremental": false,
@@ -360,7 +396,19 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.Option.html",
-          "hash": "Nu7TSK+QfMzdb5c2xCQwg4dmAWLRZocFKB008BtexNk="
+          "hash": "vddfuefy3LjMxHaOgaZzFm+z3UTHRGVNySGHbkJPisI="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "obj/api/com.ricoh.livestreaming.ProxyOption.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/com.ricoh.livestreaming.ProxyOption.html",
+          "hash": "LrEFlvHmUMJdHOjQVhm+97EV+DJ7mdtFZRRew4iJoyo="
         }
       },
       "is_incremental": false,
@@ -372,7 +420,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.ReceivingOption.html",
-          "hash": "uJDSw6QoRYkpqD8SJ+AhH5cUdX7OwBlTB+DmIOxhwZ8="
+          "hash": "HdPHVxTANBbEJUYLieBPwXH6CfCj7jA0egtz4MF6TeE="
         }
       },
       "is_incremental": false,
@@ -384,7 +432,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.SDKErrorEvent.html",
-          "hash": "TuVecPkRqUY3TDrvzmSxE85S+XkqLGPFWP12fdi/AK8="
+          "hash": "Itxz4vUlTqdzbWJ+JbrxSYqAy6XuD4UzCXzl42pZ8qg="
         }
       },
       "is_incremental": false,
@@ -396,7 +444,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.SDKException.html",
-          "hash": "ljexkkR+9aq1hoPODBdVy2MSMR/s7AYiAbGRbbkNFC0="
+          "hash": "umKxbVIcF2x3QaK7XZVNRREnq0aSRrBLIoBsX7H3428="
         }
       },
       "is_incremental": false,
@@ -408,7 +456,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.SendingOption.html",
-          "hash": "p6tXmznArhYd09wSPBvcsqBuJYn07LONuOiPw02J8tA="
+          "hash": "MfnDGVLx/Jc1iefRbGzwqvD3TX3QcUDvEf3Eb8nVVt0="
         }
       },
       "is_incremental": false,
@@ -420,7 +468,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.SendingVideoOption.SendingPriority.html",
-          "hash": "9PnKcy7coP4KKSdUE/1ST4nx+AGYcgG/zB2RGIhSWqQ="
+          "hash": "HaQRGB+K0Oe5dxCTVrSYmxE5fJ44UPlgYt7ugNMS1Nc="
         }
       },
       "is_incremental": false,
@@ -432,7 +480,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.SendingVideoOption.VideoCodecType.html",
-          "hash": "Ia+xnNkiuwEp7IHOjEfzgbfjc3QbTwUcfm4kArgDHcY="
+          "hash": "tyqPFL1l0f5q2p0uMarJEOb+QvcoWBebDrUzmicc1Xo="
         }
       },
       "is_incremental": false,
@@ -444,7 +492,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.SendingVideoOption.html",
-          "hash": "D/U3TNroAwTgwCwz0nToYV619Vif6/AcKh3K4H1eR0k="
+          "hash": "cNIVVv6QmJbhYwCqGyTICUKmqPtHUYqLkqI+Y/qT5+o="
         }
       },
       "is_incremental": false,
@@ -456,7 +504,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.Stability.html",
-          "hash": "NUPCgF31zJAa8NnA82GM4CrnLT+rP/ikYcuroiMRFsM="
+          "hash": "gLRXK5w9FwuHYPp6Y74IwekPBINpJKPg85z0PEOxcOc="
         }
       },
       "is_incremental": false,
@@ -468,7 +516,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.VideoRequirement.html",
-          "hash": "gDl374leRv+6FbSlqOdAf32CJZr9GyLo/BKzx1S+cZo="
+          "hash": "I1t6oxo+CSnmwu/7Gb+EFwuXDojwvj1g8cxsUm43qW4="
         }
       },
       "is_incremental": false,
@@ -480,7 +528,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.unity.UnityCameraCapturer.html",
-          "hash": "WQC2Pivy7xOGIcEJQx1mSMG97pq+MVhHDMr2eWNHzvE="
+          "hash": "A/kGRjAU7ONtIdWF0A2HXRP3Z2pBVbA7KSUpEgva7bA="
         }
       },
       "is_incremental": false,
@@ -492,7 +540,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.unity.UnityRenderer.html",
-          "hash": "oxd+boOsE9PnnB65FOAzY3gJAkBFZUhlBA5PvSlcN0k="
+          "hash": "F5OvTQj8Cn2Xf2dOXJpe4zCHbjDN0m4ytzywHTm0NM8="
         }
       },
       "is_incremental": false,
@@ -504,7 +552,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.unity.WindowProcedureHook.DeviceType.html",
-          "hash": "ouMN7f2yGRz5ozih8EuvBqurngo6xiiPRpJEgoxBWxk="
+          "hash": "0CeOpiqsF+KlVbRPVIHOgom36bZibnEcuvOzyd3HV0I="
         }
       },
       "is_incremental": false,
@@ -516,7 +564,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.unity.WindowProcedureHook.IListener.html",
-          "hash": "WfLTzLFZhALQL20X6hYU0qswe4EWpCYegvYAld4gVxU="
+          "hash": "5abn74ex3Th5vf6VxUnOD/MWFFoTApUf5Ykywve3nCo="
         }
       },
       "is_incremental": false,
@@ -528,7 +576,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.unity.WindowProcedureHook.html",
-          "hash": "ZE4jBvIuU2/afoM9HUGcuFN3OxZKiVxskeeDIVJ+3As="
+          "hash": "hUByokKMQBtH50oiQdxp2KpN/9Zw+WaBMu3i4zMfJuQ="
         }
       },
       "is_incremental": false,
@@ -540,7 +588,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.unity.html",
-          "hash": "6lrSeeRd4JqbhHcFD2R2zQONPUoqo/9ZRZQ0mWcpvaM="
+          "hash": "C9ZzwaSvvoJ+Oui13vHCGR/DpS4X27ZdpVJwXXcnGaA="
         }
       },
       "is_incremental": false,
@@ -552,7 +600,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.AudioCapturer.html",
-          "hash": "+Qy2LIhp2LAqeqf9q731kF8p3qm0jVrPy6uPP320LRg="
+          "hash": "iG5OsfiV3Kc6BhdpJbUG3rP+JFnW17G422jv9/KMiWs="
         }
       },
       "is_incremental": false,
@@ -564,7 +612,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.AudioDataCapturer.html",
-          "hash": "OytjxT8dyZxo4vsgy4OQ2AyKsoG8lsjHezGGf8uXKMM="
+          "hash": "mhcBdZFYLMA5S2kMmnjqko4eOu1JF6N4pOWiF1yxY9U="
         }
       },
       "is_incremental": false,
@@ -576,7 +624,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.AudioTrack.html",
-          "hash": "kwJ9jxCLmHUA3sJ3iwUzXSMld2C8mQkkjXAOfA9b278="
+          "hash": "dLRiLQBgunlvQWVs2J256PuIcKiXksppOl/u1fYOn3Q="
         }
       },
       "is_incremental": false,
@@ -588,7 +636,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.ByteArrayCapturer.html",
-          "hash": "b/MN7ElAMM14WqletJFUwld7EwXphVtuzfPT+LZx7SU="
+          "hash": "856Be+HcWxnxMuRXV0n6wXrQQUxHyiLP3lVtYXJ16tY="
         }
       },
       "is_incremental": false,
@@ -600,7 +648,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.CodecUtil.html",
-          "hash": "2VEZ5CM3pBvmAXZeZ0A85VXu/X4WkBYqF4sdRZQzAnM="
+          "hash": "ej90hVSt03mvf7p+a+LGut7H06MNVUU+U6bch6O8AaE="
         }
       },
       "is_incremental": false,
@@ -612,7 +660,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.DeviceInfo.html",
-          "hash": "dN6fT2sTIwSv7KbCcTY7QbclBcAL3mEtKKe1dRH+M+Y="
+          "hash": "EYBESrkge9+H8fQI+ZIeCZ0is1LaI8+ssOAxRLpJQ7o="
         }
       },
       "is_incremental": false,
@@ -624,7 +672,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.DeviceUtil.html",
-          "hash": "MnR3zjC8ZRy08cXiINgJ+YtRrmLS8chMCrDAS6+bQSY="
+          "hash": "UCukvbbSgTXSIRKL6n/FHVArE+G9NHZOEAczTeA0NKU="
         }
       },
       "is_incremental": false,
@@ -636,7 +684,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.MediaStream.html",
-          "hash": "rHRfFrmXu6EAcX1+HwXuPajj+7AbOvhpmHuGfMcxEJk="
+          "hash": "1G6O07sjxg+UnrI97iePVL8GyuAtHY+RYCQh4JbGMug="
         }
       },
       "is_incremental": false,
@@ -648,7 +696,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.MediaStreamConstraints.html",
-          "hash": "8PC1zw/In4K21IJSreCNc1high0SDxr6E/q4z47txqs="
+          "hash": "MhhnuhwiCJ9TcQQOjg60uijfXNkdzwbkNo0xWE9RLM4="
         }
       },
       "is_incremental": false,
@@ -660,7 +708,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.MediaStreamTrack.TrackType.html",
-          "hash": "rkDCWooCYwcy3dEtiPdHNJuvO1j36mEdJ40udA4j9aI="
+          "hash": "3XTUHAdvG0q0xlZgBAsgJrrqrav3kLC91yHyRWPjTys="
         }
       },
       "is_incremental": false,
@@ -672,7 +720,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.MediaStreamTrack.html",
-          "hash": "rNRx/biOERiFdwSyUG41owVQlrFLbvcGSAoPPwhqhGE="
+          "hash": "90tRJ0/zYPKlfOMTzG9hlf+ucovDxu/urr7jT/e7g/E="
         }
       },
       "is_incremental": false,
@@ -684,7 +732,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.PixelImageCapturer.html",
-          "hash": "KBblBd7Gu/k8L+PUd6A9+LcQozF5VTo1+u4GGGVoqDk="
+          "hash": "Li4/dh+SyGDNb7MBqQXdnEk1wofApGB/geVSSNY0ChU="
         }
       },
       "is_incremental": false,
@@ -696,7 +744,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.PixelImageRenerer.html",
-          "hash": "3gAWbnXK2j0YdimLiWIeGyWavo/hKDGh2LPsYbLLOv8="
+          "hash": "KrGGgCXEpgf4Ozbi4j+adGpvfD8ivG1vpsg2DoxMLks="
         }
       },
       "is_incremental": false,
@@ -708,7 +756,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.RTCStats.html",
-          "hash": "Rftl6bwqijlQrjpAqD74xprkitdmpI7t20RXUmCSoh4="
+          "hash": "FznPLXDcm/kVhpacoEUiHu9frFszsdF064dudUy3v04="
         }
       },
       "is_incremental": false,
@@ -720,7 +768,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.RTCStatsReport.html",
-          "hash": "99W4zKBzWAfzP7R8Tomq2PdFj4XumquWuZaUKKtHpFU="
+          "hash": "dowbteFG/qEgtmYeZeohqy1Hyk9TJ5iVy4RVDC2IcvE="
         }
       },
       "is_incremental": false,
@@ -732,7 +780,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.VideoCapturer.CapturerType.html",
-          "hash": "nwD335tbfs4AZ5JVWfGawgpzOJay5Q6hK6HmbMhw24A="
+          "hash": "YbUIqqWjeGjUS5s15pB4s8SG+XHKtTSRDbsdFS66X1U="
         }
       },
       "is_incremental": false,
@@ -744,7 +792,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.VideoCapturer.html",
-          "hash": "suFF8uw0rHOP9PVV8rHtrD0dCWD6KLR+vh3lWcVdNbs="
+          "hash": "NgovDlTyeDfRMc9rwiCYpuXFBcTRmLhVlRvBEkfHETo="
         }
       },
       "is_incremental": false,
@@ -756,7 +804,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.VideoCapturerDeviceCapability.html",
-          "hash": "qvjuAxNlRREOywRT63QWrfRZJAVWWaOjlncg6v908/w="
+          "hash": "cFbyKf+4k37oqNZXRNN+CuUGQhHdErmOZoOkIy/Sinc="
         }
       },
       "is_incremental": false,
@@ -768,7 +816,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.VideoDeviceCapturer.html",
-          "hash": "tmt6K2AJftK8NfAqyho5BHEYWQaZvbLiL1GIMC+bp24="
+          "hash": "/6ISt1sX5ietMAqU0mq5FI3Qec4ZQ6noGL3b4a5LkPU="
         }
       },
       "is_incremental": false,
@@ -780,7 +828,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.VideoTrack.IListener.html",
-          "hash": "haWjt5P24XZnYDHZTcSfBbrVFpEVMwtQjXkUrEQ8Da4="
+          "hash": "odyt1/w1I+s6Xf+7U3fd/x08w060QlhSREWDgu9naM0="
         }
       },
       "is_incremental": false,
@@ -792,7 +840,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.VideoTrack.html",
-          "hash": "UGfyON/4XvDAUIew2X6wfrkF1fq46Q1jBXzGQmUzmeE="
+          "hash": "qQ5/7IbTDiutbLfD4j4Qfie0QOws2c47a80/5hvVdSc="
         }
       },
       "is_incremental": false,
@@ -804,7 +852,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.WebrtcLog.html",
-          "hash": "u39F8XL1vg6XosUPaU5b1potyCfCDnsBc00NKQYoUlE="
+          "hash": "xa0CN7H7hziOB9mjXw+OlPgFKJC91Wb4e8fT/vQXBes="
         }
       },
       "is_incremental": false,
@@ -816,7 +864,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.WebrtcWrapperForPixelImageRegister.html",
-          "hash": "m9qlDDHe30YEMEyfj5Z3SjiZZfdlI0pW6hTB2k80tFk="
+          "hash": "XX+cycch5/7fmv1m+IUBxwnpcDkCCQzdK30dj2O5SWo="
         }
       },
       "is_incremental": false,
@@ -828,7 +876,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.webrtc.html",
-          "hash": "WaBtXWpDfRpybfmpcWNm18UzAb7fZPHeRgGHc9d7ets="
+          "hash": "xOxUlitjc0wXae0GHmx0G8GsAV9DKW/y+FYzCPPPRxM="
         }
       },
       "is_incremental": false,
@@ -840,7 +888,7 @@
       "output": {
         ".html": {
           "relative_path": "api/com.ricoh.livestreaming.html",
-          "hash": "RG2nQ5CrdvQaL/cuI/d3N4KDoeibS2Jr4euJF39J4B4="
+          "hash": "+lV5t9xsvouI/iSbBwrf5UbQlBnDUxwiF1SLXSx2Je4="
         }
       },
       "is_incremental": false,
@@ -852,7 +900,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "7PEMdmX6r/LRrYleKcO9CwLf8r1zqIZRDv1pJRRlfNI="
+          "hash": "UjcbPLwOAl2wpL9SCD4gZj419ajrkDkfyLXzKksF+x8="
         }
       },
       "is_incremental": false,
@@ -891,7 +939,7 @@
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build",
-          "total_file_count": 65,
+          "total_file_count": 69,
           "skipped_file_count": 0
         },
         "TocDocumentProcessor": {

@@ -151,6 +151,18 @@ extern "C"
 	typedef ReceivingOption* (*CreateReceivingOptionFunc)(bool);
 
 	/// <summary>
+	/// ProxyOptionのCreate関数
+	/// </summary>
+	/// <remarks>com::ricoh::livestreaming::ProxyOption</remarks>
+	/// <param name="url">ProxyサーバーのURL</param>
+	/// <returns>Wrapperクラスのインスタンス</returns>
+	DECLSPEC ProxyOption* CreateProxyOption(const char* url);
+	/// <summary>
+	/// ProxyOptionの関数ポインター型
+	/// </summary>
+	typedef ProxyOption* (*CreateProxyOptionFunc)(const char*);
+
+	/// <summary>
 	/// ClientのCreate関数
 	/// </summary>
 	/// <remarks>com::ricoh::livestreaming::Create</remarks>
