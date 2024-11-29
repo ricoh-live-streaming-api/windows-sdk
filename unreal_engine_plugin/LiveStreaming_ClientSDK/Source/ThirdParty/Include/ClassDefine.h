@@ -447,7 +447,7 @@ public:
 	enum class SendingPriority 
 	{
 		isNull = -999,
-		Normal,
+		Normal = 0,
 		High,
 	};
 
