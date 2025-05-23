@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class Client
    ">
-    <meta name="generator" content="docfx 2.59.3.0">
+    <meta name="generator" content="docfx 2.59.4.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -409,6 +409,26 @@ This class has a state. The state can be acquired with the <a class="xref" href=
 </td>
       </tr>
       <tr>
+        <td><a class="xref" href="com.ricoh.livestreaming.SDKException.html">SDKException</a></td>
+        <td><p>Thrown when sending.enabled is true and LocalLSTracks does not exist.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.ricoh.livestreaming.SDKException.html">SDKException</a></td>
+        <td><p>Thrown when sending.enabled is false and LocalLSTracks does exist.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.ricoh.livestreaming.SDKException.html">SDKException</a></td>
+        <td><p>Thrown when an invalid ProxyOption is specified.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="com.ricoh.livestreaming.SDKException.html">SDKException</a></td>
+        <td><p>Thrown when retrieving ParameterError or SignalingError from the server fails.</p>
+</td>
+      </tr>
+      <tr>
         <td><span class="xref">System.ArgumentNullException</span></td>
         <td><p><code data-dev-comment-type="paramref" class="paramref">clientId</code> or <code data-dev-comment-type="paramref" class="paramref">accessToken</code> is null.</p>
 </td>
@@ -597,11 +617,6 @@ This class has a state. The state can be acquired with the <a class="xref" href=
       </tr>
       <tr>
         <td><a class="xref" href="com.ricoh.livestreaming.SDKException.html">SDKException</a></td>
-        <td><p>Thrown when failed to set track to RtpSender.</p>
-</td>
-      </tr>
-      <tr>
-        <td><a class="xref" href="com.ricoh.livestreaming.SDKException.html">SDKException</a></td>
         <td><p>Thrown when targetTrack not found on replace Media Stream Track.</p>
 </td>
       </tr>
@@ -662,33 +677,6 @@ This class has a state. The state can be acquired with the <a class="xref" href=
         <td><span class="xref">System.String</span></td>
         <td><span class="parametername">deviceName</span></td>
         <td><p>Device Name</p>
-</td>
-      </tr>
-    </tbody>
-  </table>
-  <a id="com_ricoh_livestreaming_Client_SetEventListener_" data-uid="com.ricoh.livestreaming.Client.SetEventListener*"></a>
-  <h4 id="com_ricoh_livestreaming_Client_SetEventListener_com_ricoh_livestreaming_IClientListener_" data-uid="com.ricoh.livestreaming.Client.SetEventListener(com.ricoh.livestreaming.IClientListener)">SetEventListener(IClientListener)</h4>
-  <div class="markdown level1 summary"><p>Set event listener.</p>
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void SetEventListener(IClientListener listener)</code></pre>
-  </div>
-  <h5 class="parameters">Parameters</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><a class="xref" href="com.ricoh.livestreaming.IClientListener.html">IClientListener</a></td>
-        <td><span class="parametername">listener</span></td>
-        <td><p>Listener to set.</p>
 </td>
       </tr>
     </tbody>
@@ -847,6 +835,376 @@ This class has a state. The state can be acquired with the <a class="xref" href=
         <td><span class="xref">System.ArgumentNullException</span></td>
         <td><p><code data-dev-comment-type="paramref" class="paramref">lsTrack</code> is null.</p>
 </td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  <h4 id="com_ricoh_livestreaming_Client_OnAddLocalTrack" data-uid="com.ricoh.livestreaming.Client.OnAddLocalTrack">OnAddLocalTrack</h4>
+  <div class="markdown level1 summary"><p>Called when new local track added.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;LSAddLocalTrackEvent&gt; OnAddLocalTrack</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="com.ricoh.livestreaming.LSAddLocalTrackEvent.html">LSAddLocalTrackEvent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="com_ricoh_livestreaming_Client_OnAddRemoteConnection" data-uid="com.ricoh.livestreaming.Client.OnAddRemoteConnection">OnAddRemoteConnection</h4>
+  <div class="markdown level1 summary"><p>Called when remote connection added.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;LSAddRemoteConnectionEvent&gt; OnAddRemoteConnection</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="com.ricoh.livestreaming.LSAddRemoteConnectionEvent.html">LSAddRemoteConnectionEvent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="com_ricoh_livestreaming_Client_OnAddRemoteTrack" data-uid="com.ricoh.livestreaming.Client.OnAddRemoteTrack">OnAddRemoteTrack</h4>
+  <div class="markdown level1 summary"><p>Called when new remote track added.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;LSAddRemoteTrackEvent&gt; OnAddRemoteTrack</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="com.ricoh.livestreaming.LSAddRemoteTrackEvent.html">LSAddRemoteTrackEvent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="com_ricoh_livestreaming_Client_OnChangeMediaStability" data-uid="com.ricoh.livestreaming.Client.OnChangeMediaStability">OnChangeMediaStability</h4>
+  <div class="markdown level1 summary"><p>Called when the communication stability of the Media connection has changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;LSChangeMediaStabilityEvent&gt; OnChangeMediaStability</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="com.ricoh.livestreaming.LSChangeMediaStabilityEvent.html">LSChangeMediaStabilityEvent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="com_ricoh_livestreaming_Client_OnClosed" data-uid="com.ricoh.livestreaming.Client.OnClosed">OnClosed</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="com.ricoh.livestreaming.Client.html">Client</a> is disconnected from the server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;LSCloseEvent&gt; OnClosed</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="com.ricoh.livestreaming.LSCloseEvent.html">LSCloseEvent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="com_ricoh_livestreaming_Client_OnClosing" data-uid="com.ricoh.livestreaming.Client.OnClosing">OnClosing</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="com.ricoh.livestreaming.Client.html">Client</a> start to disconnect from the server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;LSClosingEvent&gt; OnClosing</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="com.ricoh.livestreaming.LSClosingEvent.html">LSClosingEvent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="com_ricoh_livestreaming_Client_OnConnecting" data-uid="com.ricoh.livestreaming.Client.OnConnecting">OnConnecting</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="com.ricoh.livestreaming.Client.html">Client</a> start to connect to the server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;LSConnectingEvent&gt; OnConnecting</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="com.ricoh.livestreaming.LSConnectingEvent.html">LSConnectingEvent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="com_ricoh_livestreaming_Client_OnError" data-uid="com.ricoh.livestreaming.Client.OnError">OnError</h4>
+  <div class="markdown level1 summary"><p>Called when an error occurs.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;SDKErrorEvent&gt; OnError</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="com.ricoh.livestreaming.SDKErrorEvent.html">SDKErrorEvent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="com_ricoh_livestreaming_Client_OnMediaOpen" data-uid="com.ricoh.livestreaming.Client.OnMediaOpen">OnMediaOpen</h4>
+  <div class="markdown level1 summary"><p>Called when the media connection established with server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;LSMediaOpenEvent&gt; OnMediaOpen</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="com.ricoh.livestreaming.LSMediaOpenEvent.html">LSMediaOpenEvent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="com_ricoh_livestreaming_Client_OnOpen" data-uid="com.ricoh.livestreaming.Client.OnOpen">OnOpen</h4>
+  <div class="markdown level1 summary"><p>Called when the <a class="xref" href="com.ricoh.livestreaming.Client.html">Client</a> is connected to the server.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;LSOpenEvent&gt; OnOpen</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="com.ricoh.livestreaming.LSOpenEvent.html">LSOpenEvent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="com_ricoh_livestreaming_Client_OnRemoveRemoteConnection" data-uid="com.ricoh.livestreaming.Client.OnRemoveRemoteConnection">OnRemoveRemoteConnection</h4>
+  <div class="markdown level1 summary"><p>Called when remote connection removed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;LSRemoveRemoteConnectionEvent&gt; OnRemoveRemoteConnection</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="com.ricoh.livestreaming.LSRemoveRemoteConnectionEvent.html">LSRemoveRemoteConnectionEvent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="com_ricoh_livestreaming_Client_OnUpdateConnectionsStatus" data-uid="com.ricoh.livestreaming.Client.OnUpdateConnectionsStatus">OnUpdateConnectionsStatus</h4>
+  <div class="markdown level1 summary"><p>Called when ConnectionsStatus has been updated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;LSUpdateConnectionsStatusEvent&gt; OnUpdateConnectionsStatus</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="com.ricoh.livestreaming.LSUpdateConnectionsStatusEvent.html">LSUpdateConnectionsStatusEvent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="com_ricoh_livestreaming_Client_OnUpdateMute" data-uid="com.ricoh.livestreaming.Client.OnUpdateMute">OnUpdateMute</h4>
+  <div class="markdown level1 summary"><p>Called when remote track mute state updated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;LSUpdateMuteEvent&gt; OnUpdateMute</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="com.ricoh.livestreaming.LSUpdateMuteEvent.html">LSUpdateMuteEvent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="com_ricoh_livestreaming_Client_OnUpdateRecording" data-uid="com.ricoh.livestreaming.Client.OnUpdateRecording">OnUpdateRecording</h4>
+  <div class="markdown level1 summary"><p>Called when the recording status of Room is changed.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;LSUpdateRecordingEvent&gt; OnUpdateRecording</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="com.ricoh.livestreaming.LSUpdateRecordingEvent.html">LSUpdateRecordingEvent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="com_ricoh_livestreaming_Client_OnUpdateRemoteConnection" data-uid="com.ricoh.livestreaming.Client.OnUpdateRemoteConnection">OnUpdateRemoteConnection</h4>
+  <div class="markdown level1 summary"><p>Called when update metadata of remote connection</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;LSUpdateRemoteConnectionEvent&gt; OnUpdateRemoteConnection</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="com.ricoh.livestreaming.LSUpdateRemoteConnectionEvent.html">LSUpdateRemoteConnectionEvent</a>&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h4 id="com_ricoh_livestreaming_Client_OnUpdateRemoteTrack" data-uid="com.ricoh.livestreaming.Client.OnUpdateRemoteTrack">OnUpdateRemoteTrack</h4>
+  <div class="markdown level1 summary"><p>Called when remote track updated.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public event EventHandler&lt;LSUpdateRemoteTrackEvent&gt; OnUpdateRemoteTrack</code></pre>
+  </div>
+  <h5 class="eventType">Event Type</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.EventHandler</span>&lt;<a class="xref" href="com.ricoh.livestreaming.LSUpdateRemoteTrackEvent.html">LSUpdateRemoteTrackEvent</a>&gt;</td>
+        <td></td>
       </tr>
     </tbody>
   </table>

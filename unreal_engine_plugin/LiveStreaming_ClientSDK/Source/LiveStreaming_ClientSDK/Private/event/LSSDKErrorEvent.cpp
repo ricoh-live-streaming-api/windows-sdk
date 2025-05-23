@@ -31,3 +31,8 @@ FString ULSSDKErrorEvent::ToReportString() const
     checkf(_sdkErrorEvent, TEXT("SDKErrorEvent is null."));
     return FString(_sdkErrorEvent->ToReportString());
 }
+
+bool ULSSDKErrorEvent::GetWithDisconnection() const
+{
+    return _sdkErrorEvent->get_WithDisconnection();
+}

@@ -116,7 +116,7 @@ public class AppBehaviour : BehaviorBase
         bitrateEdit.text = Secrets.GetInstance().VideoBitrate.ToString();
 
         HasLocalVideoTrack = true;
-        InitializeClient(new ClientListener(this));
+        InitializeClient();
         InitializeDevice();
 
         // Set MuteType dropdown.
@@ -358,99 +358,91 @@ public class AppBehaviour : BehaviorBase
         });
     }
 
-    private class ClientListener : ClientListenerBase
+    protected override void ClearRemoteTracks()
     {
-        public ClientListener(AppBehaviour app) : base(app) { }
-
-        protected override void ClearRemoteTracks()
+        foreach (var view in remoteTracks.Values)
         {
-            AppBehaviour appBehaviour = app as AppBehaviour;
-            foreach (var view in appBehaviour.remoteTracks.Values)
-            {
-                MonoBehaviour.Destroy(view.GetTexture());
-                Destroy(view.GetContent());
-            }
-
-            appBehaviour.remoteTracks.Clear();
-            appBehaviour.remoteAudioTracks.Clear();
-            appBehaviour.RenderLocalVideoTrack = null;
+            MonoBehaviour.Destroy(view.GetTexture());
+            Destroy(view.GetContent());
         }
 
-        protected override void AddRemoteTrack(string connectionId, MediaStream stream, MediaStreamTrack mediaStreamTrack, Dictionary<string, object> metadata)
+        remoteTracks.Clear();
+        remoteAudioTracks.Clear();
+        RenderLocalVideoTrack = null;
+    }
+
+    protected override void AddRemoteTrack(string connectionId, MediaStream stream, MediaStreamTrack mediaStreamTrack, Dictionary<string, object> metadata)
+    {
+        if (mediaStreamTrack is VideoTrack videoTrack)
         {
-            AppBehaviour appBehaviour = app as AppBehaviour;
-            if (mediaStreamTrack is VideoTrack videoTrack)
+            videoTrack.AddSink();
+            videoTrack.SetEventListener(new VideoTrackListener(this));
+
+            var content = Instantiate(baseContent, Vector3.zero, Quaternion.identity);
+            content.name = string.Format("track_{0}", videoTrack.Id);
+            content.transform.SetParent(scrollViewContent.transform, false);
+            content.SetActive(true);
+
+            // すでにconnectionIdと紐づいたViewがある場合は破棄する
+            RemoveRemoteTrackByConnectionId(connectionId);
+
+            var remoteView = new RemoteView(connectionId, videoTrack, content, stream.Id, metadata)
             {
-                videoTrack.AddSink();
-                videoTrack.SetEventListener(new VideoTrackListener(appBehaviour));
+                OnVideoReceiveToggleChangedAction = OnVideoRequirementChanged
+            };
 
-                var content = Instantiate(appBehaviour.baseContent, Vector3.zero, Quaternion.identity);
-                content.name = string.Format("track_{0}", videoTrack.Id);
-                content.transform.SetParent(appBehaviour.scrollViewContent.transform, false);
-                content.SetActive(true);
+            // SFU のみ Video 受信選択用 UI を表示
+            remoteView.SetVideoReceiveEnabled(RoomType == RoomSpec.Type.Sfu);
 
-                // すでにconnectionIdと紐づいたViewがある場合は破棄する
-                RemoveRemoteTrackByConnectionId(connectionId);
+            remoteTracks.Add(videoTrack.Id, remoteView);
 
-                var remoteView = new RemoteView(connectionId, videoTrack, content, stream.Id, metadata)
-                {
-                    OnVideoReceiveToggleChangedAction = appBehaviour.OnVideoRequirementChanged
-                };
-
-                // SFU のみ Video 受信選択用 UI を表示
-                remoteView.SetVideoReceiveEnabled(appBehaviour.RoomType == RoomSpec.Type.Sfu);
-
-                appBehaviour.remoteTracks.Add(videoTrack.Id, remoteView);
-
-                // 同じStreamIDのAudioTrackを探す。
-                // 見つかったらAudioTrackをRemoteViewに設定する
-                if (appBehaviour.remoteAudioTracks.ContainsKey(stream.Id))
-                {
-                    remoteView.SetAudioTrack(appBehaviour.remoteAudioTracks[stream.Id]);
-                    appBehaviour.remoteAudioTracks.Remove(stream.Id);
-                }
-            }
-            else if (mediaStreamTrack is AudioTrack audioTrack)
+            // 同じStreamIDのAudioTrackを探す。
+            // 見つかったらAudioTrackをRemoteViewに設定する
+            if (remoteAudioTracks.ContainsKey(stream.Id))
             {
-                // 既に作成済みのRemoteViewから同じStreamIDのVideoTrackを探す。
-                // 見つかったらAudioTrackをRemoteViewに設定する
-                bool foundView = false;
-                foreach (var view in appBehaviour.remoteTracks.Values)
-                {
-                    if (view.GetStreamId() == stream.Id)
-                    {
-                        view.SetAudioTrack(audioTrack);
-                        foundView = true;
-                        break;
-                    }
-                }
-
-                if (!foundView)
-                {
-                    appBehaviour.remoteAudioTracks.Add(stream.Id, audioTrack);
-                }
+                remoteView.SetAudioTrack(remoteAudioTracks[stream.Id]);
+                remoteAudioTracks.Remove(stream.Id);
             }
         }
-
-        protected override void RemoveRemoteTrackByConnectionId(string connectionId)
+        else if (mediaStreamTrack is AudioTrack audioTrack)
         {
-            AppBehaviour appBehaviour = app as AppBehaviour;
-            foreach (var trackId in appBehaviour.remoteTracks.Keys)
+            // 既に作成済みのRemoteViewから同じStreamIDのVideoTrackを探す。
+            // 見つかったらAudioTrackをRemoteViewに設定する
+            bool foundView = false;
+            foreach (var view in remoteTracks.Values)
             {
-                var remoteView = appBehaviour.remoteTracks[trackId];
-                if (remoteView.GetConnectionId() == connectionId)
+                if (view.GetStreamId() == stream.Id)
                 {
-                    MonoBehaviour.Destroy(remoteView.GetTexture());
-                    appBehaviour.RemoveRemoteView(trackId);
+                    view.SetAudioTrack(audioTrack);
+                    foundView = true;
                     break;
                 }
             }
-        }
 
-        protected override VideoTrack.IListener CreateVideoTrackListener(BehaviorBase app)
-        {
-            return new VideoTrackListener(app as AppBehaviour);
+            if (!foundView)
+            {
+                remoteAudioTracks.Add(stream.Id, audioTrack);
+            }
         }
+    }
+
+    protected override void RemoveRemoteTrackByConnectionId(string connectionId)
+    {
+        foreach (var trackId in remoteTracks.Keys)
+        {
+            var remoteView = remoteTracks[trackId];
+            if (remoteView.GetConnectionId() == connectionId)
+            {
+                MonoBehaviour.Destroy(remoteView.GetTexture());
+                RemoveRemoteView(trackId);
+                break;
+            }
+        }
+    }
+
+    protected override VideoTrack.IListener CreateVideoTrackListener(BehaviorBase app)
+    {
+        return new VideoTrackListener(app as AppBehaviour);
     }
 
     private void RemoveRemoteView(string trackId)

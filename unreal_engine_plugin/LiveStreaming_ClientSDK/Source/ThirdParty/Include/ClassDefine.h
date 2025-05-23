@@ -45,8 +45,10 @@ class LSRemoveRemoteConnectionEvent;
 class LSUpdateRemoteConnectionEvent;
 class LSUpdateRemoteTrackEvent;
 class LSUpdateMuteEvent;
-class LSChangeStabilityEvent;
+class LSChangeMediaStabilityEvent;
 class LSUpdateConnectionsStatusEvent;
+class LSUpdateRecordingEvent;
+class LSMediaOpenEvent;
 
 /// <summary>
 /// 音声を追加出力するためのコールバック関数
@@ -108,6 +110,7 @@ class SDKErrorEvent
 public:
 	virtual ErrorDetail* get_Detail() = 0;
 	virtual const char* ToReportString() = 0;
+	virtual bool get_WithDisconnection() = 0;
 	virtual ~SDKErrorEvent() {};
 };
 
@@ -520,6 +523,13 @@ public:
 	virtual ~ConnectionsVideoStatus() {};
 };
 
+class RecordingStatus
+{
+public:
+	virtual bool get_InRecording() = 0;
+	virtual ~RecordingStatus() {};
+};
+
 class LSConnectingEvent {};
 
 class LSOpenEvent
@@ -590,7 +600,7 @@ public:
 	virtual MuteType get_MuteType() = 0;
 };
 
-class LSChangeStabilityEvent
+class LSChangeMediaStabilityEvent
 {
 public:
 	virtual const char* get_ConnectionId() = 0;
@@ -602,6 +612,13 @@ class LSUpdateConnectionsStatusEvent
 public:
 	virtual ConnectionsStatus* get_ConnectionsStatus() = 0;
 };
+
+class LSUpdateRecordingEvent
+{
+public:
+	virtual RecordingStatus* get_RecordingStatus() = 0;
+};
+class LSMediaOpenEvent {};
 
 /// <summary>
 /// com::ricoh::livestreaming::IClientListenerのWrapper
@@ -624,14 +641,14 @@ public:
 	/// <summary>
 	/// Called when the <see cref="Client"/> start to disconnect from the server.
 	/// </summary>
-	/// <param name="lSClosingEvent"></param>
-	virtual void OnClosing(LSClosingEvent* lSClosingEvent) = 0;
+	/// <param name="lsClosingEvent"></param>
+	virtual void OnClosing(LSClosingEvent* lsClosingEvent) = 0;
 
 	/// <summary>
 	/// Called when the <see cref="Client"/> is disconnected from the server.
 	/// </summary>
-	/// <param name="lSCloseEvent"></param>
-	virtual void OnClosed(LSCloseEvent* lSCloseEvent) = 0;
+	/// <param name="lsCloseEvent"></param>
+	virtual void OnClosed(LSCloseEvent* lsCloseEvent) = 0;
 
 	/// <summary>
 	/// Called when new local track added.
@@ -684,14 +701,26 @@ public:
 	/// <summary>
 	/// Called when stability of the connection changed.
 	/// </summary>
-	/// <param name="lsChangeStabilityEvent"></param>
-	virtual void OnChangeStability(LSChangeStabilityEvent* lsChangeStabilityEvent) = 0;
+	/// <param name="lsChangeMediaStabilityEvent"></param>
+	virtual void OnChangeMediaStability(LSChangeMediaStabilityEvent* lsChangeMediaStabilityEvent) = 0;
 
 	/// <summary>
 	/// Called when ConnectionsStatus has been updated.
 	/// </summary>
-	/// <param name="lSUpdateConnectionsStatusEvent"></param>
-	virtual void OnUpdateConnectionsStatus(LSUpdateConnectionsStatusEvent* lSUpdateConnectionsStatusEvent) = 0;
+	/// <param name="lsUpdateConnectionsStatusEvent"></param>
+	virtual void OnUpdateConnectionsStatus(LSUpdateConnectionsStatusEvent* lsUpdateConnectionsStatusEvent) = 0;
+
+	/// <summary>
+	/// Called when the recording status of Room is changed.
+	/// </summary>
+	/// <param name="lsUpdateRecordingEvent"></param>
+	virtual void OnUpdateRecording(LSUpdateRecordingEvent* lsUpdateRecordingEvent) = 0;
+
+	/// <summary>
+	/// Called when the media connection established with server.
+	/// </summary>
+	/// <param name="lsMediaOpenEvent"></param>
+	virtual void OnMediaOpen(LSMediaOpenEvent* lsMediaOpenEvent) = 0;
 
 	virtual ~IClientListener() {};
 };

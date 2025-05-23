@@ -55,7 +55,7 @@ public class Watch : BehaviorBase
         roomIDEdit.text = (string.IsNullOrEmpty(userData.RoomID) ? Secrets.GetInstance().RoomId : userData.RoomID);
 
         HasLocalVideoTrack = false;
-        InitializeClient(new ClientListener(this));
+        InitializeClient();
         InitializeDevice();
     }
 
@@ -195,36 +195,31 @@ public class Watch : BehaviorBase
         });
     }
 
-    private class ClientListener : ClientListenerBase
+    protected override void ClearRemoteTracks()
     {
-        public ClientListener(Watch unityCamera) : base(unityCamera) { }
+        renderRemoteVideoTrack = null;
+    }
 
-        protected override void ClearRemoteTracks()
+    protected override void AddRemoteTrack(string connectionId, MediaStream stream, MediaStreamTrack mediaStreamTrack, Dictionary<string, object> metadata)
+    {
+        if (mediaStreamTrack is VideoTrack videoTrack)
         {
-            (app as Watch).renderRemoteVideoTrack = null;
-        }
+            videoTrack.AddSink();
+            videoTrack.SetEventListener(new VideoTrackListener(this));
 
-        protected override void AddRemoteTrack(string connectionId, MediaStream stream, MediaStreamTrack mediaStreamTrack, Dictionary<string, object> metadata)
-        {
-            if (mediaStreamTrack is VideoTrack videoTrack)
-            {
-                videoTrack.AddSink();
-                videoTrack.SetEventListener(new VideoTrackListener(app));
-
-                (app as Watch).renderRemoteVideoTrack = videoTrack;
-                (app as Watch).remoteVideoTrackMetadata = metadata;
-            }
+            renderRemoteVideoTrack = videoTrack;
+            remoteVideoTrackMetadata = metadata;
         }
+    }
 
-        protected override void RemoveRemoteTrackByConnectionId(string connectionId)
-        {
-            ClearRemoteTracks();
-        }
+    protected override void RemoveRemoteTrackByConnectionId(string connectionId)
+    {
+        ClearRemoteTracks();
+    }
 
-        protected override VideoTrack.IListener CreateVideoTrackListener(BehaviorBase app)
-        {
-            return new VideoTrackListener(app);
-        }
+    protected override VideoTrack.IListener CreateVideoTrackListener(BehaviorBase app)
+    {
+        return new VideoTrackListener(this);
     }
 
     private class VideoTrackListener : VideoTrack.IListener

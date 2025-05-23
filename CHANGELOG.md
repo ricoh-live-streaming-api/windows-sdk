@@ -1,5 +1,40 @@
 # CHANGELOG
 
+## v3.1.0
+- API 変更
+  - **破壊的変更** C#において ClientListener インタフェースを使っていたイベント購読形式を、Client クラスのイベント構文で受け取る形式に変更しました
+    - 例えば `IClientListener#OnConnecting(LSConnectingEvent)` は `Client#OnConnecting` イベントハンドラを登録する形式になります。他のイベントに対しても同様に対応する必要があります
+    - ただし `IClientListener#OnChangeStability(LSChangeStabilityEvent lSChangeStabilityEvent)` は `Client#OnChangeMediaStability`に変更になります
+  - **破壊的変更** 下記の WebRTC ログに関わる API を廃止しました
+    - `WebrtcLog#Create(string path, string prefix, uint size)`
+    - `WebrtcLog#Destroy()`
+  - (SFURoom のみ) SFU とのメディア接続が確立した際に発行する[イベント](https://livestreaming.ricoh/docs/clientsdk-api-external-specification/#イベント)である OnMediaOpen を追加しました。[GetStats](https://livestreaming.ricoh/docs/clientsdk-api-external-specification/#getstats) が実行可能か判断するトリガーや、以降 [53719 ConnectionCreateTimeout](https://livestreaming.ricoh/docs/clientsdk-error-specification/#networkerror) が発生しないことの確認などに使用できます
+  - Room のクラウド録画状態を通知する [OnUpdateRecording イベント](https://livestreaming.ricoh/docs/clientsdk-api-external-specification/#イベント)を追加しました
+  - onError イベントに切断を伴うエラーかどうかを判定する withDisconnection パラメータを追加しました
+  - 映像コーデックが使用可能かを判定する API を追加しました
+    - `CodecUtil#IsH265Supported()`
+    - `CodecUtil#IsAv1EncoderSupported()`
+    - `CodecUtil#IsAv1DecoderSupported()`
+  - Unreal Engine プラグインの `LSSDKErrorEvent` クラスに `GetWithDisconnection()` メソッドを追加しました
+- SDK 修正
+  - シグナリングサーバへの WebSocket リクエスト前に行われる HTTP リクエストが失敗した場合に通知される [NetworkError の追加](https://livestreaming.ricoh/docs/clientsdk-error-specification/#networkerror)を行いました
+    - HTTP リクエストに失敗した場合のエラーコード 54003 PreConnectError
+    - HTTP リクエスト中に Client#disconnect が呼ばれた場合のエラーコード 53005 CanceledByApplication
+  - Intel VPL のハードウェアアクセラレータ機能を利用した H.264、H.265、AV1 のエンコーダとデコーダに対応しました
+  - `Client#SetLibWebrtcLogOption(LibWebrtcLogOption option)` の logLevel のデフォルト値が仕様と異なっている問題を修正しました
+  - `Client#SetLibWebrtcLogOption(LibWebrtcLogOption option)` が出力するログファイルの大きさが maxTotalFileSize と異なっている問題を修正しました
+  - P2P の複数接続時に Client#ReplaceMediaStreamTrack や Hardmute を実施した場合、InternalError が発生する問題を修正しました
+  - P2P にて Connect と同時に audio の hardmute ができない問題を修正しました
+  - ICE success のログ出力を peer connection 単位で行っていない問題を修正しました
+  - Unreal Engine プラグインでログが文字化けすることがある問題を修正しました
+  - WebRTC のバージョンを m128.6613.2.0 に更新しました
+  - 依存ライブラリのバージョンを更新しました
+- サンプルアプリ修正
+  - Video Codec ドロップダウンリストに H.265、AV1 が表示されるように修正しました
+  - 対応する Unity のバージョンを LTS 2022.3.45f1 に更新しました
+  - 依存ライブラリを Unity の Package Manager からインストールするように修正しました
+  - 依存ライブラリバージョンについてメジャーバージョンのアップデートを含む更新を行いました
+
 ## v2.2.0
 - API 変更
   - NetworkErrorに SFU が WebRTC 接続を切断判定した場合のエラー 53004 ConnectionClosedByServer を追加しました

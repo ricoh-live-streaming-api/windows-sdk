@@ -10,8 +10,7 @@ RICOH Live Streaming Serviceは、映像/音声などのメディアデータや
 詳細は下記Webサイトをご確認ください。
 
 * サービスサイト: https://livestreaming.ricoh/
-* ソフトウェア開発者向けサイト: https://api.livestreaming.ricoh/
-* アカウント登録: https://console.livestreaming.mw.smart-integration.ricoh.com/login/register
+* トライアル登録: https://console.livestreaming.mw.smart-integration.ricoh.com/login/register
 * ソフトウェア使用許諾契約書 : [Software License Agreement](SoftwareLicenseAgreement.txt)
 * NOTICE: This package includes SDK and sample application(s) for "RICOH Live Streaming Service".
 At this moment, we provide API license agreement / software license agreement only in Japanese.
@@ -27,12 +26,11 @@ At this moment, we provide API license agreement / software license agreement on
 
 ## ライブラリの場所
 
-- Unityプロジェクト [unity_app\Assets\Plugins\x86_64](unity_app/Assets/Plugins/x86_64) 配下の下記dllが対象
+- Unityプロジェクト [unity_app\Assets\Plugins\x86_64](unity_app/Assets/Plugins/x86_64) 配下の下記dllが対象  
+  依存ライブラリのインストールについては、[チュートリアル](doc/articles/tutorial.html) をご参照ください
 
   - ClientSDK.dll
   - webrtc_wrapper.dll
-  - log4net.dll
-  - Newtonsoft.Json.dll
   - websocket-sharp.dll
 
 - UEプラグイン [unreal_engine_plugin\LiveStreaming_ClientSDK\Source\ThirdParty\Bin\Win64](unreal_engine_plugin/LiveStreaming_ClientSDK/Source/ThirdParty/Bin/Win64) 配下の下記dllが対象
@@ -44,11 +42,13 @@ At this moment, we provide API license agreement / software license agreement on
   - log4net.dll
   - Newtonsoft.Json.dll
   - websocket-sharp.dll
+  - Microsoft.Extensions.Http.dll と依存ライブラリ一式
 
 ## 依存ライブラリ
-- log4net : v2.0.15
-- Newtonsoft.Json : v13.0.1
+- log4net : v3.0.3
+- Newtonsoft.Json : v13.0.3
 - WebSocketSharp : v1.0.2
+- Microsoft.Extensions.Http : v9.0.1
 
 ## バージョンアップ時の更新方法
 - dll 一式を差し替えてください

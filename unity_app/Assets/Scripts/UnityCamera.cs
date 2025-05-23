@@ -75,7 +75,7 @@ public class UnityCamera : BehaviorBase
         roomIDEdit.text = (string.IsNullOrEmpty(userData.RoomID) ? Secrets.GetInstance().RoomId : userData.RoomID);
 
         HasLocalVideoTrack = true;
-        InitializeClient(new ClientListener(this));
+        InitializeClient();
         InitializeDevice();
 
         StartCoroutine(Render());
@@ -304,91 +304,83 @@ public class UnityCamera : BehaviorBase
         }
     }
 
-    private class ClientListener : ClientListenerBase
+    protected override void ClearRemoteTracks()
     {
-        public ClientListener(UnityCamera unityCamera) : base(unityCamera) { }
-
-        protected override void ClearRemoteTracks()
+        foreach (var view in remoteTracks.Values)
         {
-            UnityCamera unityCamera = app as UnityCamera;
-            foreach (var view in unityCamera.remoteTracks.Values)
-            {
-                MonoBehaviour.Destroy(view.GetTexture());
-                Destroy(view.GetContent());
-            }
-
-            unityCamera.remoteTracks.Clear();
-            unityCamera.remoteAudioTracks.Clear();
-            unityCamera.RenderLocalVideoTrack = null;
+            MonoBehaviour.Destroy(view.GetTexture());
+            Destroy(view.GetContent());
         }
 
-        protected override void AddRemoteTrack(string connectionId, MediaStream stream, MediaStreamTrack mediaStreamTrack, Dictionary<string, object> metadata)
+        remoteTracks.Clear();
+        remoteAudioTracks.Clear();
+        RenderLocalVideoTrack = null;
+    }
+
+    protected override void AddRemoteTrack(string connectionId, MediaStream stream, MediaStreamTrack mediaStreamTrack, Dictionary<string, object> metadata)
+    {
+        if (mediaStreamTrack is VideoTrack videoTrack)
         {
-            UnityCamera unityCamera = app as UnityCamera;
-            if (mediaStreamTrack is VideoTrack videoTrack)
+            videoTrack.AddSink();
+            videoTrack.SetEventListener(new VideoTrackListener(this));
+
+            var content = Instantiate(baseContent, Vector3.zero, Quaternion.identity);
+            content.name = string.Format("track_{0}", videoTrack.Id);
+            content.transform.SetParent(scrollViewContent.transform, false);
+            content.SetActive(true);
+
+            // すでにconnectionIdと紐づいたViewがある場合は破棄する
+            RemoveRemoteTrackByConnectionId(connectionId);
+
+            var remoteView = new RemoteView(connectionId, videoTrack, content, stream.Id, metadata);
+            remoteTracks.Add(videoTrack.Id, remoteView);
+            // 同じStreamIDのAudioTrackを探す。
+            // 見つかったらAudioTrackをRemoteViewに設定する
+            if (remoteAudioTracks.ContainsKey(stream.Id))
             {
-                videoTrack.AddSink();
-                videoTrack.SetEventListener(new VideoTrackListener(unityCamera));
-
-                var content = Instantiate(unityCamera.baseContent, Vector3.zero, Quaternion.identity);
-                content.name = string.Format("track_{0}", videoTrack.Id);
-                content.transform.SetParent(unityCamera.scrollViewContent.transform, false);
-                content.SetActive(true);
-
-                // すでにconnectionIdと紐づいたViewがある場合は破棄する
-                RemoveRemoteTrackByConnectionId(connectionId);
-
-                var remoteView = new RemoteView(connectionId, videoTrack, content, stream.Id, metadata);
-                unityCamera.remoteTracks.Add(videoTrack.Id, remoteView);
-                // 同じStreamIDのAudioTrackを探す。
-                // 見つかったらAudioTrackをRemoteViewに設定する
-                if (unityCamera.remoteAudioTracks.ContainsKey(stream.Id))
-                {
-                    remoteView.SetAudioTrack(unityCamera.remoteAudioTracks[stream.Id]);
-                    unityCamera.remoteAudioTracks.Remove(stream.Id);
-                }
-            }
-            else if (mediaStreamTrack is AudioTrack audioTrack)
-            {
-                // 既に作成済みのRemoteViewから同じStreamIDのVideoTrackを探す。
-                // 見つかったらAudioTrackをRemoteViewに設定する
-                bool foundView = false;
-                foreach (var view in unityCamera.remoteTracks.Values)
-                {
-                    if (view.GetStreamId() == stream.Id)
-                    {
-                        view.SetAudioTrack(audioTrack);
-                        foundView = true;
-                        break;
-                    }
-                }
-
-                if (!foundView)
-                {
-                    unityCamera.remoteAudioTracks.Add(stream.Id, audioTrack);
-                }
+                remoteView.SetAudioTrack(remoteAudioTracks[stream.Id]);
+                remoteAudioTracks.Remove(stream.Id);
             }
         }
-
-        protected override void RemoveRemoteTrackByConnectionId(string connectionId)
+        else if (mediaStreamTrack is AudioTrack audioTrack)
         {
-            UnityCamera unityCamera = app as UnityCamera;
-            foreach (var trackId in unityCamera.remoteTracks.Keys)
+            // 既に作成済みのRemoteViewから同じStreamIDのVideoTrackを探す。
+            // 見つかったらAudioTrackをRemoteViewに設定する
+            bool foundView = false;
+            foreach (var view in remoteTracks.Values)
             {
-                var remoteView = unityCamera.remoteTracks[trackId];
-                if (remoteView.GetConnectionId() == connectionId)
+                if (view.GetStreamId() == stream.Id)
                 {
-                    MonoBehaviour.Destroy(remoteView.GetTexture());
-                    unityCamera.RemoveRemoteView(trackId);
+                    view.SetAudioTrack(audioTrack);
+                    foundView = true;
                     break;
                 }
             }
-        }
 
-        protected override VideoTrack.IListener CreateVideoTrackListener(BehaviorBase app)
-        {
-            return new VideoTrackListener(app as UnityCamera);
+            if (!foundView)
+            {
+                remoteAudioTracks.Add(stream.Id, audioTrack);
+            }
         }
+    }
+
+    protected override void RemoveRemoteTrackByConnectionId(string connectionId)
+    {
+        foreach (var trackId in remoteTracks.Keys)
+        {
+            var remoteView = remoteTracks[trackId];
+            if (remoteView.GetConnectionId() == connectionId)
+            {
+                MonoBehaviour.Destroy(remoteView.GetTexture());
+                RemoveRemoteView(trackId);
+                break;
+            }
+        }
+    }
+
+    protected override VideoTrack.IListener CreateVideoTrackListener(BehaviorBase app)
+    {
+        return new VideoTrackListener(app as UnityCamera);
     }
 
     private class VideoTrackListener : VideoTrack.IListener

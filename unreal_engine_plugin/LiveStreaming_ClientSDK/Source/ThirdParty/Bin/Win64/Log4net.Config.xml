@@ -3,6 +3,7 @@
   <log4net>
     <appender name="main" type="log4net.Appender.RollingFileAppender" >
       <File type="log4net.Util.PatternString" value="%property{LogDir}/%property{LogName}.log" />
+      <Encoding value="utf-16" />
       <StaticLogFileName value="false" />
       <RollingStyle value="Size" />
       <AppendToFile value="true" />

@@ -72,12 +72,22 @@ void ULSClientListener::OnUpdateMute(LSUpdateMuteEvent* lsUpdateMuteEvent)
     BroadcastEvent<FUpdateMuteEventDelegate, ULSUpdateMuteEvent, LSUpdateMuteEvent>(UpdateMuteEventDelegate, lsUpdateMuteEvent);
 }
 
-void ULSClientListener::OnChangeStability(LSChangeStabilityEvent* lsChangeStabilityEvent)
+void ULSClientListener::OnChangeMediaStability(LSChangeMediaStabilityEvent* lsChangeMediaStabilityEvent)
 {
-    BroadcastEvent<FChangeStabilityEventDelegate, ULSChangeStabilityEvent, LSChangeStabilityEvent>(ChangeStabilityEventDelegate, lsChangeStabilityEvent);
+    BroadcastEvent<FChangeMediaStabilityEventDelegate, ULSChangeMediaStabilityEvent, LSChangeMediaStabilityEvent>(ChangeMediaStabilityEventDelegate, lsChangeMediaStabilityEvent);
 }
 
 void ULSClientListener::OnUpdateConnectionsStatus(LSUpdateConnectionsStatusEvent* lsUpdateConnectionsStatusEvent)
 {
     BroadcastEvent<FUpdateConnectionsStatusEventDelegate, ULSUpdateConnectionsStatusEvent, LSUpdateConnectionsStatusEvent>(UpdateConnectionsStatusEventDelegate, lsUpdateConnectionsStatusEvent);
+}
+
+void ULSClientListener::OnUpdateRecording(LSUpdateRecordingEvent* lsUpdateRecordingEvent)
+{
+    BroadcastEvent<FUpdateRecordingEventDelegate, ULSUpdateRecordingEvent, LSUpdateRecordingEvent>(UpdateRecordingEventDelegate, lsUpdateRecordingEvent);
+}
+
+void ULSClientListener::OnMediaOpen(LSMediaOpenEvent* lsMediaOpenEvent)
+{
+    BroadcastEvent<FMediaOpenEventDelegate, ULSMediaOpenEvent, LSMediaOpenEvent>(MediaOpenEventDelegate, lsMediaOpenEvent);
 }

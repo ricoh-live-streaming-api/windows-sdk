@@ -60,13 +60,13 @@ enum class IceTransportPolicy
 enum class Stability 
 {
     /// <summary>
-    /// ICE is stable.
+    /// Media connection is stable.
     /// </summary>
-    IceStable,
+    Stable,
     /// <summary>
-    /// ICE is unstable.
+    /// Media connection is unstable.
     /// </summary>
-    IceUnstable
+    Unstable
 };
 
 enum class MuteType

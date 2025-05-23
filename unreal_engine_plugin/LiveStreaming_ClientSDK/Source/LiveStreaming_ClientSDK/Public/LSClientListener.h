@@ -16,8 +16,10 @@
 #include "LSUpdateRemoteConnectionEvent.h"
 #include "LSUpdateRemoteTrackEvent.h"
 #include "LSUpdateMuteEvent.h"
-#include "LSChangeStabilityEvent.h"
+#include "LSChangeMediaStabilityEvent.h"
 #include "LSUpdateConnectionsStatusEvent.h"
+#include "LSUpdateRecordingEvent.h"
+#include "LSMediaOpenEvent.h"
 #include "CoreMinimal.h"
 #include "UObject/NoExportTypes.h"
 #include "LSClientListener.generated.h"
@@ -34,8 +36,10 @@ DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FSDKErrorEventDelegate, ULSSDKErrorE
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUpdateRemoteConnectionEventDelegate, ULSUpdateRemoteConnectionEvent*, lsUpdateRemoteConnectionEvent);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUpdateRemoteTrackEventDelegate, ULSUpdateRemoteTrackEvent*, lsUpdateRemoteTrackEvent);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUpdateMuteEventDelegate, ULSUpdateMuteEvent*, lsUpdateMuteEvent);
-DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChangeStabilityEventDelegate, ULSChangeStabilityEvent*, lsChangeStabilityEvent);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FChangeMediaStabilityEventDelegate, ULSChangeMediaStabilityEvent*, lsChangeMediaStabilityEvent);
 DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUpdateConnectionsStatusEventDelegate, ULSUpdateConnectionsStatusEvent*, lsUpdateConnectionsStatusEvent);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FUpdateRecordingEventDelegate, ULSUpdateRecordingEvent*, lsUpdateRecordingEvent);
+DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam(FMediaOpenEventDelegate, ULSMediaOpenEvent*, lsMediaOpenEvent);
 
 UCLASS(BlueprintType, Blueprintable)
 class LIVESTREAMING_CLIENTSDK_API ULSClientListener : public UObject
@@ -83,10 +87,16 @@ public:
     FUpdateMuteEventDelegate UpdateMuteEventDelegate;
 
     UPROPERTY(BlueprintAssignable, Category = "RICOH Live Streaming Client SDK for Windows | LSClientListener")
-    FChangeStabilityEventDelegate ChangeStabilityEventDelegate;
+    FChangeMediaStabilityEventDelegate ChangeMediaStabilityEventDelegate;
 
     UPROPERTY(BlueprintAssignable, Category = "RICOH Live Streaming Client SDK for Windows | LSClientListener")
     FUpdateConnectionsStatusEventDelegate UpdateConnectionsStatusEventDelegate;
+
+    UPROPERTY(BlueprintAssignable, Category = "RICOH Live Streaming Client SDK for Windows | LSClientListener")
+    FUpdateRecordingEventDelegate UpdateRecordingEventDelegate;
+
+    UPROPERTY(BlueprintAssignable, Category = "RICOH Live Streaming Client SDK for Windows | LSClientListener")
+    FMediaOpenEventDelegate MediaOpenEventDelegate;
 
 protected:
     virtual void OnConnecting(LSConnectingEvent* lsConnectingEvent);
@@ -101,8 +111,10 @@ protected:
     virtual void OnUpdateRemoteConnection(LSUpdateRemoteConnectionEvent* lsUpdateRemoteConnectionEvent);
     virtual void OnUpdateRemoteTrack(LSUpdateRemoteTrackEvent* lsUpdateRemoteTrackEvent);
     virtual void OnUpdateMute(LSUpdateMuteEvent* lsUpdateMuteEvent);
-    virtual void OnChangeStability(LSChangeStabilityEvent* lsChangeStabilityEvent);
+    virtual void OnChangeMediaStability(LSChangeMediaStabilityEvent* lsChangeMediaStabilityEvent);
     virtual void OnUpdateConnectionsStatus(LSUpdateConnectionsStatusEvent* lsUpdateConnectionsStatusEvent);
+    virtual void OnUpdateRecording(LSUpdateRecordingEvent* lsUpdateRecordingEvent);
+    virtual void OnMediaOpen(LSMediaOpenEvent* lSMediaOpenEvent);
 
 private:
     class ClientListenerImpl : public IClientListener
@@ -121,8 +133,10 @@ private:
         virtual void OnUpdateRemoteConnection(LSUpdateRemoteConnectionEvent* lsUpdateRemoteConnectionEvent) override { _parent->OnUpdateRemoteConnection(lsUpdateRemoteConnectionEvent); };
         virtual void OnUpdateRemoteTrack(LSUpdateRemoteTrackEvent* lsUpdateRemoteTrackEvent) override { _parent->OnUpdateRemoteTrack(lsUpdateRemoteTrackEvent); };
         virtual void OnUpdateMute(LSUpdateMuteEvent* lsUpdateMuteEvent) override { _parent->OnUpdateMute(lsUpdateMuteEvent); };
-        virtual void OnChangeStability(LSChangeStabilityEvent* lsChangeStabilityEvent) override { _parent->OnChangeStability(lsChangeStabilityEvent); };
+        virtual void OnChangeMediaStability(LSChangeMediaStabilityEvent* lsChangeMediaStabilityEvent) override { _parent->OnChangeMediaStability(lsChangeMediaStabilityEvent); };
         virtual void OnUpdateConnectionsStatus(LSUpdateConnectionsStatusEvent* lsUpdateConnectionsStatusEvent) override { _parent->OnUpdateConnectionsStatus(lsUpdateConnectionsStatusEvent); };
+        virtual void OnUpdateRecording(LSUpdateRecordingEvent* lsUpdateRecordingEvent) override { _parent->OnUpdateRecording(lsUpdateRecordingEvent); };
+        virtual void OnMediaOpen(LSMediaOpenEvent* lSMediaOpenEvent) override { _parent->OnMediaOpen(lSMediaOpenEvent); };
 
     private:
         ULSClientListener* _parent;

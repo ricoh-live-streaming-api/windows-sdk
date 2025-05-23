@@ -1,4 +1,75 @@
 # 移行ガイド
+## v3.1.0
+* v3.1.0 より下記の通り変更となりましたので、移行をお願いします
+  * [RICOH Live Streaming Client SDK for Windows Unity](unity_app/README.md) で使用する依存ライブラリの扱いが変更となりました
+    * 旧
+      * [unity_app\Assets\Plugins\x86_64](unity_app/Assets/Plugins/x86_64) に依存ライブラリも含めていました
+    * 新
+      * Unity の Package Manager からインストールする必要があります  
+        インストール方法等の詳細はチュートリアルの [SDKの利用](doc/articles/tutorial.html#sdkの利用) をご参照ください
+
+  * `IClientListener` を廃止し、各種イベントハンドラを `System.EventHandler` 型の `Client` のメンバーに設定するように変更となりました
+    * 旧
+      ```c#
+      protected class ClientListener : IClientListener
+      {
+          public void OnAddLocalTrack(LSAddLocalTrackEvent lSAddLocalTrackEvent)
+          {
+          }
+      }
+  
+      public void MyMethod()
+      {
+        client = new Client();
+        client.SetEventListener(new ClientListener());
+      }
+      ```
+    * 新
+      ```c#
+      private void OnAddLocalTrack(object sender, LSAddLocalTrackEvent lSAddLocalTrackEvent)
+      {
+      }
+  
+      public void MyMethod()
+      {
+        client = new Client();
+        client.OnAddLocalTrack += OnAddLocalTrack;
+      }
+      ```
+
+  * `IClientListener#OnChangeStability(LSChangeStabilityEvent lSChangeStabilityEvent)` を廃止し、`IClientListener#OnChangeMediaStability(LSChangeMediaStabilityEvent lSChangeMediaStability)` にて設定するように変更となりました  
+  また、enum `Stability` のメンバー `IceStable` と `IceUnstable` が `Stable` と `Unstable` に変更となりました
+    * 旧
+      ```c#
+      private void OnChangeStability(object sender, LSChangeStabilityEvent lSChangeStabilityEvent)
+      {
+          if (lSChangeStabilityEvent.Stability == Stability.IceStable)
+          {
+          }
+      }
+      ```
+    * 新
+      ```c#
+      private void OnChangeMediaStability(object sender, LSChangeMediaStabilityEvent lSChangeMediaStabilityEvent)
+      {
+          if (lSChangeMediaStabilityEvent.Stability == Stability.Stable)
+          {
+          }
+      }
+      ```
+  
+  * 非推奨の `WebrtcLog#Create(string path, string prefix, uint size)` と `WebrtcLog#Destroy()` を廃止しました  
+    今後は `Client#SetLibWebrtcLogOption(LibWebrtcLogOption option)` を使用するように変更をお願いします
+    * 旧
+      ```c#
+      uint logSize = 10 * 1024 * 1024;
+      WebrtcLog.Create(logFilePath, "webrtc_", logSize);
+      ```
+    * 新
+      ```c#
+      uint logSize = 10; // Mbyte
+      client.SetLibWebrtcLogOption(new LibWebrtcLogOption(logFilePath, logSize));
+      ```
 
 ## v2.0.0
 * v2.0.0 より `IClientListener` で定義している各種イベントハンドラの引数が変更になりましたので、下記の通り移行をお願いします

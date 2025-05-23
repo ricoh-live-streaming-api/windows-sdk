@@ -25,6 +25,9 @@ public:
     UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSSDKErrorEvent")
     FString ToReportString() const;
 
+    UFUNCTION(BlueprintCallable, Category = "RICOH Live Streaming Client SDK for Windows | LSSDKErrorEvent")
+    bool GetWithDisconnection() const;
+
 private:
     SDKErrorEvent* _sdkErrorEvent = nullptr;
 

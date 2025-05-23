@@ -68,17 +68,19 @@ Live Streaming API に接続するWindows Unityアプリケーション
 
 現状対応しているコーデックは以下の通り。
 - VP8、VP9ソフトウェアエンコーダ、デコーダ
-- [NVIDIA VIDEO CODEC SDK](https://developer.nvidia.com/nvidia-video-codec-sdk)のH264ハードウェアエンコード、デコード
+- [NVIDIA Video Codec SDK](https://developer.nvidia.com/nvidia-video-codec-sdk) の H.264 ハードウェアエンコード、デコード
+- [Intel® Video Processing Library](https://www.intel.com/content/www/us/en/developer/tools/vpl/overview.html#gs.m3wrha) の H.264、H.265、AV1 ハードウェアエンコード、デコード
 
-ソフトウェアでのH.264エンコード/デコードは未対応。
+ソフトウェアでの H.264、H.265、AV1 エンコード/デコードは未対応。
 
 ## 対応Unityバージョン
-- Unity 2020.3
+- Unity 2022.3
 
 ## 対応プラットフォーム
 - Windows10 1903 x86_64以降
 
 ## 依存ライブラリ
-- log4net : v2.0.15
-- Newtonsoft.Json : v13.0.1
-- JWT : v9.0.3
+- アプリ
+  - JWT
+- Client SDK
+  - Client SDK の [依存ライブラリ](../README.md#依存ライブラリ) を参照

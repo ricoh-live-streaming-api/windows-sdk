@@ -41,6 +41,7 @@ public abstract class BehaviorBase : MonoBehaviour
     private string statsLogPath;
     private const string webrtcLogName = "webrtc";
     private const uint webrtcMaxTotalFileSizeMbyte = 10;
+    private Timer statsOutpuTimer;
 
     public virtual void Awake()
     {
@@ -72,11 +73,28 @@ public abstract class BehaviorBase : MonoBehaviour
     /// <summary>
     /// <see cref="client"/>を新しく生成し、初期化処理を行う。
     /// </summary>
-    /// <param name="listener">クライアントに設定するリスナー</param>
-    protected void InitializeClient(IClientListener listener)
+    protected void InitializeClient()
     {
         client = new Client();
-        client.SetEventListener(listener);
+
+        // Subscribe to the event.
+        client.OnAddLocalTrack += OnAddLocalTrack;
+        client.OnAddRemoteConnection += OnAddRemoteConnection;
+        client.OnAddRemoteTrack += OnAddRemoteTrack;
+        client.OnClosed += OnClosed;
+        client.OnClosing += OnClosing;
+        client.OnConnecting += OnConnecting;
+        client.OnError += OnError;
+        client.OnOpen += OnOpen;
+        client.OnRemoveRemoteConnection += OnRemoveRemoteConnection;
+        client.OnUpdateRemoteTrack += OnUpdateRemoteTrack;
+        client.OnUpdateMute += OnUpdateMute;
+        client.OnUpdateRemoteConnection += OnUpdateRemoteConnection;
+        client.OnChangeMediaStability += OnChangeMediaStability;
+        client.OnUpdateConnectionsStatus += OnUpdateConnectionsStatus;
+        client.OnUpdateRecording += OnUpdateRecording;
+        client.OnMediaOpen += OnMediaOpen;
+
         SetConfigWebrtcLog(client);
         SetDevice(client);
     }
@@ -330,255 +348,261 @@ public abstract class BehaviorBase : MonoBehaviour
     /// <param name="interactable">true : ボタン操作可, false : ボタン操作不可</param>
     protected abstract void SetConnectButtonText(string buttonText, bool interactable);
 
-    protected abstract class ClientListenerBase : IClientListener
+    #region ClientListener events
+    private void OnAddLocalTrack(object sender, LSAddLocalTrackEvent lSAddLocalTrackEvent)
     {
-        protected readonly BehaviorBase app;
+        Logger.Debug($"OnAddLocalTrack() trackID={lSAddLocalTrackEvent.MediaStreamTrack.Id}");
 
-        private Timer statsOutpuTimer;
-
-        public ClientListenerBase(BehaviorBase app)
+        UnityUIContext.Post(__ =>
         {
-            this.app = app;
-        }
-
-        public virtual void OnAddLocalTrack(LSAddLocalTrackEvent lSAddLocalTrackEvent)
-        {
-            Logger.Debug($"OnAddLocalTrack() trackID={lSAddLocalTrackEvent.MediaStreamTrack.Id}");
-
-            app.UnityUIContext.Post(__ =>
+            lock (frameLockObject)
             {
-                lock (frameLockObject)
+                if (HasLocalVideoTrack && lSAddLocalTrackEvent.MediaStreamTrack is VideoTrack videoTrack)
                 {
-                    if (app.HasLocalVideoTrack && lSAddLocalTrackEvent.MediaStreamTrack is VideoTrack videoTrack)
-                    {
-                        videoTrack.SetEventListener(CreateVideoTrackListener(app));
-                        videoTrack.AddSink();
-                        app.RenderLocalVideoTrack = videoTrack;
-                    }
+                    videoTrack.SetEventListener(CreateVideoTrackListener(this));
+                    videoTrack.AddSink();
+                    RenderLocalVideoTrack = videoTrack;
                 }
-            }, null);
+            }
+        }, null);
+    }
+
+    private void OnAddRemoteConnection(object sender, LSAddRemoteConnectionEvent lSAddRemoteConnectionEvent)
+    {
+        var metadataStr = "";
+        foreach (var m in lSAddRemoteConnectionEvent.Metadata)
+        {
+            metadataStr += $"({m.Key}, {m.Value})";
         }
 
-        public virtual void OnAddRemoteConnection(LSAddRemoteConnectionEvent lSAddRemoteConnectionEvent)
-        {
-            var metadataStr = "";
-            foreach (var m in lSAddRemoteConnectionEvent.Metadata)
-            {
-                metadataStr += $"({m.Key}, {m.Value})";
-            }
+        Logger.Debug($"OnAddRemoteConnection() connectionId={lSAddRemoteConnectionEvent.ConnectionId} metadata={metadataStr}");
+    }
 
-            Logger.Debug($"OnAddRemoteConnection() connectionId={lSAddRemoteConnectionEvent.ConnectionId} metadata={metadataStr}");
+    private void OnAddRemoteTrack(object sender, LSAddRemoteTrackEvent lSAddRemoteTrackEvent)
+    {
+        Logger.Debug($"OnAddRemoteTrack() " +
+            $"connectionId={lSAddRemoteTrackEvent.ConnectionId}, " +
+            $"streamID={lSAddRemoteTrackEvent.Stream.Id}, " +
+            $"trackID={lSAddRemoteTrackEvent.MediaStreamTrack.Id}, " +
+            $"muteType={lSAddRemoteTrackEvent.MuteType}");
+
+        foreach (KeyValuePair<string, object> pair in lSAddRemoteTrackEvent.Metadata)
+        {
+            Logger.Debug($"key={pair.Key} value={pair.Value}");
         }
 
-        public virtual void OnAddRemoteTrack(LSAddRemoteTrackEvent lSAddRemoteTrackEvent)
+        UnityUIContext.Post(__ =>
         {
-            Logger.Debug($"OnAddRemoteTrack() " +
-                $"connectionId={lSAddRemoteTrackEvent.ConnectionId}, " +
-                $"streamID={lSAddRemoteTrackEvent.Stream.Id}, " +
-                $"trackID={lSAddRemoteTrackEvent.MediaStreamTrack.Id}, " +
-                $"muteType={lSAddRemoteTrackEvent.MuteType}");
-
-            foreach (KeyValuePair<string, object> pair in lSAddRemoteTrackEvent.Metadata)
+            lock (frameLockObject)
             {
-                Logger.Debug($"key={pair.Key} value={pair.Value}");
+                AddRemoteTrack(
+                    lSAddRemoteTrackEvent.ConnectionId,
+                    lSAddRemoteTrackEvent.Stream,
+                    lSAddRemoteTrackEvent.MediaStreamTrack,
+                    lSAddRemoteTrackEvent.Metadata);
             }
+        }, null);
+    }
 
-            app.UnityUIContext.Post(__ =>
+    private void OnClosed(object sender, LSCloseEvent lSCloseEvent)
+    {
+        Logger.Debug("OnClosed()");
+
+        UnityUIContext.Post(__ =>
+        {
+            lock (clientLockObject)
             {
-                lock (frameLockObject)
+                if (statsOutpuTimer != null)
                 {
-                    AddRemoteTrack(
-                        lSAddRemoteTrackEvent.ConnectionId,
-                        lSAddRemoteTrackEvent.Stream,
-                        lSAddRemoteTrackEvent.MediaStreamTrack,
-                        lSAddRemoteTrackEvent.Metadata);
+                    statsOutpuTimer.Change(Timeout.Infinite, Timeout.Infinite); // stops timer.
+                        statsOutpuTimer.Dispose();
+                    statsOutpuTimer = null;
                 }
-            }, null);
-        }
 
-        public virtual void OnClosed(LSCloseEvent lSCloseEvent)
+                if (StatsLogger != null)
+                {
+                    StatsLogger.Dispose();
+                    StatsLogger = null;
+                }
+
+                VideoCapturer?.Release();
+
+                    // 切断した場合、Clientを再生成する
+                    client?.Dispose();
+                client = null;
+                InitializeClient();
+            }
+        }, null);
+
+        SetConnectButtonText("Connect", true);
+    }
+
+    private void OnClosing(object sender, LSClosingEvent lSClosingEvent)
+    {
+        Logger.Debug("OnClosing()");
+        SetConnectButtonText("Disconnecting...", false);
+        UnityUIContext.Post(__ =>
         {
-            Logger.Debug("OnClosed()");
+            lock (frameLockObject)
+            {
+                ClearRemoteTracks();
+            }
+        }, null);
+    }
 
-            app.UnityUIContext.Post(__ =>
+    private void OnConnecting(object sender, LSConnectingEvent lSConnectingEvent)
+    {
+        Logger.Debug("OnConnecting()");
+    }
+
+    private void OnError(object sender, SDKErrorEvent error)
+    {
+        Logger.Debug($"OnError() " +
+            $"code={error.Detail.Code}, " +
+            $"type={error.Detail.Type}, " +
+            $"error={error.Detail.Error}, " +
+            $"WithDisconnection={error.WithDisconnection}," +
+            $"detail={error.ToReportString()}");
+    }
+
+    private void OnOpen(object sender, LSOpenEvent LSOpenEvent)
+    {
+        Logger.Debug($"OnOpen() " +
+            $"accessToken=\n{LSOpenEvent.AccessTokenJson}\n" +
+            $"ReceiverExistence={ LSOpenEvent.ConnectionsStatus.ConnectionsVideoStatus.ReceiverExistence}");
+
+        UnityUIContext.Post(__ =>
+        {
+            StatsLogger = new RTCStatsLogger(Utils.CreateFilePath(statsLogPath));
+
+            // starts logging stats.
+            statsOutpuTimer = new Timer(state =>
             {
                 lock (clientLockObject)
                 {
-                    if (statsOutpuTimer != null)
+                    if (client != null)
                     {
-                        statsOutpuTimer.Change(Timeout.Infinite, Timeout.Infinite); // stops timer.
-                        statsOutpuTimer.Dispose();
-                        statsOutpuTimer = null;
-                    }
-
-                    if (app.StatsLogger != null)
-                    {
-                        app.StatsLogger.Dispose();
-                        app.StatsLogger = null;
-                    }
-
-                    app.VideoCapturer?.Release();
-
-                    // 切断した場合、Clientを再生成する
-                    app.client?.Dispose();
-                    app.client = null;
-                    app.InitializeClient(this);
-                }
-            }, null);
-
-            app.SetConnectButtonText("Connect", true);
-        }
-
-        public virtual void OnClosing(LSClosingEvent lSClosingEvent)
-        {
-            Logger.Debug("OnClosing()");
-            app.SetConnectButtonText("Disconnecting...", false);
-            app.UnityUIContext.Post(__ =>
-            {
-                lock (frameLockObject)
-                {
-                    ClearRemoteTracks();
-                }
-            }, null);
-        }
-
-        public virtual void OnConnecting(LSConnectingEvent lSConnectingEvent)
-        {
-            Logger.Debug("OnConnecting()");
-        }
-
-        public virtual void OnError(SDKErrorEvent error)
-        {
-            Logger.Debug($"OnError() code={error.Detail.Code}, type={error.Detail.Type}, error={error.Detail.Error}, detail={error.ToReportString()}");
-        }
-
-        public virtual void OnOpen(LSOpenEvent LSOpenEvent)
-        {
-            Logger.Debug($"OnOpen() " +
-                $"accessToken=\n{LSOpenEvent.AccessTokenJson}\n" +
-                $"ReceiverExistence={ LSOpenEvent.ConnectionsStatus.ConnectionsVideoStatus.ReceiverExistence}");
-
-            app.UnityUIContext.Post(__ =>
-            {
-                app.StatsLogger = new RTCStatsLogger(Utils.CreateFilePath(app.statsLogPath));
-
-                // starts logging stats.
-                statsOutpuTimer = new Timer(state =>
-                {
-                    lock (clientLockObject)
-                    {
-                        if (app.client != null)
+                        var statsReports = client.GetStats();
+                        foreach (var report in statsReports)
                         {
-                            var statsReports = app.client.GetStats();
-                            foreach (var report in statsReports)
-                            {
-                                app.StatsLogger?.Log(report.Key, report.Value);
-                            }
+                            StatsLogger?.Log(report.Key, report.Value);
                         }
                     }
-                }, null, 500, 1000);
-            }, null);
-
-            app.SetConnectButtonText("Disconnect", true);
-        }
-
-        public virtual void OnRemoveRemoteConnection(LSRemoveRemoteConnectionEvent lSRemoveRemoteConnectionEvent)
-        {
-            var metadataStr = "";
-            foreach (var m in lSRemoveRemoteConnectionEvent.Metadata)
-            {
-                metadataStr += $"({m.Key}, {m.Value})";
-            }
-
-            var mediaStreamTracksStr = "";
-            foreach (var track in lSRemoveRemoteConnectionEvent.MediaStreamTracks)
-            {
-                mediaStreamTracksStr += $"({track.Id}, {track.Type})";
-            }
-
-            Logger.Debug($"OnRemoveRemoteConnection() " +
-                $"connectionId={lSRemoveRemoteConnectionEvent.ConnectionId} " +
-                $"metadata={metadataStr} " +
-                $"mediaStreamTrack={mediaStreamTracksStr}");
-
-            app.UnityUIContext.Post(__ =>
-            {
-                lock (frameLockObject)
-                {
-                    RemoveRemoteTrackByConnectionId(lSRemoveRemoteConnectionEvent.ConnectionId);
                 }
-            }, null);
-        }
+            }, null, 500, 1000);
+        }, null);
 
-        public virtual void OnUpdateRemoteTrack(LSUpdateRemoteTrackEvent lSUpdateRemoteTrackEvent)
-        {
-            var metadataStr = "";
-            foreach (var m in lSUpdateRemoteTrackEvent.Metadata)
-            {
-                metadataStr += $"({m.Key}, {m.Value})";
-            }
-
-            Logger.Debug($"OnUpdateRemoteTrack() " +
-                $"connectionId={lSUpdateRemoteTrackEvent.ConnectionId}, " +
-                $"streamID={lSUpdateRemoteTrackEvent.Stream.Id}, " +
-                $"trackID={lSUpdateRemoteTrackEvent.MediaStreamTrack.Id} " +
-                $"metadata={metadataStr}");
-        }
-
-        public virtual void OnUpdateMute(LSUpdateMuteEvent lSUpdateMuteEvent)
-        {
-            Logger.Debug($"OnUpdateMute() " +
-                $"connectionId={lSUpdateMuteEvent.ConnectionId}, " +
-                $"streamID={lSUpdateMuteEvent.Stream.Id}, " +
-                $"trackID={lSUpdateMuteEvent.MediaStreamTrack.Id}, " +
-                $"muteType={lSUpdateMuteEvent.MuteType}");
-        }
-
-        public virtual void OnUpdateRemoteConnection(LSUpdateRemoteConnectionEvent lSUpdateRemoteConnectionEvent)
-        {
-            Logger.Debug($"OnUpdateRemoteConnection() connectionId={lSUpdateRemoteConnectionEvent.ConnectionId}");
-
-            foreach (KeyValuePair<string, object> pair in lSUpdateRemoteConnectionEvent.Metadata)
-            {
-                Logger.Debug($"key={pair.Key} value={pair.Value}");
-            }
-        }
-
-        public virtual void OnChangeStability(LSChangeStabilityEvent lSChangeStabilityEvent)
-        {
-            Logger.Debug($"OnChangeStability() connectionId={lSChangeStabilityEvent.ConnectionId} stability={lSChangeStabilityEvent.Stability}");
-        }
-
-        public virtual void OnUpdateConnectionsStatus(LSUpdateConnectionsStatusEvent lSUpdateConnectionsStatusEvent)
-        {
-            Logger.Debug($"OnUpdateConnectionsStatus() " +
-                $"ReceiverExistence={lSUpdateConnectionsStatusEvent.ConnectionsStatus.ConnectionsVideoStatus.ReceiverExistence}");
-        }
-
-        /// <summary>
-        /// リモートトラックのクリアを行う。
-        /// <see cref="OnClosed"/>で実行される。
-        /// </summary>
-        protected abstract void ClearRemoteTracks();
-
-        // TODO リモートトラックの処理も共通化したい。WatchのみListではないことを考慮しないといけない。
-        /// <summary>
-        /// リモートトラックの追加を行う。
-        /// <see cref="OnAddRemoteTrack"/>で実行される。
-        /// </summary>
-        /// <param name="connectionId">追加するリモートトラックのコネクションID</param>
-        /// <param name="stream">追加するストリーム</param>
-        /// <param name="track">追加するリモートトラック</param>
-        /// <param name="metadata">追加するリモートトラックのメタデータ</param>
-        protected abstract void AddRemoteTrack(string connectionId, MediaStream stream, MediaStreamTrack track, Dictionary<string, object> metadata);
-
-        /// <summary>
-        /// リモートトラックの削除を行う。
-        /// <see cref="OnRemoveRemoteConnection(string, Dictionary{string, object})"/>で実行される。
-        /// </summary>
-        /// <param name="connectionId"></param>
-        protected abstract void RemoveRemoteTrackByConnectionId(string connectionId);
-
-        protected abstract VideoTrack.IListener CreateVideoTrackListener(BehaviorBase app);
+        SetConnectButtonText("Disconnect", true);
     }
+
+    private void OnRemoveRemoteConnection(object sender, LSRemoveRemoteConnectionEvent lSRemoveRemoteConnectionEvent)
+    {
+        var metadataStr = "";
+        foreach (var m in lSRemoveRemoteConnectionEvent.Metadata)
+        {
+            metadataStr += $"({m.Key}, {m.Value})";
+        }
+
+        var mediaStreamTracksStr = "";
+        foreach (var track in lSRemoveRemoteConnectionEvent.MediaStreamTracks)
+        {
+            mediaStreamTracksStr += $"({track.Id}, {track.Type})";
+        }
+
+        Logger.Debug($"OnRemoveRemoteConnection() " +
+            $"connectionId={lSRemoveRemoteConnectionEvent.ConnectionId} " +
+            $"metadata={metadataStr} " +
+            $"mediaStreamTrack={mediaStreamTracksStr}");
+
+        UnityUIContext.Post(__ =>
+        {
+            lock (frameLockObject)
+            {
+                RemoveRemoteTrackByConnectionId(lSRemoveRemoteConnectionEvent.ConnectionId);
+            }
+        }, null);
+    }
+
+    private void OnUpdateRemoteTrack(object sender, LSUpdateRemoteTrackEvent lSUpdateRemoteTrackEvent)
+    {
+        var metadataStr = "";
+        foreach (var m in lSUpdateRemoteTrackEvent.Metadata)
+        {
+            metadataStr += $"({m.Key}, {m.Value})";
+        }
+
+        Logger.Debug($"OnUpdateRemoteTrack() " +
+            $"connectionId={lSUpdateRemoteTrackEvent.ConnectionId}, " +
+            $"streamID={lSUpdateRemoteTrackEvent.Stream.Id}, " +
+            $"trackID={lSUpdateRemoteTrackEvent.MediaStreamTrack.Id} " +
+            $"metadata={metadataStr}");
+    }
+
+    private void OnUpdateMute(object sender, LSUpdateMuteEvent lSUpdateMuteEvent)
+    {
+        Logger.Debug($"OnUpdateMute() " +
+            $"connectionId={lSUpdateMuteEvent.ConnectionId}, " +
+            $"streamID={lSUpdateMuteEvent.Stream.Id}, " +
+            $"trackID={lSUpdateMuteEvent.MediaStreamTrack.Id}, " +
+            $"muteType={lSUpdateMuteEvent.MuteType}");
+    }
+
+    private void OnUpdateRemoteConnection(object sender, LSUpdateRemoteConnectionEvent lSUpdateRemoteConnectionEvent)
+    {
+        Logger.Debug($"OnUpdateRemoteConnection() connectionId={lSUpdateRemoteConnectionEvent.ConnectionId}");
+
+        foreach (KeyValuePair<string, object> pair in lSUpdateRemoteConnectionEvent.Metadata)
+        {
+            Logger.Debug($"key={pair.Key} value={pair.Value}");
+        }
+    }
+
+    public virtual void OnUpdateConnectionsStatus(object sender, LSUpdateConnectionsStatusEvent lSUpdateConnectionsStatusEvent)
+    {
+        Logger.Debug($"OnUpdateConnectionsStatus() " +
+            $"ReceiverExistence={lSUpdateConnectionsStatusEvent.ConnectionsStatus.ConnectionsVideoStatus.ReceiverExistence}");
+    }
+
+    public virtual void OnUpdateRecording(object sender, LSUpdateRecordingEvent lSUpdateRecordingEvent)
+    {
+        Logger.Debug($"OnUpdateRecording() " +
+            $"InRecording={lSUpdateRecordingEvent.RecordingStatus.InRecording}");
+    }
+
+    public virtual void OnMediaOpen(object sender, LSMediaOpenEvent lSMediaOpenEvent)
+    {
+        Logger.Debug("OnMediaOpen()");
+    }
+
+    private void OnChangeMediaStability(object sender, LSChangeMediaStabilityEvent lSChangeMediaStabilityEvent)
+    {
+        Logger.Debug($"OnChangeMediaStability() connectionId={lSChangeMediaStabilityEvent.ConnectionId} stability={lSChangeMediaStabilityEvent.Stability}");
+    }
+    #endregion
+
+    /// <summary>
+    /// リモートトラックのクリアを行う。
+    /// <see cref="OnClosed"/>で実行される。
+    /// </summary>
+    protected abstract void ClearRemoteTracks();
+
+    // TODO リモートトラックの処理も共通化したい。WatchのみListではないことを考慮しないといけない。
+    /// <summary>
+    /// リモートトラックの追加を行う。
+    /// <see cref="OnAddRemoteTrack"/>で実行される。
+    /// </summary>
+    /// <param name="connectionId">追加するリモートトラックのコネクションID</param>
+    /// <param name="stream">追加するストリーム</param>
+    /// <param name="track">追加するリモートトラック</param>
+    /// <param name="metadata">追加するリモートトラックのメタデータ</param>
+    protected abstract void AddRemoteTrack(string connectionId, MediaStream stream, MediaStreamTrack track, Dictionary<string, object> metadata);
+
+    /// <summary>
+    /// リモートトラックの削除を行う。
+    /// <see cref="OnRemoveRemoteConnection(string, Dictionary{string, object})"/>で実行される。
+    /// </summary>
+    /// <param name="connectionId"></param>
+    protected abstract void RemoveRemoteTrackByConnectionId(string connectionId);
+
+    protected abstract VideoTrack.IListener CreateVideoTrackListener(BehaviorBase app);
 }

@@ -156,6 +156,102 @@ references:
   isSpec: "True"
   fullName: com.ricoh.livestreaming.Client.GetUserMedia
   nameWithType: Client.GetUserMedia
+- uid: com.ricoh.livestreaming.Client.OnAddLocalTrack
+  name: OnAddLocalTrack
+  href: api/com.ricoh.livestreaming.Client.html#com_ricoh_livestreaming_Client_OnAddLocalTrack
+  commentId: E:com.ricoh.livestreaming.Client.OnAddLocalTrack
+  fullName: com.ricoh.livestreaming.Client.OnAddLocalTrack
+  nameWithType: Client.OnAddLocalTrack
+- uid: com.ricoh.livestreaming.Client.OnAddRemoteConnection
+  name: OnAddRemoteConnection
+  href: api/com.ricoh.livestreaming.Client.html#com_ricoh_livestreaming_Client_OnAddRemoteConnection
+  commentId: E:com.ricoh.livestreaming.Client.OnAddRemoteConnection
+  fullName: com.ricoh.livestreaming.Client.OnAddRemoteConnection
+  nameWithType: Client.OnAddRemoteConnection
+- uid: com.ricoh.livestreaming.Client.OnAddRemoteTrack
+  name: OnAddRemoteTrack
+  href: api/com.ricoh.livestreaming.Client.html#com_ricoh_livestreaming_Client_OnAddRemoteTrack
+  commentId: E:com.ricoh.livestreaming.Client.OnAddRemoteTrack
+  fullName: com.ricoh.livestreaming.Client.OnAddRemoteTrack
+  nameWithType: Client.OnAddRemoteTrack
+- uid: com.ricoh.livestreaming.Client.OnChangeMediaStability
+  name: OnChangeMediaStability
+  href: api/com.ricoh.livestreaming.Client.html#com_ricoh_livestreaming_Client_OnChangeMediaStability
+  commentId: E:com.ricoh.livestreaming.Client.OnChangeMediaStability
+  fullName: com.ricoh.livestreaming.Client.OnChangeMediaStability
+  nameWithType: Client.OnChangeMediaStability
+- uid: com.ricoh.livestreaming.Client.OnClosed
+  name: OnClosed
+  href: api/com.ricoh.livestreaming.Client.html#com_ricoh_livestreaming_Client_OnClosed
+  commentId: E:com.ricoh.livestreaming.Client.OnClosed
+  fullName: com.ricoh.livestreaming.Client.OnClosed
+  nameWithType: Client.OnClosed
+- uid: com.ricoh.livestreaming.Client.OnClosing
+  name: OnClosing
+  href: api/com.ricoh.livestreaming.Client.html#com_ricoh_livestreaming_Client_OnClosing
+  commentId: E:com.ricoh.livestreaming.Client.OnClosing
+  fullName: com.ricoh.livestreaming.Client.OnClosing
+  nameWithType: Client.OnClosing
+- uid: com.ricoh.livestreaming.Client.OnConnecting
+  name: OnConnecting
+  href: api/com.ricoh.livestreaming.Client.html#com_ricoh_livestreaming_Client_OnConnecting
+  commentId: E:com.ricoh.livestreaming.Client.OnConnecting
+  fullName: com.ricoh.livestreaming.Client.OnConnecting
+  nameWithType: Client.OnConnecting
+- uid: com.ricoh.livestreaming.Client.OnError
+  name: OnError
+  href: api/com.ricoh.livestreaming.Client.html#com_ricoh_livestreaming_Client_OnError
+  commentId: E:com.ricoh.livestreaming.Client.OnError
+  fullName: com.ricoh.livestreaming.Client.OnError
+  nameWithType: Client.OnError
+- uid: com.ricoh.livestreaming.Client.OnMediaOpen
+  name: OnMediaOpen
+  href: api/com.ricoh.livestreaming.Client.html#com_ricoh_livestreaming_Client_OnMediaOpen
+  commentId: E:com.ricoh.livestreaming.Client.OnMediaOpen
+  fullName: com.ricoh.livestreaming.Client.OnMediaOpen
+  nameWithType: Client.OnMediaOpen
+- uid: com.ricoh.livestreaming.Client.OnOpen
+  name: OnOpen
+  href: api/com.ricoh.livestreaming.Client.html#com_ricoh_livestreaming_Client_OnOpen
+  commentId: E:com.ricoh.livestreaming.Client.OnOpen
+  fullName: com.ricoh.livestreaming.Client.OnOpen
+  nameWithType: Client.OnOpen
+- uid: com.ricoh.livestreaming.Client.OnRemoveRemoteConnection
+  name: OnRemoveRemoteConnection
+  href: api/com.ricoh.livestreaming.Client.html#com_ricoh_livestreaming_Client_OnRemoveRemoteConnection
+  commentId: E:com.ricoh.livestreaming.Client.OnRemoveRemoteConnection
+  fullName: com.ricoh.livestreaming.Client.OnRemoveRemoteConnection
+  nameWithType: Client.OnRemoveRemoteConnection
+- uid: com.ricoh.livestreaming.Client.OnUpdateConnectionsStatus
+  name: OnUpdateConnectionsStatus
+  href: api/com.ricoh.livestreaming.Client.html#com_ricoh_livestreaming_Client_OnUpdateConnectionsStatus
+  commentId: E:com.ricoh.livestreaming.Client.OnUpdateConnectionsStatus
+  fullName: com.ricoh.livestreaming.Client.OnUpdateConnectionsStatus
+  nameWithType: Client.OnUpdateConnectionsStatus
+- uid: com.ricoh.livestreaming.Client.OnUpdateMute
+  name: OnUpdateMute
+  href: api/com.ricoh.livestreaming.Client.html#com_ricoh_livestreaming_Client_OnUpdateMute
+  commentId: E:com.ricoh.livestreaming.Client.OnUpdateMute
+  fullName: com.ricoh.livestreaming.Client.OnUpdateMute
+  nameWithType: Client.OnUpdateMute
+- uid: com.ricoh.livestreaming.Client.OnUpdateRecording
+  name: OnUpdateRecording
+  href: api/com.ricoh.livestreaming.Client.html#com_ricoh_livestreaming_Client_OnUpdateRecording
+  commentId: E:com.ricoh.livestreaming.Client.OnUpdateRecording
+  fullName: com.ricoh.livestreaming.Client.OnUpdateRecording
+  nameWithType: Client.OnUpdateRecording
+- uid: com.ricoh.livestreaming.Client.OnUpdateRemoteConnection
+  name: OnUpdateRemoteConnection
+  href: api/com.ricoh.livestreaming.Client.html#com_ricoh_livestreaming_Client_OnUpdateRemoteConnection
+  commentId: E:com.ricoh.livestreaming.Client.OnUpdateRemoteConnection
+  fullName: com.ricoh.livestreaming.Client.OnUpdateRemoteConnection
+  nameWithType: Client.OnUpdateRemoteConnection
+- uid: com.ricoh.livestreaming.Client.OnUpdateRemoteTrack
+  name: OnUpdateRemoteTrack
+  href: api/com.ricoh.livestreaming.Client.html#com_ricoh_livestreaming_Client_OnUpdateRemoteTrack
+  commentId: E:com.ricoh.livestreaming.Client.OnUpdateRemoteTrack
+  fullName: com.ricoh.livestreaming.Client.OnUpdateRemoteTrack
+  nameWithType: Client.OnUpdateRemoteTrack
 - uid: com.ricoh.livestreaming.Client.ReplaceMediaStreamTrack(com.ricoh.livestreaming.LSTrack,com.ricoh.livestreaming.webrtc.MediaStreamTrack)
   name: ReplaceMediaStreamTrack(LSTrack, MediaStreamTrack)
   href: api/com.ricoh.livestreaming.Client.html#com_ricoh_livestreaming_Client_ReplaceMediaStreamTrack_com_ricoh_livestreaming_LSTrack_com_ricoh_livestreaming_webrtc_MediaStreamTrack_
@@ -195,19 +291,6 @@ references:
   isSpec: "True"
   fullName: com.ricoh.livestreaming.Client.SetAudioOutputDevice
   nameWithType: Client.SetAudioOutputDevice
-- uid: com.ricoh.livestreaming.Client.SetEventListener(com.ricoh.livestreaming.IClientListener)
-  name: SetEventListener(IClientListener)
-  href: api/com.ricoh.livestreaming.Client.html#com_ricoh_livestreaming_Client_SetEventListener_com_ricoh_livestreaming_IClientListener_
-  commentId: M:com.ricoh.livestreaming.Client.SetEventListener(com.ricoh.livestreaming.IClientListener)
-  fullName: com.ricoh.livestreaming.Client.SetEventListener(com.ricoh.livestreaming.IClientListener)
-  nameWithType: Client.SetEventListener(IClientListener)
-- uid: com.ricoh.livestreaming.Client.SetEventListener*
-  name: SetEventListener
-  href: api/com.ricoh.livestreaming.Client.html#com_ricoh_livestreaming_Client_SetEventListener_
-  commentId: Overload:com.ricoh.livestreaming.Client.SetEventListener
-  isSpec: "True"
-  fullName: com.ricoh.livestreaming.Client.SetEventListener
-  nameWithType: Client.SetEventListener
 - uid: com.ricoh.livestreaming.Client.SetLibWebrtcLogOption(com.ricoh.livestreaming.LibWebrtcLogOption)
   name: SetLibWebrtcLogOption(LibWebrtcLogOption)
   href: api/com.ricoh.livestreaming.Client.html#com_ricoh_livestreaming_Client_SetLibWebrtcLogOption_com_ricoh_livestreaming_LibWebrtcLogOption_
@@ -450,194 +533,6 @@ references:
   commentId: F:com.ricoh.livestreaming.IceTransportPolicy.Relay
   fullName: com.ricoh.livestreaming.IceTransportPolicy.Relay
   nameWithType: IceTransportPolicy.Relay
-- uid: com.ricoh.livestreaming.IClientListener
-  name: IClientListener
-  href: api/com.ricoh.livestreaming.IClientListener.html
-  commentId: T:com.ricoh.livestreaming.IClientListener
-  fullName: com.ricoh.livestreaming.IClientListener
-  nameWithType: IClientListener
-- uid: com.ricoh.livestreaming.IClientListener.OnAddLocalTrack(com.ricoh.livestreaming.LSAddLocalTrackEvent)
-  name: OnAddLocalTrack(LSAddLocalTrackEvent)
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnAddLocalTrack_com_ricoh_livestreaming_LSAddLocalTrackEvent_
-  commentId: M:com.ricoh.livestreaming.IClientListener.OnAddLocalTrack(com.ricoh.livestreaming.LSAddLocalTrackEvent)
-  fullName: com.ricoh.livestreaming.IClientListener.OnAddLocalTrack(com.ricoh.livestreaming.LSAddLocalTrackEvent)
-  nameWithType: IClientListener.OnAddLocalTrack(LSAddLocalTrackEvent)
-- uid: com.ricoh.livestreaming.IClientListener.OnAddLocalTrack*
-  name: OnAddLocalTrack
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnAddLocalTrack_
-  commentId: Overload:com.ricoh.livestreaming.IClientListener.OnAddLocalTrack
-  isSpec: "True"
-  fullName: com.ricoh.livestreaming.IClientListener.OnAddLocalTrack
-  nameWithType: IClientListener.OnAddLocalTrack
-- uid: com.ricoh.livestreaming.IClientListener.OnAddRemoteConnection(com.ricoh.livestreaming.LSAddRemoteConnectionEvent)
-  name: OnAddRemoteConnection(LSAddRemoteConnectionEvent)
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnAddRemoteConnection_com_ricoh_livestreaming_LSAddRemoteConnectionEvent_
-  commentId: M:com.ricoh.livestreaming.IClientListener.OnAddRemoteConnection(com.ricoh.livestreaming.LSAddRemoteConnectionEvent)
-  fullName: com.ricoh.livestreaming.IClientListener.OnAddRemoteConnection(com.ricoh.livestreaming.LSAddRemoteConnectionEvent)
-  nameWithType: IClientListener.OnAddRemoteConnection(LSAddRemoteConnectionEvent)
-- uid: com.ricoh.livestreaming.IClientListener.OnAddRemoteConnection*
-  name: OnAddRemoteConnection
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnAddRemoteConnection_
-  commentId: Overload:com.ricoh.livestreaming.IClientListener.OnAddRemoteConnection
-  isSpec: "True"
-  fullName: com.ricoh.livestreaming.IClientListener.OnAddRemoteConnection
-  nameWithType: IClientListener.OnAddRemoteConnection
-- uid: com.ricoh.livestreaming.IClientListener.OnAddRemoteTrack(com.ricoh.livestreaming.LSAddRemoteTrackEvent)
-  name: OnAddRemoteTrack(LSAddRemoteTrackEvent)
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnAddRemoteTrack_com_ricoh_livestreaming_LSAddRemoteTrackEvent_
-  commentId: M:com.ricoh.livestreaming.IClientListener.OnAddRemoteTrack(com.ricoh.livestreaming.LSAddRemoteTrackEvent)
-  fullName: com.ricoh.livestreaming.IClientListener.OnAddRemoteTrack(com.ricoh.livestreaming.LSAddRemoteTrackEvent)
-  nameWithType: IClientListener.OnAddRemoteTrack(LSAddRemoteTrackEvent)
-- uid: com.ricoh.livestreaming.IClientListener.OnAddRemoteTrack*
-  name: OnAddRemoteTrack
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnAddRemoteTrack_
-  commentId: Overload:com.ricoh.livestreaming.IClientListener.OnAddRemoteTrack
-  isSpec: "True"
-  fullName: com.ricoh.livestreaming.IClientListener.OnAddRemoteTrack
-  nameWithType: IClientListener.OnAddRemoteTrack
-- uid: com.ricoh.livestreaming.IClientListener.OnChangeStability(com.ricoh.livestreaming.LSChangeStabilityEvent)
-  name: OnChangeStability(LSChangeStabilityEvent)
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnChangeStability_com_ricoh_livestreaming_LSChangeStabilityEvent_
-  commentId: M:com.ricoh.livestreaming.IClientListener.OnChangeStability(com.ricoh.livestreaming.LSChangeStabilityEvent)
-  fullName: com.ricoh.livestreaming.IClientListener.OnChangeStability(com.ricoh.livestreaming.LSChangeStabilityEvent)
-  nameWithType: IClientListener.OnChangeStability(LSChangeStabilityEvent)
-- uid: com.ricoh.livestreaming.IClientListener.OnChangeStability*
-  name: OnChangeStability
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnChangeStability_
-  commentId: Overload:com.ricoh.livestreaming.IClientListener.OnChangeStability
-  isSpec: "True"
-  fullName: com.ricoh.livestreaming.IClientListener.OnChangeStability
-  nameWithType: IClientListener.OnChangeStability
-- uid: com.ricoh.livestreaming.IClientListener.OnClosed(com.ricoh.livestreaming.LSCloseEvent)
-  name: OnClosed(LSCloseEvent)
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnClosed_com_ricoh_livestreaming_LSCloseEvent_
-  commentId: M:com.ricoh.livestreaming.IClientListener.OnClosed(com.ricoh.livestreaming.LSCloseEvent)
-  fullName: com.ricoh.livestreaming.IClientListener.OnClosed(com.ricoh.livestreaming.LSCloseEvent)
-  nameWithType: IClientListener.OnClosed(LSCloseEvent)
-- uid: com.ricoh.livestreaming.IClientListener.OnClosed*
-  name: OnClosed
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnClosed_
-  commentId: Overload:com.ricoh.livestreaming.IClientListener.OnClosed
-  isSpec: "True"
-  fullName: com.ricoh.livestreaming.IClientListener.OnClosed
-  nameWithType: IClientListener.OnClosed
-- uid: com.ricoh.livestreaming.IClientListener.OnClosing(com.ricoh.livestreaming.LSClosingEvent)
-  name: OnClosing(LSClosingEvent)
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnClosing_com_ricoh_livestreaming_LSClosingEvent_
-  commentId: M:com.ricoh.livestreaming.IClientListener.OnClosing(com.ricoh.livestreaming.LSClosingEvent)
-  fullName: com.ricoh.livestreaming.IClientListener.OnClosing(com.ricoh.livestreaming.LSClosingEvent)
-  nameWithType: IClientListener.OnClosing(LSClosingEvent)
-- uid: com.ricoh.livestreaming.IClientListener.OnClosing*
-  name: OnClosing
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnClosing_
-  commentId: Overload:com.ricoh.livestreaming.IClientListener.OnClosing
-  isSpec: "True"
-  fullName: com.ricoh.livestreaming.IClientListener.OnClosing
-  nameWithType: IClientListener.OnClosing
-- uid: com.ricoh.livestreaming.IClientListener.OnConnecting(com.ricoh.livestreaming.LSConnectingEvent)
-  name: OnConnecting(LSConnectingEvent)
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnConnecting_com_ricoh_livestreaming_LSConnectingEvent_
-  commentId: M:com.ricoh.livestreaming.IClientListener.OnConnecting(com.ricoh.livestreaming.LSConnectingEvent)
-  fullName: com.ricoh.livestreaming.IClientListener.OnConnecting(com.ricoh.livestreaming.LSConnectingEvent)
-  nameWithType: IClientListener.OnConnecting(LSConnectingEvent)
-- uid: com.ricoh.livestreaming.IClientListener.OnConnecting*
-  name: OnConnecting
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnConnecting_
-  commentId: Overload:com.ricoh.livestreaming.IClientListener.OnConnecting
-  isSpec: "True"
-  fullName: com.ricoh.livestreaming.IClientListener.OnConnecting
-  nameWithType: IClientListener.OnConnecting
-- uid: com.ricoh.livestreaming.IClientListener.OnError(com.ricoh.livestreaming.SDKErrorEvent)
-  name: OnError(SDKErrorEvent)
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnError_com_ricoh_livestreaming_SDKErrorEvent_
-  commentId: M:com.ricoh.livestreaming.IClientListener.OnError(com.ricoh.livestreaming.SDKErrorEvent)
-  fullName: com.ricoh.livestreaming.IClientListener.OnError(com.ricoh.livestreaming.SDKErrorEvent)
-  nameWithType: IClientListener.OnError(SDKErrorEvent)
-- uid: com.ricoh.livestreaming.IClientListener.OnError*
-  name: OnError
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnError_
-  commentId: Overload:com.ricoh.livestreaming.IClientListener.OnError
-  isSpec: "True"
-  fullName: com.ricoh.livestreaming.IClientListener.OnError
-  nameWithType: IClientListener.OnError
-- uid: com.ricoh.livestreaming.IClientListener.OnOpen(com.ricoh.livestreaming.LSOpenEvent)
-  name: OnOpen(LSOpenEvent)
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnOpen_com_ricoh_livestreaming_LSOpenEvent_
-  commentId: M:com.ricoh.livestreaming.IClientListener.OnOpen(com.ricoh.livestreaming.LSOpenEvent)
-  fullName: com.ricoh.livestreaming.IClientListener.OnOpen(com.ricoh.livestreaming.LSOpenEvent)
-  nameWithType: IClientListener.OnOpen(LSOpenEvent)
-- uid: com.ricoh.livestreaming.IClientListener.OnOpen*
-  name: OnOpen
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnOpen_
-  commentId: Overload:com.ricoh.livestreaming.IClientListener.OnOpen
-  isSpec: "True"
-  fullName: com.ricoh.livestreaming.IClientListener.OnOpen
-  nameWithType: IClientListener.OnOpen
-- uid: com.ricoh.livestreaming.IClientListener.OnRemoveRemoteConnection(com.ricoh.livestreaming.LSRemoveRemoteConnectionEvent)
-  name: OnRemoveRemoteConnection(LSRemoveRemoteConnectionEvent)
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnRemoveRemoteConnection_com_ricoh_livestreaming_LSRemoveRemoteConnectionEvent_
-  commentId: M:com.ricoh.livestreaming.IClientListener.OnRemoveRemoteConnection(com.ricoh.livestreaming.LSRemoveRemoteConnectionEvent)
-  fullName: com.ricoh.livestreaming.IClientListener.OnRemoveRemoteConnection(com.ricoh.livestreaming.LSRemoveRemoteConnectionEvent)
-  nameWithType: IClientListener.OnRemoveRemoteConnection(LSRemoveRemoteConnectionEvent)
-- uid: com.ricoh.livestreaming.IClientListener.OnRemoveRemoteConnection*
-  name: OnRemoveRemoteConnection
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnRemoveRemoteConnection_
-  commentId: Overload:com.ricoh.livestreaming.IClientListener.OnRemoveRemoteConnection
-  isSpec: "True"
-  fullName: com.ricoh.livestreaming.IClientListener.OnRemoveRemoteConnection
-  nameWithType: IClientListener.OnRemoveRemoteConnection
-- uid: com.ricoh.livestreaming.IClientListener.OnUpdateConnectionsStatus(com.ricoh.livestreaming.LSUpdateConnectionsStatusEvent)
-  name: OnUpdateConnectionsStatus(LSUpdateConnectionsStatusEvent)
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnUpdateConnectionsStatus_com_ricoh_livestreaming_LSUpdateConnectionsStatusEvent_
-  commentId: M:com.ricoh.livestreaming.IClientListener.OnUpdateConnectionsStatus(com.ricoh.livestreaming.LSUpdateConnectionsStatusEvent)
-  fullName: com.ricoh.livestreaming.IClientListener.OnUpdateConnectionsStatus(com.ricoh.livestreaming.LSUpdateConnectionsStatusEvent)
-  nameWithType: IClientListener.OnUpdateConnectionsStatus(LSUpdateConnectionsStatusEvent)
-- uid: com.ricoh.livestreaming.IClientListener.OnUpdateConnectionsStatus*
-  name: OnUpdateConnectionsStatus
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnUpdateConnectionsStatus_
-  commentId: Overload:com.ricoh.livestreaming.IClientListener.OnUpdateConnectionsStatus
-  isSpec: "True"
-  fullName: com.ricoh.livestreaming.IClientListener.OnUpdateConnectionsStatus
-  nameWithType: IClientListener.OnUpdateConnectionsStatus
-- uid: com.ricoh.livestreaming.IClientListener.OnUpdateMute(com.ricoh.livestreaming.LSUpdateMuteEvent)
-  name: OnUpdateMute(LSUpdateMuteEvent)
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnUpdateMute_com_ricoh_livestreaming_LSUpdateMuteEvent_
-  commentId: M:com.ricoh.livestreaming.IClientListener.OnUpdateMute(com.ricoh.livestreaming.LSUpdateMuteEvent)
-  fullName: com.ricoh.livestreaming.IClientListener.OnUpdateMute(com.ricoh.livestreaming.LSUpdateMuteEvent)
-  nameWithType: IClientListener.OnUpdateMute(LSUpdateMuteEvent)
-- uid: com.ricoh.livestreaming.IClientListener.OnUpdateMute*
-  name: OnUpdateMute
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnUpdateMute_
-  commentId: Overload:com.ricoh.livestreaming.IClientListener.OnUpdateMute
-  isSpec: "True"
-  fullName: com.ricoh.livestreaming.IClientListener.OnUpdateMute
-  nameWithType: IClientListener.OnUpdateMute
-- uid: com.ricoh.livestreaming.IClientListener.OnUpdateRemoteConnection(com.ricoh.livestreaming.LSUpdateRemoteConnectionEvent)
-  name: OnUpdateRemoteConnection(LSUpdateRemoteConnectionEvent)
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnUpdateRemoteConnection_com_ricoh_livestreaming_LSUpdateRemoteConnectionEvent_
-  commentId: M:com.ricoh.livestreaming.IClientListener.OnUpdateRemoteConnection(com.ricoh.livestreaming.LSUpdateRemoteConnectionEvent)
-  fullName: com.ricoh.livestreaming.IClientListener.OnUpdateRemoteConnection(com.ricoh.livestreaming.LSUpdateRemoteConnectionEvent)
-  nameWithType: IClientListener.OnUpdateRemoteConnection(LSUpdateRemoteConnectionEvent)
-- uid: com.ricoh.livestreaming.IClientListener.OnUpdateRemoteConnection*
-  name: OnUpdateRemoteConnection
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnUpdateRemoteConnection_
-  commentId: Overload:com.ricoh.livestreaming.IClientListener.OnUpdateRemoteConnection
-  isSpec: "True"
-  fullName: com.ricoh.livestreaming.IClientListener.OnUpdateRemoteConnection
-  nameWithType: IClientListener.OnUpdateRemoteConnection
-- uid: com.ricoh.livestreaming.IClientListener.OnUpdateRemoteTrack(com.ricoh.livestreaming.LSUpdateRemoteTrackEvent)
-  name: OnUpdateRemoteTrack(LSUpdateRemoteTrackEvent)
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnUpdateRemoteTrack_com_ricoh_livestreaming_LSUpdateRemoteTrackEvent_
-  commentId: M:com.ricoh.livestreaming.IClientListener.OnUpdateRemoteTrack(com.ricoh.livestreaming.LSUpdateRemoteTrackEvent)
-  fullName: com.ricoh.livestreaming.IClientListener.OnUpdateRemoteTrack(com.ricoh.livestreaming.LSUpdateRemoteTrackEvent)
-  nameWithType: IClientListener.OnUpdateRemoteTrack(LSUpdateRemoteTrackEvent)
-- uid: com.ricoh.livestreaming.IClientListener.OnUpdateRemoteTrack*
-  name: OnUpdateRemoteTrack
-  href: api/com.ricoh.livestreaming.IClientListener.html#com_ricoh_livestreaming_IClientListener_OnUpdateRemoteTrack_
-  commentId: Overload:com.ricoh.livestreaming.IClientListener.OnUpdateRemoteTrack
-  isSpec: "True"
-  fullName: com.ricoh.livestreaming.IClientListener.OnUpdateRemoteTrack
-  nameWithType: IClientListener.OnUpdateRemoteTrack
 - uid: com.ricoh.livestreaming.LibWebrtcLogOption
   name: LibWebrtcLogOption
   href: api/com.ricoh.livestreaming.LibWebrtcLogOption.html
@@ -849,38 +744,38 @@ references:
   isSpec: "True"
   fullName: com.ricoh.livestreaming.LSAddRemoteTrackEvent.Stream
   nameWithType: LSAddRemoteTrackEvent.Stream
-- uid: com.ricoh.livestreaming.LSChangeStabilityEvent
-  name: LSChangeStabilityEvent
-  href: api/com.ricoh.livestreaming.LSChangeStabilityEvent.html
-  commentId: T:com.ricoh.livestreaming.LSChangeStabilityEvent
-  fullName: com.ricoh.livestreaming.LSChangeStabilityEvent
-  nameWithType: LSChangeStabilityEvent
-- uid: com.ricoh.livestreaming.LSChangeStabilityEvent.ConnectionId
+- uid: com.ricoh.livestreaming.LSChangeMediaStabilityEvent
+  name: LSChangeMediaStabilityEvent
+  href: api/com.ricoh.livestreaming.LSChangeMediaStabilityEvent.html
+  commentId: T:com.ricoh.livestreaming.LSChangeMediaStabilityEvent
+  fullName: com.ricoh.livestreaming.LSChangeMediaStabilityEvent
+  nameWithType: LSChangeMediaStabilityEvent
+- uid: com.ricoh.livestreaming.LSChangeMediaStabilityEvent.ConnectionId
   name: ConnectionId
-  href: api/com.ricoh.livestreaming.LSChangeStabilityEvent.html#com_ricoh_livestreaming_LSChangeStabilityEvent_ConnectionId
-  commentId: P:com.ricoh.livestreaming.LSChangeStabilityEvent.ConnectionId
-  fullName: com.ricoh.livestreaming.LSChangeStabilityEvent.ConnectionId
-  nameWithType: LSChangeStabilityEvent.ConnectionId
-- uid: com.ricoh.livestreaming.LSChangeStabilityEvent.ConnectionId*
+  href: api/com.ricoh.livestreaming.LSChangeMediaStabilityEvent.html#com_ricoh_livestreaming_LSChangeMediaStabilityEvent_ConnectionId
+  commentId: P:com.ricoh.livestreaming.LSChangeMediaStabilityEvent.ConnectionId
+  fullName: com.ricoh.livestreaming.LSChangeMediaStabilityEvent.ConnectionId
+  nameWithType: LSChangeMediaStabilityEvent.ConnectionId
+- uid: com.ricoh.livestreaming.LSChangeMediaStabilityEvent.ConnectionId*
   name: ConnectionId
-  href: api/com.ricoh.livestreaming.LSChangeStabilityEvent.html#com_ricoh_livestreaming_LSChangeStabilityEvent_ConnectionId_
-  commentId: Overload:com.ricoh.livestreaming.LSChangeStabilityEvent.ConnectionId
+  href: api/com.ricoh.livestreaming.LSChangeMediaStabilityEvent.html#com_ricoh_livestreaming_LSChangeMediaStabilityEvent_ConnectionId_
+  commentId: Overload:com.ricoh.livestreaming.LSChangeMediaStabilityEvent.ConnectionId
   isSpec: "True"
-  fullName: com.ricoh.livestreaming.LSChangeStabilityEvent.ConnectionId
-  nameWithType: LSChangeStabilityEvent.ConnectionId
-- uid: com.ricoh.livestreaming.LSChangeStabilityEvent.Stability
+  fullName: com.ricoh.livestreaming.LSChangeMediaStabilityEvent.ConnectionId
+  nameWithType: LSChangeMediaStabilityEvent.ConnectionId
+- uid: com.ricoh.livestreaming.LSChangeMediaStabilityEvent.Stability
   name: Stability
-  href: api/com.ricoh.livestreaming.LSChangeStabilityEvent.html#com_ricoh_livestreaming_LSChangeStabilityEvent_Stability
-  commentId: P:com.ricoh.livestreaming.LSChangeStabilityEvent.Stability
-  fullName: com.ricoh.livestreaming.LSChangeStabilityEvent.Stability
-  nameWithType: LSChangeStabilityEvent.Stability
-- uid: com.ricoh.livestreaming.LSChangeStabilityEvent.Stability*
+  href: api/com.ricoh.livestreaming.LSChangeMediaStabilityEvent.html#com_ricoh_livestreaming_LSChangeMediaStabilityEvent_Stability
+  commentId: P:com.ricoh.livestreaming.LSChangeMediaStabilityEvent.Stability
+  fullName: com.ricoh.livestreaming.LSChangeMediaStabilityEvent.Stability
+  nameWithType: LSChangeMediaStabilityEvent.Stability
+- uid: com.ricoh.livestreaming.LSChangeMediaStabilityEvent.Stability*
   name: Stability
-  href: api/com.ricoh.livestreaming.LSChangeStabilityEvent.html#com_ricoh_livestreaming_LSChangeStabilityEvent_Stability_
-  commentId: Overload:com.ricoh.livestreaming.LSChangeStabilityEvent.Stability
+  href: api/com.ricoh.livestreaming.LSChangeMediaStabilityEvent.html#com_ricoh_livestreaming_LSChangeMediaStabilityEvent_Stability_
+  commentId: Overload:com.ricoh.livestreaming.LSChangeMediaStabilityEvent.Stability
   isSpec: "True"
-  fullName: com.ricoh.livestreaming.LSChangeStabilityEvent.Stability
-  nameWithType: LSChangeStabilityEvent.Stability
+  fullName: com.ricoh.livestreaming.LSChangeMediaStabilityEvent.Stability
+  nameWithType: LSChangeMediaStabilityEvent.Stability
 - uid: com.ricoh.livestreaming.LSCloseEvent
   name: LSCloseEvent
   href: api/com.ricoh.livestreaming.LSCloseEvent.html
@@ -899,6 +794,12 @@ references:
   commentId: T:com.ricoh.livestreaming.LSConnectingEvent
   fullName: com.ricoh.livestreaming.LSConnectingEvent
   nameWithType: LSConnectingEvent
+- uid: com.ricoh.livestreaming.LSMediaOpenEvent
+  name: LSMediaOpenEvent
+  href: api/com.ricoh.livestreaming.LSMediaOpenEvent.html
+  commentId: T:com.ricoh.livestreaming.LSMediaOpenEvent
+  fullName: com.ricoh.livestreaming.LSMediaOpenEvent
+  nameWithType: LSMediaOpenEvent
 - uid: com.ricoh.livestreaming.LSOpenEvent
   name: LSOpenEvent
   href: api/com.ricoh.livestreaming.LSOpenEvent.html
@@ -1185,6 +1086,25 @@ references:
   isSpec: "True"
   fullName: com.ricoh.livestreaming.LSUpdateMuteEvent.Stream
   nameWithType: LSUpdateMuteEvent.Stream
+- uid: com.ricoh.livestreaming.LSUpdateRecordingEvent
+  name: LSUpdateRecordingEvent
+  href: api/com.ricoh.livestreaming.LSUpdateRecordingEvent.html
+  commentId: T:com.ricoh.livestreaming.LSUpdateRecordingEvent
+  fullName: com.ricoh.livestreaming.LSUpdateRecordingEvent
+  nameWithType: LSUpdateRecordingEvent
+- uid: com.ricoh.livestreaming.LSUpdateRecordingEvent.RecordingStatus
+  name: RecordingStatus
+  href: api/com.ricoh.livestreaming.LSUpdateRecordingEvent.html#com_ricoh_livestreaming_LSUpdateRecordingEvent_RecordingStatus
+  commentId: P:com.ricoh.livestreaming.LSUpdateRecordingEvent.RecordingStatus
+  fullName: com.ricoh.livestreaming.LSUpdateRecordingEvent.RecordingStatus
+  nameWithType: LSUpdateRecordingEvent.RecordingStatus
+- uid: com.ricoh.livestreaming.LSUpdateRecordingEvent.RecordingStatus*
+  name: RecordingStatus
+  href: api/com.ricoh.livestreaming.LSUpdateRecordingEvent.html#com_ricoh_livestreaming_LSUpdateRecordingEvent_RecordingStatus_
+  commentId: Overload:com.ricoh.livestreaming.LSUpdateRecordingEvent.RecordingStatus
+  isSpec: "True"
+  fullName: com.ricoh.livestreaming.LSUpdateRecordingEvent.RecordingStatus
+  nameWithType: LSUpdateRecordingEvent.RecordingStatus
 - uid: com.ricoh.livestreaming.LSUpdateRemoteConnectionEvent
   name: LSUpdateRemoteConnectionEvent
   href: api/com.ricoh.livestreaming.LSUpdateRemoteConnectionEvent.html
@@ -1609,6 +1529,25 @@ references:
   isSpec: "True"
   fullName: com.ricoh.livestreaming.ReceivingOption.Enabled
   nameWithType: ReceivingOption.Enabled
+- uid: com.ricoh.livestreaming.RecordingStatus
+  name: RecordingStatus
+  href: api/com.ricoh.livestreaming.RecordingStatus.html
+  commentId: T:com.ricoh.livestreaming.RecordingStatus
+  fullName: com.ricoh.livestreaming.RecordingStatus
+  nameWithType: RecordingStatus
+- uid: com.ricoh.livestreaming.RecordingStatus.InRecording
+  name: InRecording
+  href: api/com.ricoh.livestreaming.RecordingStatus.html#com_ricoh_livestreaming_RecordingStatus_InRecording
+  commentId: P:com.ricoh.livestreaming.RecordingStatus.InRecording
+  fullName: com.ricoh.livestreaming.RecordingStatus.InRecording
+  nameWithType: RecordingStatus.InRecording
+- uid: com.ricoh.livestreaming.RecordingStatus.InRecording*
+  name: InRecording
+  href: api/com.ricoh.livestreaming.RecordingStatus.html#com_ricoh_livestreaming_RecordingStatus_InRecording_
+  commentId: Overload:com.ricoh.livestreaming.RecordingStatus.InRecording
+  isSpec: "True"
+  fullName: com.ricoh.livestreaming.RecordingStatus.InRecording
+  nameWithType: RecordingStatus.InRecording
 - uid: com.ricoh.livestreaming.SDKErrorEvent
   name: SDKErrorEvent
   href: api/com.ricoh.livestreaming.SDKErrorEvent.html
@@ -1641,6 +1580,19 @@ references:
   isSpec: "True"
   fullName: com.ricoh.livestreaming.SDKErrorEvent.ToReportString
   nameWithType: SDKErrorEvent.ToReportString
+- uid: com.ricoh.livestreaming.SDKErrorEvent.WithDisconnection
+  name: WithDisconnection
+  href: api/com.ricoh.livestreaming.SDKErrorEvent.html#com_ricoh_livestreaming_SDKErrorEvent_WithDisconnection
+  commentId: P:com.ricoh.livestreaming.SDKErrorEvent.WithDisconnection
+  fullName: com.ricoh.livestreaming.SDKErrorEvent.WithDisconnection
+  nameWithType: SDKErrorEvent.WithDisconnection
+- uid: com.ricoh.livestreaming.SDKErrorEvent.WithDisconnection*
+  name: WithDisconnection
+  href: api/com.ricoh.livestreaming.SDKErrorEvent.html#com_ricoh_livestreaming_SDKErrorEvent_WithDisconnection_
+  commentId: Overload:com.ricoh.livestreaming.SDKErrorEvent.WithDisconnection
+  isSpec: "True"
+  fullName: com.ricoh.livestreaming.SDKErrorEvent.WithDisconnection
+  nameWithType: SDKErrorEvent.WithDisconnection
 - uid: com.ricoh.livestreaming.SDKException
   name: SDKException
   href: api/com.ricoh.livestreaming.SDKException.html
@@ -1826,12 +1778,24 @@ references:
   commentId: T:com.ricoh.livestreaming.SendingVideoOption.VideoCodecType
   fullName: com.ricoh.livestreaming.SendingVideoOption.VideoCodecType
   nameWithType: SendingVideoOption.VideoCodecType
+- uid: com.ricoh.livestreaming.SendingVideoOption.VideoCodecType.AV1
+  name: AV1
+  href: api/com.ricoh.livestreaming.SendingVideoOption.VideoCodecType.html#com_ricoh_livestreaming_SendingVideoOption_VideoCodecType_AV1
+  commentId: F:com.ricoh.livestreaming.SendingVideoOption.VideoCodecType.AV1
+  fullName: com.ricoh.livestreaming.SendingVideoOption.VideoCodecType.AV1
+  nameWithType: SendingVideoOption.VideoCodecType.AV1
 - uid: com.ricoh.livestreaming.SendingVideoOption.VideoCodecType.H264
   name: H264
   href: api/com.ricoh.livestreaming.SendingVideoOption.VideoCodecType.html#com_ricoh_livestreaming_SendingVideoOption_VideoCodecType_H264
   commentId: F:com.ricoh.livestreaming.SendingVideoOption.VideoCodecType.H264
   fullName: com.ricoh.livestreaming.SendingVideoOption.VideoCodecType.H264
   nameWithType: SendingVideoOption.VideoCodecType.H264
+- uid: com.ricoh.livestreaming.SendingVideoOption.VideoCodecType.H265
+  name: H265
+  href: api/com.ricoh.livestreaming.SendingVideoOption.VideoCodecType.html#com_ricoh_livestreaming_SendingVideoOption_VideoCodecType_H265
+  commentId: F:com.ricoh.livestreaming.SendingVideoOption.VideoCodecType.H265
+  fullName: com.ricoh.livestreaming.SendingVideoOption.VideoCodecType.H265
+  nameWithType: SendingVideoOption.VideoCodecType.H265
 - uid: com.ricoh.livestreaming.SendingVideoOption.VideoCodecType.Vp8
   name: Vp8
   href: api/com.ricoh.livestreaming.SendingVideoOption.VideoCodecType.html#com_ricoh_livestreaming_SendingVideoOption_VideoCodecType_Vp8
@@ -1850,18 +1814,18 @@ references:
   commentId: T:com.ricoh.livestreaming.Stability
   fullName: com.ricoh.livestreaming.Stability
   nameWithType: Stability
-- uid: com.ricoh.livestreaming.Stability.IceStable
-  name: IceStable
-  href: api/com.ricoh.livestreaming.Stability.html#com_ricoh_livestreaming_Stability_IceStable
-  commentId: F:com.ricoh.livestreaming.Stability.IceStable
-  fullName: com.ricoh.livestreaming.Stability.IceStable
-  nameWithType: Stability.IceStable
-- uid: com.ricoh.livestreaming.Stability.IceUnstable
-  name: IceUnstable
-  href: api/com.ricoh.livestreaming.Stability.html#com_ricoh_livestreaming_Stability_IceUnstable
-  commentId: F:com.ricoh.livestreaming.Stability.IceUnstable
-  fullName: com.ricoh.livestreaming.Stability.IceUnstable
-  nameWithType: Stability.IceUnstable
+- uid: com.ricoh.livestreaming.Stability.Stable
+  name: Stable
+  href: api/com.ricoh.livestreaming.Stability.html#com_ricoh_livestreaming_Stability_Stable
+  commentId: F:com.ricoh.livestreaming.Stability.Stable
+  fullName: com.ricoh.livestreaming.Stability.Stable
+  nameWithType: Stability.Stable
+- uid: com.ricoh.livestreaming.Stability.Unstable
+  name: Unstable
+  href: api/com.ricoh.livestreaming.Stability.html#com_ricoh_livestreaming_Stability_Unstable
+  commentId: F:com.ricoh.livestreaming.Stability.Unstable
+  fullName: com.ricoh.livestreaming.Stability.Unstable
+  nameWithType: Stability.Unstable
 - uid: com.ricoh.livestreaming.unity
   name: com.ricoh.livestreaming.unity
   href: api/com.ricoh.livestreaming.unity.html
@@ -2216,6 +2180,32 @@ references:
   commentId: T:com.ricoh.livestreaming.webrtc.CodecUtil
   fullName: com.ricoh.livestreaming.webrtc.CodecUtil
   nameWithType: CodecUtil
+- uid: com.ricoh.livestreaming.webrtc.CodecUtil.IsAv1DecoderSupported
+  name: IsAv1DecoderSupported()
+  href: api/com.ricoh.livestreaming.webrtc.CodecUtil.html#com_ricoh_livestreaming_webrtc_CodecUtil_IsAv1DecoderSupported
+  commentId: M:com.ricoh.livestreaming.webrtc.CodecUtil.IsAv1DecoderSupported
+  fullName: com.ricoh.livestreaming.webrtc.CodecUtil.IsAv1DecoderSupported()
+  nameWithType: CodecUtil.IsAv1DecoderSupported()
+- uid: com.ricoh.livestreaming.webrtc.CodecUtil.IsAv1DecoderSupported*
+  name: IsAv1DecoderSupported
+  href: api/com.ricoh.livestreaming.webrtc.CodecUtil.html#com_ricoh_livestreaming_webrtc_CodecUtil_IsAv1DecoderSupported_
+  commentId: Overload:com.ricoh.livestreaming.webrtc.CodecUtil.IsAv1DecoderSupported
+  isSpec: "True"
+  fullName: com.ricoh.livestreaming.webrtc.CodecUtil.IsAv1DecoderSupported
+  nameWithType: CodecUtil.IsAv1DecoderSupported
+- uid: com.ricoh.livestreaming.webrtc.CodecUtil.IsAv1EncoderSupported
+  name: IsAv1EncoderSupported()
+  href: api/com.ricoh.livestreaming.webrtc.CodecUtil.html#com_ricoh_livestreaming_webrtc_CodecUtil_IsAv1EncoderSupported
+  commentId: M:com.ricoh.livestreaming.webrtc.CodecUtil.IsAv1EncoderSupported
+  fullName: com.ricoh.livestreaming.webrtc.CodecUtil.IsAv1EncoderSupported()
+  nameWithType: CodecUtil.IsAv1EncoderSupported()
+- uid: com.ricoh.livestreaming.webrtc.CodecUtil.IsAv1EncoderSupported*
+  name: IsAv1EncoderSupported
+  href: api/com.ricoh.livestreaming.webrtc.CodecUtil.html#com_ricoh_livestreaming_webrtc_CodecUtil_IsAv1EncoderSupported_
+  commentId: Overload:com.ricoh.livestreaming.webrtc.CodecUtil.IsAv1EncoderSupported
+  isSpec: "True"
+  fullName: com.ricoh.livestreaming.webrtc.CodecUtil.IsAv1EncoderSupported
+  nameWithType: CodecUtil.IsAv1EncoderSupported
 - uid: com.ricoh.livestreaming.webrtc.CodecUtil.IsH264Supported
   name: IsH264Supported()
   href: api/com.ricoh.livestreaming.webrtc.CodecUtil.html#com_ricoh_livestreaming_webrtc_CodecUtil_IsH264Supported
@@ -2229,6 +2219,19 @@ references:
   isSpec: "True"
   fullName: com.ricoh.livestreaming.webrtc.CodecUtil.IsH264Supported
   nameWithType: CodecUtil.IsH264Supported
+- uid: com.ricoh.livestreaming.webrtc.CodecUtil.IsH265Supported
+  name: IsH265Supported()
+  href: api/com.ricoh.livestreaming.webrtc.CodecUtil.html#com_ricoh_livestreaming_webrtc_CodecUtil_IsH265Supported
+  commentId: M:com.ricoh.livestreaming.webrtc.CodecUtil.IsH265Supported
+  fullName: com.ricoh.livestreaming.webrtc.CodecUtil.IsH265Supported()
+  nameWithType: CodecUtil.IsH265Supported()
+- uid: com.ricoh.livestreaming.webrtc.CodecUtil.IsH265Supported*
+  name: IsH265Supported
+  href: api/com.ricoh.livestreaming.webrtc.CodecUtil.html#com_ricoh_livestreaming_webrtc_CodecUtil_IsH265Supported_
+  commentId: Overload:com.ricoh.livestreaming.webrtc.CodecUtil.IsH265Supported
+  isSpec: "True"
+  fullName: com.ricoh.livestreaming.webrtc.CodecUtil.IsH265Supported
+  nameWithType: CodecUtil.IsH265Supported
 - uid: com.ricoh.livestreaming.webrtc.DeviceInfo
   name: DeviceInfo
   href: api/com.ricoh.livestreaming.webrtc.DeviceInfo.html
@@ -3013,32 +3016,6 @@ references:
   commentId: T:com.ricoh.livestreaming.webrtc.WebrtcLog
   fullName: com.ricoh.livestreaming.webrtc.WebrtcLog
   nameWithType: WebrtcLog
-- uid: com.ricoh.livestreaming.webrtc.WebrtcLog.Create(System.String,System.String,System.UInt32)
-  name: Create(String, String, UInt32)
-  href: api/com.ricoh.livestreaming.webrtc.WebrtcLog.html#com_ricoh_livestreaming_webrtc_WebrtcLog_Create_System_String_System_String_System_UInt32_
-  commentId: M:com.ricoh.livestreaming.webrtc.WebrtcLog.Create(System.String,System.String,System.UInt32)
-  fullName: com.ricoh.livestreaming.webrtc.WebrtcLog.Create(System.String, System.String, System.UInt32)
-  nameWithType: WebrtcLog.Create(String, String, UInt32)
-- uid: com.ricoh.livestreaming.webrtc.WebrtcLog.Create*
-  name: Create
-  href: api/com.ricoh.livestreaming.webrtc.WebrtcLog.html#com_ricoh_livestreaming_webrtc_WebrtcLog_Create_
-  commentId: Overload:com.ricoh.livestreaming.webrtc.WebrtcLog.Create
-  isSpec: "True"
-  fullName: com.ricoh.livestreaming.webrtc.WebrtcLog.Create
-  nameWithType: WebrtcLog.Create
-- uid: com.ricoh.livestreaming.webrtc.WebrtcLog.Destroy
-  name: Destroy()
-  href: api/com.ricoh.livestreaming.webrtc.WebrtcLog.html#com_ricoh_livestreaming_webrtc_WebrtcLog_Destroy
-  commentId: M:com.ricoh.livestreaming.webrtc.WebrtcLog.Destroy
-  fullName: com.ricoh.livestreaming.webrtc.WebrtcLog.Destroy()
-  nameWithType: WebrtcLog.Destroy()
-- uid: com.ricoh.livestreaming.webrtc.WebrtcLog.Destroy*
-  name: Destroy
-  href: api/com.ricoh.livestreaming.webrtc.WebrtcLog.html#com_ricoh_livestreaming_webrtc_WebrtcLog_Destroy_
-  commentId: Overload:com.ricoh.livestreaming.webrtc.WebrtcLog.Destroy
-  isSpec: "True"
-  fullName: com.ricoh.livestreaming.webrtc.WebrtcLog.Destroy
-  nameWithType: WebrtcLog.Destroy
 - uid: com.ricoh.livestreaming.webrtc.WebrtcWrapperForPixelImageRegister
   name: WebrtcWrapperForPixelImageRegister
   href: api/com.ricoh.livestreaming.webrtc.WebrtcWrapperForPixelImageRegister.html

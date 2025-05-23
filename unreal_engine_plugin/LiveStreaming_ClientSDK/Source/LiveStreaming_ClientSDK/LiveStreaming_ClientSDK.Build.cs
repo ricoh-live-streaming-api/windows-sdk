@@ -2,6 +2,7 @@
 
 using UnrealBuildTool;
 using System;
+using System.Collections.Generic;
 using System.IO;
 
 public class LiveStreaming_ClientSDK : ModuleRules
@@ -65,20 +66,14 @@ public class LiveStreaming_ClientSDK : ModuleRules
 
 	private void LoadDll()
 	{
-		string[] dllNames = {
-			"AssemblyResolve.dll",
-			"ClientSDK.dll",
-			"log4net.Config.xml",
-			"log4net.dll",
-			"Newtonsoft.Json.dll",
-			"UnrealEngineClient.dll",
-			"webrtc_wrapper.dll",
-			"websocket-sharp.dll",
-		};
+		var thirdPartyPath = Path.Combine(PluginDirectory, "Source/ThirdParty/bin/Win64");
+		List<string> dllNames = new List<string>();
+		dllNames.AddRange(Directory.GetFiles(thirdPartyPath, "*.dll", SearchOption.TopDirectoryOnly));
+		dllNames.Add("log4net.Config.xml");
 
-		foreach (var dllName in dllNames)
+		foreach (var dllName in dllNames.ToArray())
 		{
-			string fullPath = Path.Combine("$(PluginDir)/Source/ThirdParty/Bin/Win64", dllName);
+			string fullPath = Path.Combine(thirdPartyPath, dllName);
 			PublicDelayLoadDLLs.Add(dllName);
 			RuntimeDependencies.Add(fullPath);
 		}
